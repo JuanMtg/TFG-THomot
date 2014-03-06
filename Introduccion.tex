@@ -1,0 +1,73 @@
+\chapter{Introducción} 
+\section{Los problemas clásicos de levantamiento, extensión y clasificación}
+En distintos contextos matemáticos encontramos dos problemas básicos, común a todos ellos, si los despojamos de las características propias de un entorno. \par
+
+Uno de ellos es la extensión: dado un diagrama de aplicaciones continuas 
+$$
+\begin{tikzcd}
+	A \rar{f} \dar[hook]{i} & Y \\
+	X \urar[dashed]{\tilde{f}}	&
+\end{tikzcd} 
+$$
+donde $i$ es una ``inclusión'' en un contexto, ¿cuándo existe $\tilde{f}$, extensión de $f$? \par
+
+La respuesta no es trivial. Es claro que, incluso si $i$ no es inclusión, ha de verificarse que si $i(a)= i(b)$ entonces $f(a) = f(b)$. Pero incluso si $i$ es biyectiva es necesario exigirle a $X$, para que la única $\tilde{f}$ posible sea continua, que posea la topología de la identificación determinada (topología cociente) por $i$: 
+$$
+\theta \subset X \text{ es abierto si y sólo si } i^{-1} (\theta) \text{ es abierto de } A. 
+$$
+
+Resultados clásicos en lo que podemos llamar ``topología general'' atribuyen respuestas positivas a este problema:
+\begin{teor} 
+Si $X,Y$ son espacios métricos, $Y$ completo, y $A$ es denso en $X$, toda aplicación uniformemente continua $f:A\rightarrow Y $ se extiende a una uniformemente continua $\tilde{f} : X \rightarrow Y$.
+\end{teor} 
+
+\begin{teor}[de Extensión de Tietze]
+Sea $X$ normal, $A \subset X$ cerrado, $I \subset \mathbb{R}$ intervalo. Entonces toda $f : A \rightarrow I $  admite una extensión $\tilde{f} : X \rightarrow I$.
+\end{teor}
+También hay resultados clásicos, si se quiere de "análisis no lineal" que constituyen respuestas negativas:
+
+\begin{teor} 
+La esfera $S^{n}$ no es un retracto del disco $D^{n+1}$. En otras palabras la identidad $S^{n} \rightarrow S^{n}$ no se extiende a $D^{n+1}$.
+\end{teor}
+
+Dualmente \footnote{Dual en el sentido de ``Eckmann-Hilton'', dualidad que se definirá más adelante.},
+nos encontramos con el problema del levantamiento de aplicaciones continuas: dado un diagrama
+$$
+\begin{tikzcd}
+	{}	& X \dar[two heads]{p} \\
+	Y \urar[dashed]{\tilde{f}} \rar{f} & B
+\end{tikzcd}
+$$
+donde $p$ es sobreyectiva ¿cuándo existe $\tilde{f}$, levantamiento de $f$?.\\ 
+La respuesta tampoco es elemental. Incluso si $p$ es biyectiva hay que exigirle que sea homeomorfismo para que la única $\tilde{f}$ sea continua.\par
+
+Igualmente hay resultados clásicos en distintos ambientes que contestan parcialmente esta cuestión.
+
+\begin{teor} 
+Sea $A \subset \mathbb{R}^2$ un conjunto estrellado respecto a $x_{0} \in A$ y $f : A \rightarrow S^{1}$ una aplicación continua. Entonces f queda determinada de forma continua por su función angular, esto es, existe una aplicación $\tilde{f} : A \rightarrow \mathbb{R}$ de tal forma que el siguiente diagrama es conmutativo:
+$$
+\begin{tikzcd}
+	{}	& \mathbb{R} \dar{exp} \\
+	A \urar{\tilde{f}} \rar{f} & S^1
+\end{tikzcd}
+$$
+Esto es, $f(x) = (cos\tilde{f}(x), sen\tilde{f}(x))$. Es más, dos tales funciones $\tilde{f}$ se diferencian en un múltiplo entero de $2\pi$.
+\end{teor}
+
+Estos problemas son, en parte, origen de la teoria de homotopía. Muchas veces, los problemas de extensión y levantamiento, son puramente homotópicos: \par
+
+Hay aplicaciones $p : X \rightarrow B$ para las que existe el levantamiento de $f : Y \rightarrow B$ si existe el levantamiento de una ``deformada'' de $f$. \\
+
+De igual forma existen algunas aplicaciones $i : A \rightarrow X$ para las que existe una extensión de $g : A \rightarrow Y$ si y sólo si existe alguna extensión para una ``deformada'' de g. \par
+
+Introduzcamos el concepto de deformación en homotopía:
+\begin{defin}
+Dos aplicaciones $f, g : X \rightarrow Y$ se dicen homótopas (deformables la una en la otra) si existe $H : X \times [0,1] \rightarrow Y$ tal que $H(x ,0) = f(x)$ y $H(x, 1) = g(x)$.
+\end{defin}
+Llegados a este punto, los problemas de extensión y levantamiento deparan ahora a un problema común de clasificación. ¿Cuándo dos aplicaciones $X \rightarrow Y$ son homótopas? ¿Cómo es el conjunto $[X, Y]$ de clases de homotopía de aplicaciones $X \rightarrow Y$?\\
+Respuesta: los métodos que se siguen son, a grosso modo, de dos enfoques distintos:\\
+Por una parte, se le asocian a los espacios modelos algebraicos y a las (clases de homotopía de) aplicaciones, morfismos entre los respectivos modelos algebraicos que permiten parcialmente su clasificación:
+Como ejemplo, probemos el teorema anterior por el que $S^n$ no es un retracto de $D^{n+1}$. Para ello, asociemos a $S^n$ alguno de los "cienes" y "cienes" invariantes algebraicos "no nulos". Como quiera que $D^{n+1}$ es deformable a un punto, todos esos invariantes se hacen 0 para el disco. Si $S^n$ fuese retracto de $D^{n+1}$ existiría un diagrama como: \textbf{(insertar diagrama 1 p6)}
+que algebraicamente daría lugar a (insertar diagrama 2 p6)lo que resulta contradictorio.
+Por otra parte, para saber más sobre $[X, Y]$ es habitual tratar de dotar a este conjunto de otras estructuras (grupo, módulo, ...) que den luz sobre un comportamiento.\\
+Para finalizar, nótese que "ya está dicho todo". Hemos hablado de "fibraciones", "cofibraciones", "tipo de homotopía", "invariantes del mismo" y "dualidad de "Eckman-Hilton"".

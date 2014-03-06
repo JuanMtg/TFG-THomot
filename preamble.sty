@@ -1,0 +1,38 @@
+%Paquetes principales
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage[spanish]{babel}
+\usepackage{makeidx}
+%TikZ CD y propiedades
+\usepackage{tikz-cd}
+\usetikzlibrary{matrix, arrows}
+
+\tikzset{
+commutative diagrams/.cd,
+arrow style=tikz,
+diagrams={>=latex}
+}
+
+%Entornos de teoremas
+\newtheorem*{teor}{Teorema}
+\newtheorem*{defin}{Definición}
+\newtheorem*{prop}{Proposición}
+\newtheorem*{coro}{Corolario}
+\newtheorem*{ejem}{Ejemplo}
+\newtheorem*{ejems}{Ejemplos}
+\theoremstyle{remark}
+\newtheorem*{demo}{Demostración}
+
+%Nuevos comandos
+\newcommand{\sen}{\operatorname{\sen}}
+
+%Definición operadores big 
+\makeatletter
+\def\bign#1{\mathclose{\hbox{$\left#1\vbox to8.5\p@{}\right.\n@space$}}\mathopen{}}
+\def\Bign#1{\mathclose{\hbox{$\left#1\vbox to11.5\p@{}\right.\n@space$}}\mathopen{}}
+\def\biggn#1{\mathclose{\hbox{$\left#1\vbox to14.5\p@{}\right.\n@space$}}\mathopen{}}
+\def\Biggn#1{\mathclose{\hbox{$\left#1\vbox to17.5\p@{}\right.\n@space$}}\mathopen{}}
+\makeatother

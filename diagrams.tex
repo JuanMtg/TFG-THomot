@@ -1,0 +1,132 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tikz-cd}
+\usetikzlibrary{matrix, arrows}
+\usepackage{makeidx}
+\author{Juan Antonio Macías García}
+\title{Diagramas}
+\date{}
+
+\tikzset{
+commutative diagrams/.cd,
+arrow style=tikz,
+diagrams={>=latex}
+}
+
+
+\makeatletter
+\def\bign#1{\mathclose{\hbox{$\left#1\vbox to8.5\p@{}\right.\n@space$}}\mathopen{}}
+\def\Bign#1{\mathclose{\hbox{$\left#1\vbox to11.5\p@{}\right.\n@space$}}\mathopen{}}
+\def\biggn#1{\mathclose{\hbox{$\left#1\vbox to14.5\p@{}\right.\n@space$}}\mathopen{}}
+\def\Biggn#1{\mathclose{\hbox{$\left#1\vbox to17.5\p@{}\right.\n@space$}}\mathopen{}}
+\makeatother
+
+\begin{document}
+\tableofcontents
+\newpage
+\chapter{Introducción}
+\section{Página 1}
+\begin{tikzcd}
+	A \rar{f} \dar[hook]{i} & Y \\
+	X \urar[dashed]{\tilde{f}}	&
+\end{tikzcd}
+
+\section{Página 3}
+\begin{tikzcd}
+	{}	& X \dar[two heads]{p} \\
+	Y \urar[dashed]{\tilde{f}} \rar{f} & B
+\end{tikzcd}
+
+\section{Página 4}
+\begin{tikzcd}
+	{}	& \mathbb{R} \dar{exp} \\
+	A \urar{\tilde{f}} \rar{f} & S^1
+\end{tikzcd}
+
+\section{Página 6}
+\begin{tikzcd}
+	S^n \arrow{rr}{1_{S^n}} \drar{i} & & S^n \\
+		&	D^{n+1} \urar{r} & 
+\end{tikzcd}
+
+\begin{tikzcd}
+	0 \neq F(S^n) \arrow{rr}{1} \drar & &  F(S^n) \neq 0 \\
+		&	0 \urar & 
+\end{tikzcd}
+
+\section{Página 11}
+\begin{tikzcd}
+	S^n \arrow{rr}{f} \drar[hook] & & X \\
+		& D^{n+1} \urar{\tilde{f}}
+\end{tikzcd}
+
+\section{Página 14.1}
+\begin{tikzcd}
+	X \arrow{rr}{f} \drar[hook] & & Y \\
+	& CX \urar{h} & 
+\end{tikzcd}
+
+\section{Página 19}
+\begin{tikzcd}
+	\Omega Y \times \Omega Y \times \Omega Y \rar{\mu \times 1_{\Omega Y}} \dar{1_{\Omega Y} \times \mu}
+		  & \Omega Y \times \Omega Y \dar{\mu} \\
+	\Omega Y \times \Omega Y \rar{\mu} 
+		  & \Omega Y
+\end{tikzcd}
+
+\section{Página 21}
+\begin{tikzcd}
+	\Sigma X \rar{\nu} \dar{\nu} & \Sigma X \vee \Sigma X \dar{1 \vee \nu} \\
+	\Sigma X \vee \Sigma X \rar{\nu \vee 1} & \Sigma X \vee \Sigma X \vee \Sigma X
+\end{tikzcd}
+
+\begin{tikzcd}
+	\Sigma X \rar{\nu} \arrow[bend right = 20]{rrr}{1}
+ 		& \Sigma X \vee \Sigma X \rar{c_{x_0} \vee 1} & \Sigma X \vee \Sigma X \rar{\sigma} & \Sigma X
+\end{tikzcd}
+
+\section{Página 22}
+\begin{tikzcd}
+	\Sigma X \rar{\nu} \arrow[bend right = 20]{rrr}{c_{x_0}}
+		& \Sigma X \vee \Sigma X \rar{1 \vee \eta} & \Sigma X \vee \Sigma X \rar{\sigma} & \Sigma X
+\end{tikzcd}
+
+\begin{tikzcd}
+\Sigma X \rar{\nu} & \Sigma X \vee \Sigma X \rar{f \vee g} & Y \vee Y \rar{\sigma} & Y
+\end{tikzcd}
+
+
+\section{Página 34}
+\begin{tikzcd}
+	{} 						  & X \drar{i_0} \arrow[bend left]{drr}{f}			   &        					&   \\
+	A \urar[hook] \drar{i_0}  &   												   & X \times I \rar[dashed]{F} & Y \\
+	   						  & A \times I  \urar[hook] \arrow[bend right]{urr}{G} &   							&
+\end{tikzcd}
+
+\section{Página 35}
+\begin{tikzcd}
+	(X \times \{0\}) \cup (A \times I) \rar{f} \dar[hook] & Y \\
+	X \times I \urar[dashed]{\tilde{f}} &
+\end{tikzcd}
+
+\section{Página 37}
+\begin{tikzcd}
+	(X \times \{0\}) \cup (A \times I) \arrow{rr}{1} \drar[hook] & & (X \times \{0\}) \cup (A \times I) \\
+				& X \times I \urar[dashed]{r} &
+\end{tikzcd}
+
+\section{Página 39}
+\begin{tikzcd}
+	(X \times \{0\}) \cup (A \times I) \arrow{rr}{1_X \cup F} \drar[hook] & & X \\
+				& X \times I \urar{H} &
+\end{tikzcd}
+
+\section{Página 40}
+\begin{tikzcd}
+	X \rar{H_t} \dar{q} & X \dar{q} \\
+	X \bign/ A \rar{\overline{H_t}} \urar{g} & X \bign/A
+\end{tikzcd}
+\end{document}

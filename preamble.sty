@@ -6,6 +6,11 @@
 \usepackage{amsthm}
 \usepackage[spanish]{babel}
 \usepackage{makeidx}
+\usepackage[rflt]{floatflt}
+\usepackage{fancyhdr}
+
+%Estilo de página
+%\pagestyle{fancy}
 %TikZ CD y propiedades
 \usepackage{tikz-cd}
 \usetikzlibrary{matrix, arrows}
@@ -21,13 +26,13 @@ diagrams={>=latex}
 \newtheorem*{defin}{Definición}
 \newtheorem*{prop}{Proposición}
 \newtheorem*{coro}{Corolario}
-\newtheorem*{ejem}{Ejemplo}
-\newtheorem*{ejems}{Ejemplos}
 \theoremstyle{remark}
 \newtheorem*{demo}{Demostración}
 
 %Nuevos comandos
 \newcommand{\sen}{\operatorname{\sen}}
+
+\setlength{\medmuskip}{2mu}
 
 %Definición operadores big 
 \makeatletter
@@ -36,3 +41,24 @@ diagrams={>=latex}
 \def\biggn#1{\mathclose{\hbox{$\left#1\vbox to14.5\p@{}\right.\n@space$}}\mathopen{}}
 \def\Biggn#1{\mathclose{\hbox{$\left#1\vbox to17.5\p@{}\right.\n@space$}}\mathopen{}}
 \makeatother
+
+% Entornos personalizados
+\newcounter{Ejemscount}
+\setcounter{Ejemscount}{0}
+\newenvironment{ejems}
+{
+\par \noindent \stepcounter{Ejemscount} {\bf Ejemplos:}
+}
+{
+\par 
+}
+
+\newcounter{Ejemcount}
+\setcounter{Ejemcount}{0}
+\newenvironment{ejem}
+{
+\par \noindent \stepcounter{Ejemsount} {\bf Ejemplo:}
+}
+{
+\par 
+}

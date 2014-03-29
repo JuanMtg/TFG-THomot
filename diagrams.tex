@@ -1,30 +1,3 @@
-\documentclass[12pt,a4paper]{report}
-\usepackage[utf8]{inputenc}
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
-\usepackage{tikz-cd}
-\usetikzlibrary{matrix, arrows}
-\usepackage{makeidx}
-\author{Juan Antonio Macías García}
-\title{Diagramas}
-\date{}
-
-\tikzset{
-commutative diagrams/.cd,
-arrow style=tikz,
-diagrams={>=latex}
-}
-
-
-\makeatletter
-\def\bign#1{\mathclose{\hbox{$\left#1\vbox to8.5\p@{}\right.\n@space$}}\mathopen{}}
-\def\Bign#1{\mathclose{\hbox{$\left#1\vbox to11.5\p@{}\right.\n@space$}}\mathopen{}}
-\def\biggn#1{\mathclose{\hbox{$\left#1\vbox to14.5\p@{}\right.\n@space$}}\mathopen{}}
-\def\Biggn#1{\mathclose{\hbox{$\left#1\vbox to17.5\p@{}\right.\n@space$}}\mathopen{}}
-\makeatother
-
-\begin{document}
 \tableofcontents
 \newpage
 \chapter{Introducción}
@@ -129,4 +102,3 @@ diagrams={>=latex}
 	X \rar{H_t} \dar{q} & X \dar{q} \\
 	X \bign/ A \rar{\overline{H_t}} \urar{g} & X \bign/A
 \end{tikzcd}
-\end{document}

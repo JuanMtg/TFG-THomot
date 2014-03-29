@@ -48,8 +48,11 @@ pip-log.txt
 .mr.developer.cfg
 
 ## TEX ##
-.synctex.gz
-.log
+*.synctex.gz
+*.log
 Main.pdf
-Main.bbl
-Main.blg
+*.bbl
+*.blg
+*.toc
+*.gz
+*.aux

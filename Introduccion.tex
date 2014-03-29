@@ -19,7 +19,7 @@ $$
 \newpage
 Hay varios ejemplos de resultados que dan respuesta a este problema. Algunos dan una respuesta positiva:
 \begin{teor} 
-Si $X,Y$ son espacios métricos, $Y$ completo, y $A$ es denso en $X$, toda aplicación uniformemente continua $f:A\rightarrow Y $ se extiende a una uniformemente continua $\tilde{f} : X \rightarrow Y$.
+Si $X,Y$ son espacios métricos, $Y$ completo, y $A$ es denso en $X$, toda aplicación uniformemente continua $f:A\longrightarrow Y $ se extiende a una uniformemente continua $\tilde{f} : X \rightarrow Y$.
 \end{teor} 
 
 \begin{teor}[de Extensión de Tietze]
@@ -45,7 +45,7 @@ La respuesta tampoco es elemental. Incluso si $p$ es biyectiva hay que exigirle 
 Igualmente hay resultados clásicos en distintos ambientes que contestan parcialmente esta cuestión.
 
 \begin{teor} 
-Sea $A \subset \mathbb{R}^2$ un conjunto estrellado respecto a $x_{0} \in A$ y $f : A \rightarrow S^{1}$ una aplicación continua. Entonces f queda determinada de forma continua por su función angular, esto es, existe una aplicación $\tilde{f} : A \rightarrow \mathbb{R}$ de tal forma que el siguiente diagrama es conmutativo:
+Sea $A \subset \mathbb{R}^2$ un conjunto estrellado respecto a $x_{0} \in A$ y $f : A \longrightarrow S^{1}$ una aplicación continua. Entonces f queda determinada de forma continua por su función angular, esto es, existe una aplicación $\tilde{f} : A \longrightarrow \mathbb{R}$ de tal forma que el siguiente diagrama es conmutativo:
 $$
 \begin{tikzcd}
 	{}	& \mathbb{R} \dar{exp} \\
@@ -57,14 +57,14 @@ Esto es, $f(x) = (cos\tilde{f}(x), sen\tilde{f}(x))$. Es más, dos tales funcion
 
 Estos problemas son, en parte, origen de la teoria de homotopía. Muchas veces, los problemas de extensión y levantamiento son puramente homotópicos: \par
 
-Hay aplicaciones $p : X \rightarrow B$ para las que existe el levantamiento de $f : Y \rightarrow B$ si existe el levantamiento de una ``deformada'' de $f$. \par
-De igual forma existen algunas aplicaciones $i : A \rightarrow X$ para las que existe una extensión de $g : A \rightarrow Y$ si y sólo si existe alguna extensión para una ``deformada'' de g. \par
+Hay aplicaciones $p : X \longrightarrow B$ para las que existe el levantamiento de $f : Y \longrightarrow B$ si existe el levantamiento de una ``deformada'' de $f$. \par
+De igual forma existen algunas aplicaciones $i : A \longrightarrow X$ para las que existe una extensión de $g : A \longrightarrow Y$ si y sólo si existe alguna extensión para una ``deformada'' de g. \par
 
 Introduzcamos el concepto de deformación en homotopía:
 \begin{defin}
-Dos aplicaciones $f, g : X \rightarrow Y$ se dicen homótopas (deformables la una en la otra), denotado por $f \simeq g$, si existe  $H : X \times [0,1] \rightarrow Y$ una aplicación tal que $H(x ,0) = f(x)$ y $H(x, 1) = g(x)$.
+Dos aplicaciones $f, g : X \longrightarrow Y$ se dicen homótopas (deformables la una en la otra), denotado por $f \simeq g$, si existe  $H : X \times [0,1] \longrightarrow Y$ una aplicación tal que $H(x ,0) = f(x)$ y $H(x, 1) = g(x)$.
 \end{defin}
-Llegados a este punto, los problemas de extensión y levantamiento deparan ahora a un problema común de clasificación. ¿Cuándo dos aplicaciones $X \rightarrow Y$ son homótopas? ¿Cómo es el conjunto $[X, Y]$ de clases de homotopía de aplicaciones $X \rightarrow Y$? \par 
+Llegados a este punto, los problemas de extensión y levantamiento deparan ahora a un problema común de clasificación. ¿Cuándo dos aplicaciones $X \longrightarrow Y$ son homótopas? ¿Cómo es el conjunto $[X, Y]$ de clases de homotopía de aplicaciones $X \longrightarrow Y$? \par 
 Los métodos que se siguen son, a grosso modo, de dos enfoques distintos:\\
 Por una parte, a los espacios se le asocian modelos algebraicos y morfismos entre los respectivos modelos algebraicos a las aplicaciones. Estas asociaciones permiten parcialmente su clasificación. \par 
 Como ejemplo, probemos el teorema anterior por el que $S^n$ no es un retracto de $D^{n+1}$. Para ello, asociemos a $S^n$ un invariante algebraico no nulo. Como el disco $D^{n+1}$ es deformable a un punto, todos esos invariantes se hacen 0. Si $S^n$ fuese retracto de $D^{n+1}$ existiría un diagrama como el siguiente:
@@ -83,19 +83,17 @@ $$
 $$
 lo que resulta contradictorio. \par
 
-Por otra parte, para saber más sobre $[X, Y]$ es habitual tratar de dotar a este conjunto de otras estructuras (grupo, módulo...) que den luz sobre un comportamiento. \par 
-
-
+Por otra parte, para saber más sobre $[X, Y]$ es habitual tratar de dotar a este conjunto de otras estructuras (grupo, módulo...) que den luz sobre su comportamiento. 
 
 \section{Homotopía: Nociones básicas}
-La relación de homotopía es básica y formaliza la noción de deformación continua de dos espacios: dos aplicaciones $f, g : X\rightarrow Y$ son homótopas si existe $H:X\times I \rightarrow Y$ tal que $H(x, 0) = f(x)$, $H(x, 1) = g(x)$. 
+La relación de homotopía es básica y formaliza la noción de deformación continua de dos espacios: dos aplicaciones $f, g : X\longrightarrow Y$ son homótopas si existe $H : X \times I \longrightarrow Y$ tal que $H(x, 0) = f(x)$, $H(x, 1) = g(x)$. 
 \begin{prop}
 La relación de homotopía es una relación de equivalencia en el conjunto de aplicaciones continuas de $X$ a $Y$.
 \end{prop}
 \begin{demo} 
 La propiedad reflexiva es clara sin más que tomar la aplicación $F(x,t) = x$.\\
-Para la simétrica, si $H : f \simeq g$ entonces $F : X \times I \rightarrow Y$, $F(x, t) = H(x, 1-t)$ es una homotopía de $g$ a $f$.\\
-Veamos ahora la transitiva. Si $F : f \simeq g$, $H : g \simeq h$ entonces $G : X \times I \rightarrow Y$,
+Para la simétrica, si $H : f \simeq g$ entonces $F : X \times I \longrightarrow Y$, $F(x, t) = H(x, 1-t)$ es una homotopía de $g$ a $f$.\\
+Veamos ahora la transitiva. Si $F : f \simeq g$, $H : g \simeq h$ entonces $G : X \times I \longrightarrow Y$,
 
 $$G(x, t) = 
 \begin{cases}
@@ -112,24 +110,24 @@ es una homotopía de $f$ a $h$.
 \includegraphics[width=7cm]{images/pag8.pdf}
 \end{figure}
 \item[(2)] Sean $X = Y = \mathbb{R}^n$, y consideremos las aplicaciones $f = 1_{\mathbb{R}^n}$ y $g \equiv 0$. Entonces $f \simeq g$ mediante la aplicación
-$$H : \mathbb{R}^n \times I \rightarrow \mathbb{R}^n$$ $$H(x, t) = tx$$
+$$H : \mathbb{R}^n \times I \longrightarrow \mathbb{R}^n$$ $$H(x, t) = tx$$
 \end{itemize}
 \end{ejems}
 A menudo estamos interesados en aplicaciones entre pares
-$$f : (X, A) \rightarrow (Y, B)$$ que no es más que una aplicación continua tal que $f(A) \subset B$. En este caso, $f, g : (X, A) \rightarrow (Y, B)$ son homótopas si existe $H : X \times I \rightarrow Y$ tal que $\forall t \in I$, $H_t = H(-, t) : (X, A) \rightarrow (Y, B)$.\footnote{Arreglar, explicar}\\
-Un caso particular de suma importancia es el de los espacios punteados $(X, x_0)$. En este caso, $f \simeq g : (X, x_0) \rightarrow (Y, y_0)$ si existe $H: X \times I \rightarrow Y$ tal que $H(x, 0) = f(x), H(x, 1) = g(x)$ y $H(x_0, t) = y_0$ $\forall t \in I$.\\
+$$f : (X, A) \longrightarrow (Y, B)$$ que no es más que una aplicación continua tal que $f(A) \subset B$. En este caso, $f, g : (X, A) \longrightarrow (Y, B)$ son homótopas si existe $H : X \times I \longrightarrow Y$ tal que $\forall t \in I$, $H_t = H(-, t) : (X, A) \longrightarrow (Y, B)$.\footnote{Arreglar, explicar}\\
+Un caso particular de suma importancia es el de los espacios punteados $(X, x_0)$. En este caso, $f \simeq g : (X, x_0) \longrightarrow (Y, y_0)$ si existe $H: X \times I \longrightarrow Y$ tal que $H(x, 0) = f(x), H(x, 1) = g(x)$ y $H(x_0, t) = y_0$ $\forall t \in I$.\\
 \begin{ejems}
 \begin{itemize}
-\item[(1)] En el ejemplo anterior (2), podemos considerar $f \simeq g : (\mathbb{R}^n, 0) \rightarrow (\mathbb{R}^n, 0)$ tomando como homotopía la misma función $H$.
-\item[(2)] Si consideramos un espacio como el siguiente: \textbf{(Insertar imagen p9)} Tenemos que $f : I \rightarrow Y$ es obviamente homótopa a la constante en $y_0$ que denominamos $c_{y_0}$. Pero la aplicación de pares $f : (I, \{ 0,1 \} \rightarrow (Y, y_0)$ no es homótopa a la constante $c_{y_0}$.
-\item[(3)] Dado $E^2 = \{ x \in \mathbb{R}^2 : \| x \| \leq 1 \}$, tenemos que $1 \simeq a$ donde $a$ es la función antípoda mediante la hopotopía de la rotación: $H : E^2 \times I \rightarrow E^2$ dada por $H(x, t) = H(\rho e^{i\theta}, t) = \rho e^{i(\theta + t\pi)}$ \textbf{(Insertar gráfico p10)}\\
-Es más, como aplicaciones de pares, $1 \simeq a$ mediante $H : (E^2, S^1) \times I \rightarrow (E^2, S^1)$. Sin embargo, $\nexists x_0 \neq 0$ tal que $1 \simeq a$ como aplicaciones $(E^2, x_0) \rightarrow (E^2, -x_0)$.
+\item[(1)] En el ejemplo anterior (2), podemos considerar $f \simeq g : (\mathbb{R}^n, 0) \longrightarrow (\mathbb{R}^n, 0)$ tomando como homotopía la misma función $H$.
+\item[(2)] Si consideramos un espacio como el siguiente: \textbf{(Insertar imagen p9)} Tenemos que $f : I \longrightarrow Y$ es obviamente homótopa a la constante en $y_0$ que denominamos $c_{y_0}$. Pero la aplicación de pares $f : (I, \{ 0,1 \} \longrightarrow (Y, y_0)$ no es homótopa a la constante $c_{y_0}$.
+\item[(3)] Dado $E^2 = \{ x \in \mathbb{R}^2 : \| x \| \leq 1 \}$, tenemos que $1 \simeq a$ donde $a$ es la función antípoda mediante la hopotopía de la rotación: $H : E^2 \times I \longrightarrow E^2$ dada por $H(x, t) = H(\rho e^{i\theta}, t) = \rho e^{i(\theta + t\pi)}$ \textbf{(Insertar gráfico p10)}\\
+Es más, como aplicaciones de pares, $1 \simeq a$ mediante $H : (E^2, S^1) \times I \longrightarrow (E^2, S^1)$. Sin embargo, $\nexists x_0 \neq 0$ tal que $1 \simeq a$ como aplicaciones $(E^2, x_0) \longrightarrow (E^2, -x_0)$.
 \end{itemize}
 \end{ejems}
 Al conjunto cociente formado por las clases de homotopía de aplicaciones continuas de $(X, A)$ en $(Y, B)$ se le denota por $[(X, A), (Y, B)]$.\\
 Por tanto, ya podemos definir nuestros ``objetos de plastilina''.
 \begin{defin}
-Dos espacios $X$ e $Y$ son homotópicamente equivalentes si existen aplicaciones $f: X \rightarrow Y$ y $g: Y \rightarrow X$ tales que $g \circ f \simeq 1_X$ y $f \circ g \simeq 1_Y$ \\
+Dos espacios $X$ e $Y$ son homotópicamente equivalentes si existen aplicaciones $f: X \longrightarrow Y$ y $g: Y \longrightarrow X$ tales que $g \circ f \simeq 1_X$ y $f \circ g \simeq 1_Y$ \\
 A las aplicaciones $f$ y $g$ se les denomina equivalencias de homotopía.
 \end{defin}
 
@@ -139,33 +137,192 @@ A las aplicaciones $f$ y $g$ se les denomina equivalencias de homotopía.
 \begin{tikzcd}
 A \rar[hook]{i} & X  
 \end{tikzcd}
-es un retracto de X si existe una aplicación $r : X \rightarrow A$ tal que $r \circ i = 1_A$.
+es un retracto de X si existe una aplicación $r : X \longrightarrow A$ tal que $r \circ i = 1_A$.
 Decimos que $A$ es un retracto de deformación de $X$ si además $i \circ r \simeq 1_X$.\\
 Como ejemplo, $S^n = \{ x \in \mathbb{R}^{n+1}$ : $\| x \| = 1 \}$ es un retracto de deformación de $\mathbb{R}^{n+1} -\{ 0 \}$. En efecto, si consideramos 
 
-$$r : \mathbb{R}^{n+1} -\{ 0 \} \rightarrow S^n $$
+$$r : \mathbb{R}^{n+1} -\{ 0 \} \longrightarrow S^n $$
 $$x \mapsto \frac{x}{\| x \|}$$
 
 
 entonces 
-$$H : \mathbb{R}^{n+1} -\{ 0 \} \times I \rightarrow \mathbb{R}^{n+1} -\{ 0 \}$$
+$$H : \mathbb{R}^{n+1} -\{ 0 \} \times I \longrightarrow \mathbb{R}^{n+1} -\{ 0 \}$$
 $$H(x, t) = (1 - t)x + \frac{tx}{\| x \|}$$ es una homotopía entre $1_{\mathbb{R}^{n+1} -\{ 0 \}}$ y $i \circ r$.
 \item[(2)] \textbf{Espacios contráctiles}: Un espacio X es contráctil si tiene el mismo tipo de homotopía de un punto, o equivalentemente, la identidad en $X$ es homótopa a una constante, o un punto es retracto de deformación del espacio. Antes hemos visto que $\mathbb{R}^n \simeq \ast \simeq D^n $.
 \item[(3)] El espacio peine P es un espacio contráctil. \textbf{(Insertar imagen p12)}\\
 $$P = \bigcup_{n=1}^\infty \left( \left\lbrace \frac{1}{n} \right\rbrace \times [0, 1]\right) \cup \{ 0 \} \times [0, 1] \cup [0, 1] \times \{ 0 \}$$ 
-que obviamente es contráctil, aunque $1_p \not \simeq_{p_0} c_{p_0}$.
+que obviamente es contráctil, aunque $1_p \not \simeq_{p_0} c_{p_0}$ para un $c_{p_0} \notin [0, 1] \times \nobreak \{ 0 \} $.
 \end{itemize}
 \end{ejems}
 Relacionado con el ejemplo $(2)$ y con el problema de la extensión tenemos el siguiente resultado:\\
 \begin{teor}
-Sea $f : S^n \rightarrow X$ una aplicación continua. Entonces $f \simeq \ast$ si y sólo si $f$ se extiende al disco. \textbf{(Insertar diagrama p11)}
+Sea $f : S^n \longrightarrow X$ una aplicación continua. Entonces $f \simeq \ast$ si y sólo si $f$ se extiende al disco. 
+\[
+\begin{tikzcd}
+	S^n \arrow{rr}{f} \drar[hook] & & X \\
+		& D^{n+1} \urar{\tilde{f}}
+\end{tikzcd}
+\]
 \end{teor}
 \begin{demo}
-Supongamos $H : f \simeq c_{x_0}$. Definimos $\tilde{f} : E^{n+1} \rightarrow X$\\
-$\tilde{f}(p )= 
+Supongamos $H : f \simeq c_{x_0}$. Definimos entonces $\tilde{f} : E^{n+1} \longrightarrow X$ dada por:
+\[
+\tilde{f}(p )= 
 \begin{cases}
-	x_0$ si $\| p \| \leq \frac{1}{2} \\
-	H(\frac{p}{\| p \|}, 2 - 2\| p \|) si \| p \| \geq \frac{1}{2}
-\end{cases}$\\
-Recíprocamente, si $\tilde{f}$ es una extensión, $H(x, t) = \tilde{f}((1 - t)x)$ es una homotopía de $f$ a la constante.
+	x_0 & \text{ si }\| p \| \leq \frac{1}{2} \\
+	H(\frac{p}{\| p \|}, 2 - 2\| p \|) & \text{ si } \| p \| \geq \frac{1}{2}
+\end{cases}
+\]
+que es la extensión que queríamos.
+
+Recíprocamente, si $\tilde{f}$ es una extensión, $H(x, t) = \tilde{f}((1 - t)x)$ es una homotopía de $f$ a la constante. 
 \end{demo}
+
+\subsection{Espacios comúnmente utilizados}
+Algunas de las construcciones que serán de utilidad son las siguientes:
+\begin{itemize}
+\item \textbf{El producto de espacios} $X \times Y$ \\
+
+\item \textbf{La suma puntual} o ``wedge'', denotado por $X \vee Y$ que puede verse como el conjunto cociente $X \dot\cup Y \Bign/ x_0 \sim \nobreak y_0$ o como un subconjunto de  $X \times Y$, esto es, $X \vee Y = X \times \{y_0\} \cup \{x_0\} \times Y$\\
+
+\item \textbf{El smash} definido como $X \wedge Y = X \times Y \Bign/ X \vee Y$. Esto es, el producto en el que identificamos ``los ejes'' a un punto.\\
+
+\item \textbf{El cono de $X$.} Dado $X$, el cono de $X$ se define como $CX = X \times I \Bign/ X \times \{0\}$. \textbf{(Introducir imagen p14.1)}\\
+Si queremos ``puntearlo'', hacemos además $CX = X \times I \Bign/ X \times \{ 0 \} \cup \{ x_0 \} \times I $ y el punto base es $[x_0, t]$. Claramente la aplicación 
+\begin{align*}
+X &\longhookrightarrow CX \\ 
+x &\longmapsto [(x, 1)]
+\end{align*}
+es un homeomorfismo en su imagen por lo que podemos pensar en $X$ como un subespacio del cono. Además $CX$ es contráctil.
+\end{itemize}
+\subsection{Adjuntando celdas o cómo pegar un disco a un espacio}
+Sea $X$ un espacio topológico y $E^n$ un disco de dimensión $n \geq 1$. \\
+ Sea $f : S^{n-1} \longrightarrow X$ una aplicación continua. Definimos $X \cup_f e^n$, el espacio obtenido adjuntando a X una $n$-celda mediante $f$:
+\begin{center}
+$X \cup_f e^n := \faktor{ X \dot{\cup} E^n}{ \sim}$
+\end{center}
+\textbf{(Adjuntar imagen p 13)} \\
+donde $\sim$ es la menor relación de equivalencia que contiene a $x \in S^{n-1} \sim f(x)$\\
+
+\begin{prop}
+La adjunción de una celda sólo depende del tipo de homotopía de la aplicación de adjunción.
+\end{prop}
+\begin{demo}
+Sean $f ,g : S^{n-1} \longrightarrow X$ dos funciones con el mismo tipo de homotopía, $f \simeq g$. Veamos que entonces que $X \cup_f e^n \simeq X \cup_g e^n$.\par 
+Si $H : f \simeq g$, definimos las siguientes funciones:
+$$k : X \cup_f e^n \longrightarrow X \cup_g e^n
+\text{ dada por }
+k(x) = 
+\begin{cases}
+	x  & \text{si } x \in X \\
+	2x & \text{si } x \in e^n$, $\| x \| \leq \frac{1}{2} \\
+	H(\frac{x}{\| x \|}, 2 - 2\|x\|) & \text{si } \| x \| \geq \frac{1}{2}
+\end{cases}$$ 
+$$h : X\cup_g e^n \longrightarrow X \cup_f e^n
+\text{ dada por }
+h(x) = 
+\begin{cases}
+	x  & \text{si } x \in X \\
+	2x & \text{si } x \in e^n$, $ \| x \| \leq \frac{1}{2} \\
+	H(\frac{x}{\| x \|}, 2\| x \| - 1 & \text{si } \| x \| \geq \frac{1}{2}\\
+\end{cases}$$
+Y tenemos que $h \circ k \simeq 1_{X \cup_f e^n}$ mediante la función $F : X \cup_f e^n \times I \longrightarrow X \cup_f e^n$ dada por: \\
+\begin{center}
+$F(x,t) = 
+\begin{cases}
+	x  & \text{si } x \in X \\
+	4x & \text{si } \| x \| \leq \frac{1}{4} \\
+	H(\frac{x}{\| x \|}, (4\|x\| - 1)t) & \text{si } \frac{1}{4} \leq \| x \| \leq \frac{1}{2} \\
+	H(\frac{x}{\| x \|}, (2 - 2\|x\|)t) & \text{si } \| x \| \geq \frac{1}{2}
+\end{cases}$ \\
+\end{center}
+De forma análoga se prueba que $k \circ h \simeq 1_{X \cup_g e^n}$.
+\end{demo}
+\textbf{Consecuencia:} Si $X$ es arcoconexo, $X \cup_f e^1 \simeq X \vee S^1$ y si $f \simeq \ast$, entonces
+$X \cup_f e^n \simeq X \vee S^n$. \\
+
+
+\begin{teor}
+Una aplicación $f : (X, x_0) \longrightarrow (Y, y_0)$ es null-homótopa si y sólo si se extiende a $CX$: 
+$$
+\begin{tikzcd}
+	X \arrow{rr}{f} \drar[hook] & & Y \\
+	& CX \urar[dashed]{h} & 
+\end{tikzcd}
+$$
+\end{teor}
+\begin{demo}
+Sea $H : f \simeq c_{y_0}$ una homotopía. Definimos entonces la aplicación $h : CX \longrightarrow Y$, dada por $h([x, t]) = H(x, t)$. Está bien definida, ya que $H(X \times \{ 0 \} \cup \{ x_0 \} \times I) = y_0$ y se extiende a $f$.\par 
+Recíprocamente, dada $h : (CX, \ast) \longrightarrow (Y, y_0)$ extensión de $f$, definimos $H: X \times I \longrightarrow Y$ como $H = h \circ \pi$ (donde $\pi: X \times I \longrightarrow CX$ es la proyección canónica) y se tiene que 
+$H(x, 0) = y_0$, $H(x, 1) = f(x)$ y $H(x_0, t) = y_0$.
+\end{demo}
+
+\section{Suspensión y lazos de un espacio}
+
+Como ya hemos visto, el cono de $X$, $CX$, es el espacio contráctil $CX = \faktor{X \times I }{X \times \{ 0 \}}$. De igual forma, la suspensión de $X$, denotada por $\Sigma X$, se define como
+\[ \Sigma X =  \faktor{X \times I}{ (x, 1) \sim (x', 1), (x, 0) \sim (x', 0)} \] Si $x_0$ es el punto base de $X$, el cono punteado era
+\[ CX = \faktor{X \times I}{X \times \{ 1 \}  \cup \{ x_0 \} \times I}\]
+De igual forma la suspensión punteada es 
+\[ \Sigma X = \faktor{ X \times I }{ (x, 1) \sim (x', 1), (x, 0) \sim (x', 0), (x_0, t) \sim (x_0, t')} \]
+Obviamente, si a $I$ le damos la estructura de $CW$-complejo con dos $0$-celdas $\{0\}, \{1\}$ y una $1$-celda, tanto el cono $CX$ como la suspensión $\Sigma X$ (que no es más que $CX \Bign/ X \times \{ 0 \}$) tienen estructura de $CW$-complejo. Nótese además que toda aplicación $f : X \rightarrow Y$ se puede suspender $\Sigma f : \Sigma X \rightarrow \Sigma Y$ de forma obvia:
+$\Sigma f [x, t] = [f(x), t]$.\\
+Nótese que $\Sigma S^n = S^{n+1}$, $n \geq 0$.\\
+Por otro lado tenemos los lazos en un espacio topológico punteado $(X, x_0)$ que se definen como
+\[
+\Omega X = (X, x_0)^{(S^1, p_0)} = \{ f : S^1 \rightarrow X, f(p_0) = x_0 \} = \{ f : I \rightarrow X, f(0) = f(1) = x_0 \}
+\]
+$\Omega X$ resulta ser $CW$-complejo si $X$ lo es. $\Omega X$ está punteado por la constante en $x_0$, $c_{x_0}$. Se tiene entonces:
+\begin{teor}
+Para cualesquiera espacios punteados $X, Y$,
+\begin{center}
+$[\Sigma X, Y ] \cong [X, \Omega Y]$ \textbf{Añadir nota al pie p 16}
+\end{center}
+\end{teor}
+\begin{demo}
+En general, el conjunto de aplicaciones continuas 
+\begin{center}
+$(Y, y_0)^{(\Sigma X, \ast)} \cong (\Omega Y, \ast)^{(X, x_0)}$
+\end{center}
+En efecto, la aplicación
+\begin{center}
+$\varphi : (\Omega Y, \ast)^{(X, x_0)} \rightarrow (Y, y_0)^{(\Sigma X, \ast)}$
+\end{center}
+dada por $\varphi (g) : \Sigma X \rightarrow Y$, $\varphi (g)[x, t] = g(x)(t)$ está bien definida y tiene por inversa a 
+\begin{center}
+$\varphi^{-1} : (Y, y_0)^{(\Sigma X, \ast)} \rightarrow (\Omega Y, \ast)^{(X, x_0)}$\\
+$\varphi^{-1} (f) : X \rightarrow \Omega Y$, $\varphi^{-1}(f)(x)(t) = f[x, t]$
+\end{center}
+Veamos que $\varphi$ induce una aplicación $\bar{\varphi} : [X \Omega Y] \rightarrow [\Sigma X, Y] $ para lo que hemos de ver que si $f \simeq_{\{ x_0 \}} g$ entonces $\varphi f \simeq_{\ast} \varphi g$.\\
+Sabemos pues que existe $H: X \times I \rightarrow \Omega Y$ tal que $H(x,0) = f(x) $, $H(x,1) = g(x)$ y 
+$H(x_0, t) = c_{y_0}$ $\forall t \in I$.\\
+Definimos entonces $F: \Sigma X \times I \rightarrow Y$, $F([x,t],s) = H(x,s)(t)$, $F([x,t],0) = H(x,0)(t) = f(x)(t) = 
+\varphi(f)[x,t]$, $F([x,t], 1) = \varphi(g)[x,t]_j$ y por último $F([x_0,t],s) = H(x_0, s)(t) = y_0$.\\
+De igual forma $\varphi^{-1}$ induce $\bar{\varphi^{-1}} : [\Sigma X, Y] \rightarrow [X, \Omega Y]$ y $\bar{\varphi}^{-1} = \bar{\varphi^{-1}}$\\
+\rightline{$\square$}
+\end{demo}
+
+\textbf{Nota:} $\Omega$ y $\Sigma$ son duales en el sentido de Eckman-Hilton.\\
+
+En $\Sigma X$ podemos definir una operación $\mu : \Omega X \times \Omega X \rightarrow \Omega X$
+$$
+\mu(\omega, \omega')(t) = 
+\left\{ \begin{array}{ll}
+             \omega(2t)		&   $si $ t \leq \frac{1}{2} \\
+             \omega'(2t-1)	&   $si $ t \geq \frac{1}{2} \\
+        \end{array}
+\right.
+$$
+$\mu(\omega, \omega')$ está bien definida y para ver que es continua basta ver
+$$
+\Omega X \times \Omega X \times I \rightarrow \Omega X \times I \rightarrow X
+$$
+$$
+(\omega, \omega', t) \longmapsto 
+\left\{ \begin{array}{ll}
+             \omega(2t)		&  t \leq \frac{1}{2} \\
+             \omega'(2t-1)	&  t \geq \frac{1}{2} \\
+        \end{array}
+\right.
+$$
+que obviamente es continua. \\
+Esta operación permite definir otra en $[X, \Omega Y]$, $(f \cdotp g)(x) = f(x) \cdotp g(x) = \mu(f(x), g(x))$

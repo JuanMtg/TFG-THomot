@@ -27,7 +27,7 @@ Sea $X$ normal, $A \subset X$ cerrado, $I \subset \mathbb{R}$ intervalo. Entonce
 \end{teor}
 Mientras que la de otros es negativa:
 \begin{teor} 
-La esfera $S^{n}$ no es un retracto del disco $D^{n+1}$. En otras palabras la identidad $S^{n} \rightarrow S^{n}$ no se extiende a $D^{n+1}$.
+La esfera $S^{n}$ no es un retracto del disco $D^{n+1}$. En otras palabras, la identidad $S^{n} \rightarrow S^{n}$ no se extiende a $D^{n+1}$.
 \end{teor}
 
 \subsection*{El problema del levantamiento}
@@ -260,69 +260,283 @@ $H(x, 0) = y_0$, $H(x, 1) = f(x)$ y $H(x_0, t) = y_0$.
 \section{Suspensión y lazos de un espacio}
 
 Como ya hemos visto, el cono de $X$, $CX$, es el espacio contráctil $CX = \faktor{X \times I }{X \times \{ 0 \}}$. De igual forma, la suspensión de $X$, denotada por $\Sigma X$, se define como
-\[ \Sigma X =  \faktor{X \times I}{ (x, 1) \sim (x', 1), (x, 0) \sim (x', 0)} \] Si $x_0$ es el punto base de $X$, el cono punteado era
+\[ \Sigma X =  \faktor{X \times I}
+{ \footnotesize{\begin{matrix}
+(x, 1) \sim (x', 1) \\
+(x, 0) \sim (x', 0)
+\end{matrix}}} \] 
+Si $x_0$ es el punto base de $X$, el cono punteado era
 \[ CX = \faktor{X \times I}{X \times \{ 1 \}  \cup \{ x_0 \} \times I}\]
 De igual forma la suspensión punteada es 
-\[ \Sigma X = \faktor{ X \times I }{ (x, 1) \sim (x', 1), (x, 0) \sim (x', 0), (x_0, t) \sim (x_0, t')} \]
+\[ \Sigma X = \faktor{ X \times I }
+{\footnotesize{ \begin{matrix}
+(x, 1) \sim (x', 1) \\ 
+(x, 0) \sim (x', 0) \\ 
+(x_0, t) \sim (x_0, t')
+\end{matrix} }} \]
 Obviamente, si a $I$ le damos la estructura de $CW$-complejo con dos $0$-celdas $\{0\}, \{1\}$ y una $1$-celda, tanto el cono $CX$ como la suspensión $\Sigma X$ (que no es más que $CX \Bign/ X \times \{ 0 \}$) tienen estructura de $CW$-complejo. Nótese además que toda aplicación $f : X \rightarrow Y$ se puede suspender $\Sigma f : \Sigma X \rightarrow \Sigma Y$ de forma obvia:
-$\Sigma f [x, t] = [f(x), t]$.\\
-Nótese que $\Sigma S^n = S^{n+1}$, $n \geq 0$.\\
+$\Sigma f [x, t] = [f(x), t]$. \par
+
 Por otro lado tenemos los lazos en un espacio topológico punteado $(X, x_0)$ que se definen como
-\[
-\Omega X = (X, x_0)^{(S^1, p_0)} = \{ f : S^1 \rightarrow X, f(p_0) = x_0 \} = \{ f : I \rightarrow X, f(0) = f(1) = x_0 \}
-\]
-$\Omega X$ resulta ser $CW$-complejo si $X$ lo es. $\Omega X$ está punteado por la constante en $x_0$, $c_{x_0}$. Se tiene entonces:
+\begin{align*}
+\Omega X =& (X, x_0)^{(S^1, p_0)} = \{ f : S^1 \rightarrow X : f(p_0)  = x_0 \} \\ 
+=& \{ f : I \rightarrow X : f(0) = f(1) = x_0 \}
+\end{align*}
+$\Omega X$ resulta ser $CW$-complejo si $X$ lo es. $\Omega X$ está punteado por la constante en $x_0$, $c_{x_0}$. Se tiene entonces: 
 \begin{teor}
-Para cualesquiera espacios punteados $X, Y$,
+Para cualesquiera espacios punteados $X$ e  $Y$ se tiene que 
 \begin{center}
-$[\Sigma X, Y ] \cong [X, \Omega Y]$ \textbf{Añadir nota al pie p 16}
+$[\Sigma X, Y ] \cong [X, \Omega Y]$ \footnote{Siempre que escribamos clases de homotopía, nos referiremos a espacios punteados.}
 \end{center}
 \end{teor}
 \begin{demo}
 En general, el conjunto de aplicaciones continuas 
-\begin{center}
-$(Y, y_0)^{(\Sigma X, \ast)} \cong (\Omega Y, \ast)^{(X, x_0)}$
-\end{center}
+
+\[ (Y, y_0)^{(\Sigma X, \ast)} \cong (\Omega Y, \ast)^{(X, x_0)} \]
+
 En efecto, la aplicación
-\begin{center}
-$\varphi : (\Omega Y, \ast)^{(X, x_0)} \rightarrow (Y, y_0)^{(\Sigma X, \ast)}$
-\end{center}
-dada por $\varphi (g) : \Sigma X \rightarrow Y$, $\varphi (g)[x, t] = g(x)(t)$ está bien definida y tiene por inversa a 
-\begin{center}
-$\varphi^{-1} : (Y, y_0)^{(\Sigma X, \ast)} \rightarrow (\Omega Y, \ast)^{(X, x_0)}$\\
-$\varphi^{-1} (f) : X \rightarrow \Omega Y$, $\varphi^{-1}(f)(x)(t) = f[x, t]$
-\end{center}
-Veamos que $\varphi$ induce una aplicación $\bar{\varphi} : [X \Omega Y] \rightarrow [\Sigma X, Y] $ para lo que hemos de ver que si $f \simeq_{\{ x_0 \}} g$ entonces $\varphi f \simeq_{\ast} \varphi g$.\\
-Sabemos pues que existe $H: X \times I \rightarrow \Omega Y$ tal que $H(x,0) = f(x) $, $H(x,1) = g(x)$ y 
+
+\[ \varphi : (\Omega Y, \ast)^{(X, x_0)} \rightarrow (Y, y_0)^{(\Sigma X, \ast)} \]
+dada por 
+\begin{align*}
+\varphi (g) : \Sigma X \longrightarrow Y \\
+\varphi (g)[x, t] = g(x)(t)
+\end{align*} 
+está bien definida y tiene por inversa a 
+\[ \varphi^{-1} : (Y, y_0)^{(\Sigma X, \ast)} \rightarrow (\Omega Y, \ast)^{(X, x_0)} \]
+\begin{align*}
+\varphi^{-1} (f)& : X \rightarrow \Omega Y \\
+\varphi^{-1}(f)&(x)(t) = f[x, t]
+\end{align*}
+Veamos que $\varphi$ induce una aplicación $\bar{\varphi} : [X, \Omega Y] \rightarrow [\Sigma X, Y] $ para lo que hemos de ver que si $f \simeq_{\{ x_0 \}} g$ entonces $\varphi (f) \simeq_{\ast} \varphi (g)$. \par
+Sabemos pues que existe una homotopía $H: X \times I \rightarrow \Omega Y$ tal que $H(x,0) = f(x) $, $H(x,1) = g(x)$ y 
 $H(x_0, t) = c_{y_0}$ $\forall t \in I$.\\
-Definimos entonces $F: \Sigma X \times I \rightarrow Y$, $F([x,t],s) = H(x,s)(t)$, $F([x,t],0) = H(x,0)(t) = f(x)(t) = 
-\varphi(f)[x,t]$, $F([x,t], 1) = \varphi(g)[x,t]_j$ y por último $F([x_0,t],s) = H(x_0, s)(t) = y_0$.\\
+Definimos entonces 
+\begin{align*}
+F: \Sigma X \times I &\longrightarrow Y \\
+F([x,t],s) &= H(x,s)(t) \\
+F([x,t],0) &= H(x,0)(t) = f(x)(t) = \varphi(f)[x,t] \\
+F([x,t], 1) &= \varphi(g)[x,t]_j \\
+F([x_0,t],s) &= H(x_0, s)(t) = y_0
+\end{align*}
+que es una homotopía entre $\varphi (f)$ y $\varphi (g)$.
 De igual forma $\varphi^{-1}$ induce $\bar{\varphi^{-1}} : [\Sigma X, Y] \rightarrow [X, \Omega Y]$ y $\bar{\varphi}^{-1} = \bar{\varphi^{-1}}$\\
-\rightline{$\square$}
 \end{demo}
 
 \textbf{Nota:} $\Omega$ y $\Sigma$ son duales en el sentido de Eckman-Hilton.\\
 
-En $\Sigma X$ podemos definir una operación $\mu : \Omega X \times \Omega X \rightarrow \Omega X$
-$$
+\noindent En $\Sigma X$ podemos definir la operación  $\mu : \Omega X \times \Omega X \longrightarrow \nobreak \Omega X$
+\[
 \mu(\omega, \omega')(t) = 
 \left\{ \begin{array}{ll}
              \omega(2t)		&   $si $ t \leq \frac{1}{2} \\
              \omega'(2t-1)	&   $si $ t \geq \frac{1}{2} \\
         \end{array}
 \right.
-$$
+\]
 $\mu(\omega, \omega')$ está bien definida y para ver que es continua basta ver
-$$
-\Omega X \times \Omega X \times I \rightarrow \Omega X \times I \rightarrow X
-$$
-$$
-(\omega, \omega', t) \longmapsto 
+\begin{align*}
+\Omega X \times \Omega X \times I &\longrightarrow \Omega X \times I \longrightarrow X \\
+(\omega, \omega', t) &\longmapsto 
 \left\{ \begin{array}{ll}
              \omega(2t)		&  t \leq \frac{1}{2} \\
              \omega'(2t-1)	&  t \geq \frac{1}{2} \\
         \end{array}
 \right.
-$$
+\end{align*}
 que obviamente es continua. \\
-Esta operación permite definir otra en $[X, \Omega Y]$, $(f \cdotp g)(x) = f(x) \cdotp g(x) = \mu(f(x), g(x))$
+Esta operación permite definir otra en $[X, \Omega Y]$, dada por 
+\[ (f \cdotp g)(x) = f(x) \cdotp g(x) = \mu(f(x), g(x)) \]
+
+Veamos que $\mu$ hace de $\Omega Y$ un ``grupo homotópico'', esto es, un H-grupo. Demostremos la siguiente proposición:
+\begin{prop}
+Consideremos el espacio de los lazos $\Omega Y$. Entonces
+\begin{enumerate}
+\item $c_{y_0}$ es el neutro homotópico.
+\item $\mu$ es homotópicamente asociativa.
+\item Si $\omega \in \Omega Y$, entonces el inverso homotópico de $\omega$ es $\omega^{-1}(t) = \omega(1 - t)$.
+\end{enumerate}
+\end{prop}
+\begin{demo}
+\begin{enumerate}
+\item Veamos que $c_{y_0}$ es neutro por la derecha. Consideramos
+\begin{align*}
+\mu(-,c_{y_0}) : \Omega Y &\longrightarrow \Omega Y \\
+\omega &\longmapsto \omega \cdotp c_{y_0}
+\end{align*}
+y tenemos que ver que es homótopa a la identidad. Para ello basta considerar la homotopía
+\begin{align*}
+F: \Omega Y \times I \longrightarrow \Omega Y \\
+F(\omega, t)(s) = 
+\begin{cases}
+\omega\left(\frac{2s}{t+1}\right) & 0 \leq s \leq \frac{t+1}{2} \\
+y_0													& \frac{t+1}{2} \leq s \leq 1
+\end{cases}
+\end{align*}
+Igualmente se demuestra que $\mu(c_{y_0}, -) \simeq Id_{\Omega Y}$.
+\item Para ver que $\mu$ es asociativa, tenemos que ver que el siguiente diagrama es homotópicamente conmutativo: 
+\[
+\begin{tikzcd}
+	\Omega Y \times \Omega Y \times \Omega Y \rar{\mu \times 1_{\Omega Y}} \dar{1_{\Omega Y} \times \mu}
+		  & \Omega Y \times \Omega Y \dar{\mu} \\
+	\Omega Y \times \Omega Y \rar{\mu} 
+		  & \Omega Y
+\end{tikzcd}
+\]
+La homotopía necesaria para esto es:
+\begin{align*}
+G: 	\Omega Y &\times \Omega Y \times \Omega Y \times I \longrightarrow \Omega Y \\
+G(\omega, \omega' \omega'', t)(s) &= 
+\begin{cases}
+\omega \left( \frac{4s}{t+1}\right) & 0 \leq s \leq \frac{t+1}{4} \\
+\omega'(4s - t - 1)         		 & \frac{t+1}{4} \leq s \leq \frac{t+2}{2} \\
+\omega''\left( \frac{4s -2 - t}{2-t}\right) & \frac{t+2}{4} \leq s \leq 1
+\end{cases}
+\end{align*}
+
+\item Por último definimos el morfismo inverso $\varPhi : \Omega Y \longrightarrow \Omega Y $ dado por $\varPhi(\omega) = \omega^{-1}$. Tenemos que ver que que $\omega \cdotp \omega^{-1} \simeq c_{y_0}$. Para ello consideramos la homotopía:
+\begin{align*}
+H &: \Omega Y \times \longrightarrow \Omega Y \\
+H(\omega, t)(s) &= 
+\begin{cases}
+y_0 & 0 \leq s \leq \frac{t}{2} \\
+\omega(2s - t) & \frac{t}{2} \leq s \leq \frac{1}{2} \\
+\omega(2 - 2s - t) & \frac{1}{2} \leq s \leq 1 - \frac{t}{2} \\
+y_0 & 1 - \frac{t}{2} \leq s \leq 1
+\end{cases}
+\end{align*}
+\end{enumerate}
+\end{demo}
+Vista esta proposición, tenemos que:
+\begin{teor}
+$[X, \Omega Y]$ es un grupo.
+\end{teor}
+\begin{demo}
+\begin{enumerate}
+\item Asociatividad: $ \left((f \cdotp g) \cdotp h \right) \simeq \left(f \cdotp (g \cdotp h) \right)  $
+\item Elemento neutro: $f \cdotp c_{y_0} \simeq f \simeq c_{y_0} \cdotp f$
+\item Elemento inverso: $ f \cdotp f^{-1} \simeq c_{y_0} \simeq f^{-1} \cdotp f$
+\end{enumerate}
+\end{demo}
+Todo puede hacerse dualmente: En la suspensión de un espacio existe una ``co-operación'' natural
+\begin{align*}
+\Sigma X &\stackrel{\nu}{\longrightarrow} \Sigma X \vee \Sigma X \\
+\nu [x, t] &= 
+\begin{cases}
+([x, 2t], \ast ) & t \leq \frac{1}{2} \\
+( \ast, [x, 2t -1]) & t \geq \frac{1}{2}
+\end{cases}
+\end{align*}
+
+\textbf{Insertar diagrama p21}
+\textbf{Insertar imagen p21}
+que resulta ser ``co-asociativa'' con ``co-elemento neutro'' y con ``co-elemento inverso'' homotópico:
+\begin{prop}
+\begin{enumerate}
+\item Asociatividad:
+\begin{tikzcd}
+	\Sigma X \rar{\nu} \dar{\nu} & \Sigma X \vee \Sigma X \dar{1 \vee \nu} \\
+	\Sigma X \vee \Sigma X \rar{\nu \vee 1} & \Sigma X \vee \Sigma X \vee \Sigma X
+\end{tikzcd}
+\item Elemento neutro:
+\begin{tikzcd}
+	\Sigma X \rar{\nu} \arrow[bend right = 20]{rrr}{1}
+ 		& \Sigma X \vee \Sigma X \rar{c_{x_0} \vee 1} & \Sigma X \vee \Sigma X \rar{\sigma} & \Sigma X
+\end{tikzcd}
+\item Elemento inverso:
+\begin{tikzcd}
+	\Sigma X \rar{\nu} \arrow[bend right = 20]{rrr}{c_{x_0}}
+		& \Sigma X \vee \Sigma X \rar{1 \vee \eta} & \Sigma X \vee \Sigma X \rar{\sigma} & \Sigma X
+\end{tikzcd}
+donde $\eta : \Sigma X \longrightarrow \Sigma X \text{,	} \eta[x,t] = [x, 1-t]$
+\end{enumerate}
+\end{prop}
+Esta co-operación define en $[\Sigma X, Y]$ una operación
+\[
+\begin{tikzcd}
+\Sigma X \rar{\nu} & \Sigma X \vee \Sigma X \rar{f \vee g} & Y \vee Y \rar{\sigma} & Y
+\end{tikzcd}
+\]
+que por la proposición anterior implica:
+\begin{teor}
+$[\Sigma X, Y]$ es un grupo.
+\end{teor}
+Y es fácil ver el siguiente resultado.
+\begin{teor}
+La aplicación $\bar{\varphi} : [\Sigma X, Y] \longrightarrow [X, \Omega Y]$
+es un isomorfismo de grupos.
+\end{teor}
+
+\subsection{Caso particular grupos de homotopía: $X = S^n$}
+Cuando $ X = S^{n-1}$, $\Sigma X \cong S^n$ y al grupo de clases de homotopía punteada
+\[ \pi_n(X, x_0) = [S^n, X] \]
+se le denomina $n$-ésimo grupo de homotopía de $X$ relativo al punto base $x_0$. \par
+La composición es por tanto bastante geométrica:
+\textbf{Insertar imagen p23} \par 
+Se tiene asímismo, en virtud de todo lo anterior
+\begin{teor}
+$\pi_n(X) = [S^n, X] = [S^{n-1}, \Omega X] = \pi_{n-1}(\Omega X)$
+\end{teor}
+
+\section{CW-complejos}
+Es una clase especial de complejos celulares. \par
+Sea $X^0$ un espacio topológico discreto: las $0$-celdas. Adjuntamos $I_1$ $1$-celdas a $X^0$ para formar el $1$-esqueleto.
+\[ X^1 = X^0 \cup_{\{f_\alpha\}} \left( \dot{\cup} \, e_\alpha^1 \right) \]
+Inductivamente, suponemos construido el $(n-1)$-esqueleto $X^{n-1}$ al que adjuntamos una familia de $n$-celdas $\{e_\alpha^n\}_{\alpha \in I_n}$ mediante las correspondientes aplicaciones de adjuncion $f_\alpha : S^{n-1} \longrightarrow X^{n-1}$. \par 
+Tenemos entonces dos opciones: el proceso se detiene en un $n$, en cuyo caso la topología ya está definida, o podemos seguir indefinidamente en la sucesion
+\[ X^0 \subset X^1 \subset \ldots \subset X^n \subset \ldots \]
+y consideramos $ \displaystyle X = \cup_{n \geq 0} X^n $ al que asignamos la topología débil heredada de los esqueletos, esto es $A \subset X$ es abierto si y sólo si $A \cap X^n$ es abierto de $X^n$ para todo $n \geq 0$. \par 
+A todo espacio $X$ así construido se le denomina CW-complejo.
+\begin{ejems}
+\begin{itemize}
+\item[(1)] Una superficie orientable compacta $M_g$ de género $g$ ($ g \geq 1$) puede ser construida a partir de un polígono de $4g$ lados identificando los lados de forma que se alternan pares de éstos. Para más claridad, a continuación se presentan algunos casos:
+\textbf{Insertar imagen p25} \par 
+Con estas identificaciones, los $4g$ lados del polígono se transforman en $2g$ circunferencias unidas por un punto, esto es, adjuntar a $X^0 = \{ \ast \}$ $2g$ $1$-celdas mediante la única posible aplicación de adjunción $S^0 \longrightarrow X^0$. Así pues, $M_g = X^2$ con 
+\begin{align*} 
+X^0 &= \{ \ast \} \text{,  } X^1 = \bigvee_{2g} S^1 \\
+M_g &= X^2 = X^1 \cup_f e^2
+\end{align*}
+
+\item $S^n$ tiene estructura de CW-complejo con $1$ $0$-celda y $1$ $n$-celda.
+\item El espacio proyectivo real $\mathbb{R}P^n = \faktor{\bb{R}-\{0\}}{\sim}$ donde la relación $\sim$ viene dada por $x \sim y$ si $\exists \lambda \neq 0$ tal que $\lambda x = y$. La aplicación 
+\begin{align*}
+\bb{R}^{n+1} - \{0\} &\longrightarrow S^n \\
+x &\longmapsto \frac{x}{\|x\|}
+\end{align*}
+induce un homeomorfismo
+\[ \bb{R}P^n = \faktor{\bb{R}^{n+1} -\{0\}}{\sim} \stackrel{\cong}{\longrightarrow} \faktor{S^n}{x \sim -x} \]
+Por otra parte, la inclusión de un hemisferio $S_+^n \longhookrightarrow S^n$ también induce de forma obvia un homeomorfismo $\faktor{S_+^n}{\sim} \stackrel{\cong}{\longrightarrow} \faktor{S^n}{\sim}$ donde $x \in S^{n-1} \sim \nobreak -x$ \par
+\textbf{Insertar imagen p27} \par 
+Así vemos que $\bb{R}P^n = \bb{R}^{n-1} \cup_p e^n$, con $p : S^{n-1} \longrightarrow \bb{R}P^{n-1}$ la proyección. De esta forma $\bb{R}P^n$ admite una estructura con una $i$-celda, $i = 0, 1, \ldots ,n$. \par 
+De igual forma $\bb{R}P^\infty = \bigcup_n \bb{R}P^n$ es un CW-complejo con una celda de cada dimensión. $\bb{R}P^\infty$ puede entenderse como las líneas en $\bb{R}^n$ que pasan por el origen.
+\end{itemize}
+\textbf{Nota:} Si $\varphi : E^n \longhookrightarrow X \dot{\cup} e^n \longrightarrow X \cup_f e^n$ es la aplicación característica de la adjunción de una celda, llamaremos a $\varphi(E^n)$ ``celda'' y a su interior ``celda abierta''. Nótese no obstante que en un CW-complejo una ``$n$-celda abierta'' sólo es abierta en el $n$-esqueleto, pero en general no lo es en el complejo.
+\end{ejems}
+
+\subsection{Construcciones básicas con CW-complejos}
+\textbf{Subcomplejos}: Dado un CW-complejo X, un subcomplejo $A$ de $X$ es un subespacio de $X$ obtenido adjuntando celdas de la CW-estructura y de forma que $A$ sea también CW-complejo. El $n$-esqueleto de un complejo es un subcomplejo; la semiesfera $S_+^n$ es un subcomplejo de $S^n$... \par 
+\textbf{Productos}:  Si X e Y son CW-complejos (localmente finitos), entonces $X \times Y$ hereda una estructura de CW-complejo donde:
+\[ (X \times Y)^n = \bigcup_{i+j=n} X^i \times X^j \]
+Si $e_i$ (resp. $e_j$) es una $i$-celda de $X$ (resp. $j$-celda de $Y$) con $i+j=n$, con aplicación de adjunción $\varphi_i : S^{i-1} \longrightarrow X^{i-1}$ (resp. $\varphi_j : S^{j-1} \longrightarrow X^{j-1}$), consideramos:
+\begin{align*} 
+e^{i+j} &= e^i \times e^j \text{ donde } \\
+S^{n-1} = S^{i+j-1} &= \partial e^{i+j} = \partial e^i \times e^j \ \cup \ e^i \times \partial e^j \\
+&= S^{i-1} \times e^j \ \cup \ e^i \times S^{j-1}
+\end{align*}
+
+$\varphi_i$ y $\varphi_j$ definen $\psi : S^{n-1} \longrightarrow (X \times Y)^{n-1}$ dada por 
+\[ \psi = \begin{cases}
+\varphi_i  \times \phi_j & \text{ en } S^{i-1} \times e^j \\
+\phi_i \times \varphi_j & \text{ en } e^i \times S^{j-1}
+\end{cases} \]
+donde $\phi_i$ y $\phi_j$ son las aplicaciones características. \par 
+\textbf{Cocientes}: Si $(X, A)$ es un CW-par ($A$ es un subcomplejo de $X$) el cociente $\faktor{X}{A}$ hereda de forma natural una estructura de CW-complejo. Las celdas de $\faktor{X}{A}$ son las de $X - A$ más una $0$-celda nueva, la imagen de $A$ en $\faktor{X}{A}$. Para cada $n$-celda $e^n$ en $X - A$ con adjunción $\varphi : S^{n-1} \longrightarrow X^{n-1}$ la corespondiente adjunción en $\faktor{X}{A}$ es $S^{n-1} \longrightarrow X^{n-1} \longrightarrow \faktor{X^{n-1}}{A^{n-1}}$. \par
+Por ejemplo, si en $S^{n-1}$ tomamos cualquier CW-estructura y construimos $D^n$ adjuntando una $n$-celda a $S^{n-1}$. $\faktor{D^n}{S^{n-1}} = S^n$ con la estructura usual. Otro ejemplo, si en la superficie de género $g$, $M_g$ ``colapsamos'' el $1$-esqueleto $\faktor{M_g}{M_g^1} = S^2$. \par 
+Nótese también que $\faktor{X^n}{X^{n-1}} = \bigvee_\alpha S_\alpha^n$ con $\alpha$ variando en el número de $n$-celdas. \par 
+\textbf{Wedge y Smash}: Si $\{X_\alpha \}_{\alpha \in I}$ son CW-complejos y $x_0^\alpha \in X_\alpha$  son $0$-celdas, el wedge $\bigvee_{\alpha \in I} X_\alpha$ obtenido al identificar puntos $\{x_0^\alpha \}$ no es más que el cociente $\faktor{\dot{\cup} X_\alpha}{\{x_0^\alpha\}}$ y tiene por lo anterior estructura de CW-complejo. \\
+Por otra parte, el smash de $2$ espacios $X$ e $Y$  se define como $X \wedge Y = \faktor{X \times Y}{X \vee Y}$ entendiendo $X \vee Y = X \times \{y_0\} \cup \{x_0\} \times Y$. Si $x_0$ e $y_0$ son $0$-celdas de $X$ e $Y$ respectivamente, entonces $X \times \{y_0\} \cup \{x_0\} \times Y$ es un subcomplejo de $X \times Y$ y podemos tomar el cociente considerando la estructura cociente $X \wedge Y$. \\
+Por ejemplo, $S^m \wedge S^n = \faktor{S^m \times S^n}{S^m \vee S^n}$ tiene pues una $0$-celda y una $(n+m)$-celda, por lo cual $S^m \wedge S^n = S^{m+n}$. En particular, $S^1 \wedge S^1 = \faktor{T^2}{S^1 \vee S^1} = S^2$ \textbf{Insertar imagen p 33} \par 
+\textbf{Espacios de aplicaciones}: SI $X$ es un CW-complejo con finitas celdas e $Y$ tiene un número numerable de ellas, entonces los espacios
+$map(X,Y)$, $map_x(X,Y)$, $Y^X$ ó $(Y, y_0)^{(X, x_0)}$ tienen el tipo de homotopía de CW-complejos. En los espacios de aplicaciones tomamos siempre la topología compacto abierta, es decir, la que tiene por subbase a los conjuntos 
+\[ \langle K, \theta \rangle = \{f:X \longrightarrow Y : f(K) \subset \theta \} \]
+\textbf{Añadir nota de p33, demost por Milnor}

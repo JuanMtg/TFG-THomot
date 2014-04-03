@@ -10,7 +10,9 @@
 \usepackage[rflt]{floatflt}		% Coloc imágenes flotantes
 \usepackage{fancyhdr}			% Paquete estilo página
 \usepackage{lmodern} 			% Estilo de letra
+%\usepackage{libertine} \usepackage[libertine]{newtxmath}
 \usepackage{faktor}				% Conjuntos cocientes
+\usepackage[normalem]{ulem}		% Distintos subrayados
 
 % Estilo de página
 %\pagestyle{fancy}
@@ -24,14 +26,15 @@ arrow style=tikz,
 diagrams={>=latex}
 }
 
-%Nuevos comandos
+% Nuevos comandos
 \newcommand{\sen}{\operatorname{\sen}}
 %	Flechas inclusiones largas
 \newcommand*{\longhookrightarrow}{\ensuremath{\lhook\joinrel\relbar\joinrel\rightarrow}}
 \newcommand*{\longhookleftarrow}{\ensuremath{\leftarrow\joinrel\relbar\joinrel\rhook}}
 \setlength{\medmuskip}{2mu}
+\newcommand*{\bb}[1]{\mathbb{#1}}
 
-%Definición operadores big 
+% Definición operadores big 
 \makeatletter
 \def\bign#1{\mathclose{\hbox{$\left#1\vbox to8.5\p@{}\right.\n@space$}}\mathopen{}}
 \def\Bign#1{\mathclose{\hbox{$\left#1\vbox to11.5\p@{}\right.\n@space$}}\mathopen{}}
@@ -43,52 +46,52 @@ diagrams={>=latex}
 %%% Para hacer un entorno con contador, hay que crearlo con \newcounter{cont}, inicializarlo con \setcounter{cont}{0} e introducirlo en el entorno para que avance una unidad con \stepcounter{cont} %%%
 %% Ejemplos
 \newenvironment{ejems}[1][\unskip]{%
-	\par \noindent \textbf{Ejemplos #1:}
+	\vspace{0.5em} \par \noindent \textbf{Ejemplos #1:}
 }
 {
-	\par 
+	\par \vspace{0.5em}
 }
 
 \newenvironment{ejem}[1][\unskip]{%
-	\par \noindent \textbf{Ejemplo #1:}
+	\vspace{0.5em} \par \noindent \textbf{Ejemplo #1:}
 }
 {
-	\par \noindent
+	\par \vspace{0.5em}
 }
 %% Teoremas
 \newenvironment{teor}[1][\unskip]{%
-	\par \noindent \textbf{Teorema #1:}
+	\vspace{0.5em} \par \noindent \textbf{Teorema #1:}
 }
 {
-	\par \noindent
+	\par \vspace{0.5em}
 }
 
 \newenvironment{prop}[1][\unskip]{%
-	\par \noindent \textbf{Proposición #1:}
+	\vspace{0.5em} \par \noindent \textbf{Proposición #1:}
 }
 {
-	\par \noindent
+	\par \vspace{0.5em}
 }
 
 \newenvironment{coro}[1][\unskip]{%
-	\par \noindent \textbf{Corolario #1:}
+	\vspace{0.5em} \par \noindent \textbf{Corolario #1:}
 }
 {
-	\par \noindent
+	\par \vspace{0.5em}
 }
 
 
 %% Demostraciones
 \newenvironment{demo}[1][\unskip]{%
-	\par \noindent \textit{Demostración #1:}
+	\vspace{0.5em} \par \noindent \textit{Demostración #1:}
 }
 {
-	\\ \qed \par \noindent
+	\qed \par \vspace{0.5em}
 }
 % Definiciones
 \newenvironment{defin}[1][\unskip]{%
-	\par \noindent \textbf{Definición #1:}
+	\vspace{0.5em} \par \noindent \textbf{Definición #1:}
 }
 {
-	\par \noindent
+	\par \vspace{0.5em}
 }

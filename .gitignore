@@ -50,7 +50,6 @@ pip-log.txt
 ## TEX ##
 *.synctex.gz
 *.log
-Main.pdf
 *.bbl
 *.blg
 *.toc

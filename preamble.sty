@@ -8,14 +8,17 @@
 \usepackage[spanish]{babel}
 \usepackage{makeidx}
 \usepackage[rflt]{floatflt}		% Coloc imágenes flotantes
+\usepackage{wrapfig}
 \usepackage{fancyhdr}			% Paquete estilo página
-\usepackage{lmodern} 			% Estilo de letra
-%\usepackage{libertine} \usepackage[libertine]{newtxmath}
+\usepackage{libertine} \usepackage[libertine]{newtxmath} % Estilo de letra
 \usepackage{faktor}				% Conjuntos cocientes
 \usepackage[normalem]{ulem}		% Distintos subrayados
+\usepackage{hyperref}			% Hipervínculos
+\usepackage{parskip}			% Ajustes de distancia entre párrafos
 
 % Estilo de página
-%\pagestyle{fancy}
+\pagestyle{fancy}
+
 % TikZ CD y propiedades
 \usepackage{tikz-cd}
 \usetikzlibrary{matrix, arrows}
@@ -26,13 +29,25 @@ arrow style=tikz,
 diagrams={>=latex}
 }
 
+% Ajustes en el documento
+\setlength{\headheight}{45pt} % Cabecera de las tablas
+\widowpenalty=10000
+\interfootnotelinepenalty=10000
 % Nuevos comandos
 \newcommand{\sen}{\operatorname{\sen}}
-%	Flechas inclusiones largas
-\newcommand*{\longhookrightarrow}{\ensuremath{\lhook\joinrel\relbar\joinrel\rightarrow}}
-\newcommand*{\longhookleftarrow}{\ensuremath{\leftarrow\joinrel\relbar\joinrel\rhook}}
+%%% Flechas inclusiones largas
+\newcommand*{\longhookrightarrow}{\ensuremath{\lhook\joinrel\relbar\joinrel\rightarrow \nobreak}}
+\newcommand*{\longhookleftarrow}{\ensuremath{\leftarrow\joinrel\relbar\joinrel\rhook \nobreak}}
 \setlength{\medmuskip}{2mu}
 \newcommand*{\bb}[1]{\mathbb{#1}}
+%%% Redefinimos flechas para que no se corten entre líneas
+\let\longra\longrightarrow
+\renewcommand*{\longrightarrow}{\ensuremath{\longra \nobreak}}
+\let\longla\longleftarrow
+\renewcommand*{\longleftarrow}{\ensuremath{\longla \nobreak}}
+
+% Cambios en nombres de secciones
+\addto\captionsspanish{\renewcommand{\appendixname}{}}
 
 % Definición operadores big 
 \makeatletter
@@ -46,10 +61,16 @@ diagrams={>=latex}
 %%% Para hacer un entorno con contador, hay que crearlo con \newcounter{cont}, inicializarlo con \setcounter{cont}{0} e introducirlo en el entorno para que avance una unidad con \stepcounter{cont} %%%
 %% Ejemplos
 \newenvironment{ejems}[1][\unskip]{%
+	\let\oldtheenumi = \theenumi
+	\let\oldlabelenumi = \labelenumi
+	\renewcommand{\theenumi}{(\arabic{enumi})}
+	\renewcommand{\labelenumi}{\textbf{\theenumi}}
 	\vspace{0.5em} \par \noindent \textbf{Ejemplos #1:}
 }
 {
 	\par \vspace{0.5em}
+	\let\theenumi=\oldtheenumi
+	\let\labelenumi=\oldlabelenumi
 }
 
 \newenvironment{ejem}[1][\unskip]{%
@@ -88,7 +109,7 @@ diagrams={>=latex}
 {
 	\qed \par \vspace{0.5em}
 }
-% Definiciones
+%% Definiciones
 \newenvironment{defin}[1][\unskip]{%
 	\vspace{0.5em} \par \noindent \textbf{Definición #1:}
 }

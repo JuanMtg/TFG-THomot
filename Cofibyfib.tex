@@ -193,3 +193,87 @@ X \times I \arrow{rr}{G} \arrow[dashed]{uurr}{\widetilde{G}} & & B
 \begin{defin}
 Decimos que la aplicación $p : E \longrightarrow B$ es una fibración (de Hurewicz)\footnote{Una fibración de Serre es aquella, más debil, que tiene la HLP para los discos $D^n$. Se puede probar que estas también tienen la HLP para los CW-complejos} si posee la HLP con respecto a cualquier espacio.
 \end{defin}
+A continuación veremos un resultado que nos dice que toda fibración es sobreyectiva, pero existen ejemplos de aplicaciones sobreyectivas que no son fibraciones.
+\begin{ejem}
+Sea $X$ el llamado ``seno del topólogo'', es decir, la adherencia del grafo de la función $\sen{\frac{1}{x}}$ con $x in (0,1]$.. Esto es:
+\[ X = \{0\} \times [-1,1] \cup \{ (x, \sen{\faktor{1}{x}}) : \ 0 < x \leq 1 \} \]
+\textbf{Añadir imagen p49}
+y tomamos $B = [0,1]$ junto con la aplicación $p : X \longrightarrow B$ la proyección sobre la primera componente. \par
+Es claro que la aplicación $p$ es sobreyectiva y la identidad $B \longrightarrow B$ no puede levantarse a $x$ ya que no existe una extensión continua de $\sen{\frac{1}{x}}$ a $0$. No obstante, $Id_B \simeq *$ y la constante puede levantarse.
+\end{ejem}
+\begin{prop}
+Toda fibración con base arcoconexa es sobreyectiva.
+\end{prop}
+\begin{demo}
+Sea $b \in B$ y $b_0 \in B$ en la imagen de $p$, $p(e_0) = b_0$. Sea también $\alpha : I \longrightarrow B$ curva con $\alpha(0) = b_0$, $\alpha(1) = b$. Entonces, por ser p fibración, por la HLP existe $\widetilde{\alpha}$ tal que:
+\[
+\begin{tikzcd}
+\{z\} \arrow{rr}{z \ \longmapsto \ e_0} \arrow[hook]{dd} & & E \arrow{dd}{p} \\
+\\
+\{z\} \times I \arrow{rr}{\alpha} \arrow[dashed]{uurr}{\widetilde{\alpha}} & & B
+\end{tikzcd}
+\]
+y obviamente $p \widetilde{\alpha}(1) = \alpha(1) = b$.
+\end{demo}
+Esta misma demostración nos dice que todas las curvas se levantan.
+\begin{teor}
+Todas las fibras tienen el mismo tipo de homotopía.
+\end{teor}
+\begin{demo}
+Denotemos por $F_b = p^{-1}(b)$ la fibra en $b$. Así, para cada $b_0, b_1 \in B$ y cada curva $\omega : I \longrightarrow B$ curva en $B$ uniendo $b_0$ con $b_1$, definimos una aplicación continua $h_[\omega] : F_{b_0} \longrightarrow F_{b_1}$ de la siguiente forma: \par 
+Por la HLP, si consideramos 
+\begin{align*}
+F_{b_0} \times I &\longrightarrow B \\
+(e, t) &\longmapsto \omega(t)
+\end{align*}
+existe un diagrama: \par
+\begin{tabular}{ll}
+\begin{minipage}{0.5\textwidth}
+\[
+\begin{tikzcd}
+F_{b_0} \arrow[hook]{rr} \arrow[hook]{dd}{i_0} & & E \arrow{dd}{p} \\
+\\
+F_{b_0} \times I \arrow{rr} \arrow{uurr}{G} & & B
+\end{tikzcd}
+\]
+\end{minipage}
+&
+\begin{minipage}{0.5\textwidth}
+tal que $p \, G(e,t) = \omega(t)$. \textbf{¿Insertar img p 51?}
+\end{minipage}
+\end{tabular}
+Obviamente, para cada $e \in F_{b_0}$, $G(e,-)$ es una curva en $E$ de forma que $G(e,t) \in F_{\omega(t)} \forall t$. Definimos entonces
+\begin{align*}
+h_{[w]} : F_{b_0} &\longrightarrow F_{[b_1]} \\
+e &\longmapsto G(e,1)
+\end{align*}
+Es más, si $\omega \simeq_{\{0,1\}} \omega'$ entonces $h_{[\omega]} \simeq h_{[\omega']}$. \par
+Tomemos ahora $\omega$ y $\tau$ curvas en $B$ que unen a $b_0$ con $b_1$ y $b_1$ con $b_2$ respectivamente. Sean $F : F_{b_0} \times I \longrightarrow E$, $G: F_{b_1} \times I \longrightarrow E$ tales que $p \, F(e,t) = \omega(t)$ y $p \, G(e,t) = \tau(t)$. Definimos
+\begin{align*}
+& H : F_{b_0} \times I \longrightarrow E \\
+H(e,t) &= \begin{cases}
+F(e, 2t) & \text{si } t \leq \frac{1}{2} \\
+G(h_{[\omega]}(e), 2t -1) & \text{si } t \geq \frac{1}{2}
+\end{cases}
+\end{align*}
+Se tiene entonces $p \, H(e,t) = (\omega \cdotp \tau)(t)$, por lo que $h_{[\omega \cdotp \tau]} (e) = H(e,1) = G(h_{[\omega]}(e), 1) = 
+h_{[\tau]} \circ h_{[\omega]}(e)$, esto es:
+\[ h_{[\omega \cdotp \tau]} = h_{[\tau]} \circ h_{[\omega]} \]
+Por tanto, $h_{[\omega]} \circ h_{[\omega^{-1}]} = h_{[\omega^{-1} \cdotp \omega]} = h_{[c_b]} = Id_{F_b}$.
+
+\begin{ejems}
+\begin{enumerate}
+\item La proyección $X \times Y \longrightarrow X$ es una fibración de forma elemental, llamada fibración trivial. Su fibra es $Y$.
+\item Hurewicz probó que si, dada una aplicación continua $p: E \longrightarrow B$, existe un recubrimiento $\mathcal{U} = \{U_i\}$ de $B$ tal que $p \vert_{p^{-1}(U_i)} : p^{-1}(U_i) \longrightarrow U_i$ es una fibración para todo $i$ y $B$ es paracompacto, entonces $p$ es una fibración. \par
+Con esto, todo fibrado con base paracompacta es una fibración. Para verlo, basta con aplicar el resultado de Hurewicz a una trivialización del fibrado $\{ U_\alpha \}_{\alpha \in I}$ recubrimiento de $B$, donde para cada $\alpha$ existe $\varphi_\alpha : U_\alpha \times F \longrightarrow p^{-1}(U_\alpha)$ tal que
+\[
+\begin{tikzcd}
+U_\alpha \times F \arrow{rr}{\cong} \arrow{dr}{p_1} & & p^{-1}(U_\alpha) \arrow{ld}{p} \\
+& U_\alpha &
+\end{tikzcd}
+\]
+
+\item Todo espacio recubridor es una fibración de fibra discreta.
+\end{enumerate}
+\end{ejems}
+\end{demo}

@@ -19,13 +19,13 @@ Decimos que un par $(X,A)$ ( o la inclusión $i: A \longhookrightarrow X$) es un
 Es decir, $A \subset X$ es cofibración si toda aplicación  
 \[ f : X \times \{0\} \cup A \times I \longrightarrow Y \]
 se extiende a $X \times I$.
-O de forma gráfica, \textbf{Insertar imagen p 35}
+O de forma gráfica, \nts{Insertar imagen p 35}
 \end{defin}
 
 \textbf{Observaciones:}
 \begin{enumerate}
 \item No todas las inclusiones $A \subset X$ son cofibraciones. Un contraejemplo de esto es el espacio formado por los segmentos de $(0, 0)$ en $(1, \frac{1}{n})$.
-Esto es, $ A = \{0\} \times [0,1] \cup [0,1] \times \{0\} \bigcup_{n \in \bb{N}} \{ (t, \frac{t}{n}) : t \in [0,1] \} $ \textbf{Insertar imagen p35} \\
+Esto es, $ A = \{0\} \times [0,1] \cup [0,1] \times \{0\} \bigcup_{n \in \bb{N}} \{ (t, \frac{t}{n}) : t \in [0,1] \} $ \nts{Insertar imagen p35} \\
 $A$ no es un retracto de $I^2$, luego no se tiene la extensión para la identidad 
 \[ 
 \begin{tikzcd}
@@ -105,7 +105,7 @@ De forma más general, si $G$ es un grafo finito, toda arista con distintos fina
 \item Consideremos $X$ el espacio formado por la unión de una $S^2$ y una $1$-celda por los polos. Por el teorema anterior, si identificamos los polos al mismo punto sobre la esfera o contraemos la $1$-celda a un punto, obtenemos dos espacios homotópicamente equivalentes. Así, tenemos que
 \[ S^2 \cup e^1 = S^1 \vee S^2 = \faktor{S^2}{S^0} \]
 
-\item \textbf{Ejemplo unión de esferas}
+\item \nts{Ejemplo unión de esferas}
 \end{enumerate}
 \end{ejems}
 
@@ -113,7 +113,7 @@ De forma más general, si $G$ es un grafo finito, toda arista con distintos fina
 Antes vimos el concepto de unir $n$-celdas a un espacio $X$. Ahora vamos a generalizar este concepto para cualesquiera espacios $X$ e $Y$. \par 
 Para ello, consideramos un subespacio $A \subset Y $ y una aplicación $f : A \longrightarrow X$. El subespacio $A$ será el ``sitio por donde vamos a pegar'' los espacios, mientras que la aplicación es la forma de pegarlos. Una vez dados estos dos elementos, definimos:
 \[ X \cup_f Y := \faktor{X \dot{\cup} Y}{x \in A \sim f(x)} \]
-\textbf{Insertar imagen p43} \\
+\nts{Insertar imagen p43} \\
 Como hemos observado, pegar una celda es un caso particular, donde el subespacio que escogemos es la frontera de la celda. \par 
 Otro caso interesante es el llamado cilindro de una aplicación. Sea $f: X \longrightarrow Y$ una aplicación continua. Definimos el cilindro de $f$, 
 \[M_f = Y \cup_{\tilde{f}} (X \times I) \] 
@@ -142,7 +142,7 @@ Si $f : X \longrightarrow Y$ es una aplicación cualquiera, la cofibra de $f$ es
 que escribimos como: 
 \[ X \stackrel{f}{\longrightarrow} Y \stackrel{q}{\longrightarrow} C_f  \]
 donde $q = q' \circ j$ , $q' : M_f \longrightarrow C_f$. \par 
-\textbf{Insertar imagen p46}
+\nts{Insertar imagen p46}
 que es una cofibración de cofibra $\Sigma X$. \par
 Tenemos entonces una sucesión
 \[ X \stackrel{f}{\longrightarrow} Y \stackrel{q}{\longrightarrow} C_f \stackrel{\delta}{\longrightarrow} \Sigma X \stackrel{\Sigma f}{\longrightarrow} \Sigma Y \stackrel{\Sigma q}{\longrightarrow} \Sigma C_f \longrightarrow \dots \]
@@ -155,7 +155,7 @@ Para todo espacio $Z$, la sucesión
 inducida por $X \stackrel{f}{\longrightarrow} Y \stackrel{q}{\longrightarrow} C_f$ es exacta.
 \end{teor}
 \begin{demo}
-\footnote{Mirar demostración} Tenemos que $ q^* \circ f^* = (q \circ f)^* = (c_{x_0})^* = c$. Supongamos que $f^*(g) \simeq c$ con $g : Y \longrightarrow Z$, esto es 
+\footnote{\nts{Volver a mirar demostración}} Tenemos que $ q^* \circ f^* = (q \circ f)^* = (c_{x_0})^* = c$. Supongamos que $f^*(g) \simeq c$ con $g : Y \longrightarrow Z$, esto es 
 \begin{tikzcd}
 X \rar{f} \arrow[bend right]{rr}{*} & Y \rar{g} & Z
 \end{tikzcd}
@@ -197,7 +197,7 @@ A continuación veremos un resultado que nos dice que toda fibración es sobreye
 \begin{ejem}
 Sea $X$ el llamado ``seno del topólogo'', es decir, la adherencia del grafo de la función $\sen{\frac{1}{x}}$ con $x in (0,1]$.. Esto es:
 \[ X = \{0\} \times [-1,1] \cup \{ (x, \sen{\faktor{1}{x}}) : \ 0 < x \leq 1 \} \]
-\textbf{Añadir imagen p49}
+\nts{Añadir imagen p49}
 y tomamos $B = [0,1]$ junto con la aplicación $p : X \longrightarrow B$ la proyección sobre la primera componente. \par
 Es claro que la aplicación $p$ es sobreyectiva y la identidad $B \longrightarrow B$ no puede levantarse a $x$ ya que no existe una extensión continua de $\sen{\frac{1}{x}}$ a $0$. No obstante, $Id_B \simeq *$ y la constante puede levantarse.
 \end{ejem}
@@ -277,3 +277,106 @@ U_\alpha \times F \arrow{rr}{\cong} \arrow{dr}{p_1} & & p^{-1}(U_\alpha) \arrow{
 \end{enumerate}
 \end{ejems}
 \end{demo}
+
+\subsection*{Fibraciones inducidas o pullbacks}
+Dada $p : E \longrightarrow B$ una fibración y $f : X \longrightarrow B$ una aplicación . Formamos el siguiente diagrama conmutativo
+\[
+\begin{tikzcd}
+f^*(E) \arrow{rr}{p_E} \arrow{dd}{p_X} & & E \arrow{dd}{p} \\
+\\
+X \arrow{rr}{f} & & B
+\end{tikzcd}
+\]
+$f^*(E) = \{ (x,e) \in X \times E : f(x) = p(e) \}$, esto es, $f^*(E)$ es el verdadero pullback de $p$ y $f$ Pues bien, se tiene entonces:
+\begin{teor}
+La aplicación 
+$\begin{aligned}
+f^*(E) &\stackrel{p_X}{\longrightarrow} X \\
+(x,e) &\longmapsto x
+\end{aligned}$ es una fibración.
+\end{teor}
+\begin{demo}
+Por ser $p$ fibración, existe $\widetilde{H}$ como en el diagrama
+\[
+\begin{tikzcd}
+Z\rar{g} \dar[hook]{i_0} & f^*(E) \rar{p_E} \dar{p_X} & E \dar{p} \\
+Z\times I \rar{H} \arrow[dashed, bend left=5]{ur}{G} \arrow[dashed, bend right=5]{rru}{\widetilde{H}} & X \rar{f} & B
+\end{tikzcd}
+\]
+Definimos entonces $G(z,t) = (H(z,t), \widetilde{H}(z,t))$. Veamos que se verifica todo:
+\begin{enumerate}
+\item $G(z,t) \in f^*(E)$ ya que $f \, H(z,t) = p \, \widetilde{H}(z,t)$.
+\item Claramente $p_X \, G = H$.
+\item $G \circ i_0 = g$. Sabemos que $\widetilde{H} \, i_0 = p_e \, g$ por lo que la segunda coordenada de $g$ es la segunda coordenada de $G \circ i_0$ (que es $\widetilde{H}$) y la primera coordenada de $g$ es $H(z,0)$ que es la primera de $G \circ i_0$. 
+\end{enumerate}
+\end{demo}
+Si consideramos ahora $A \subset B$ tenemos el siguiente resultado:
+\begin{coro}
+Si $p : E \longrightarrow B$ es fibración, entonces $p : p^{-1}(A) \longrightarrow A$ también lo es.
+\end{coro}
+\begin{prop}
+En un pullback las fibras coinciden.
+\end{prop}
+\begin{tabular}{ll}
+\begin{minipage}{0.3\textwidth}
+\[
+\begin{tikzcd}
+F \rar{Id} \dar & F \dar \\
+f^*(E) \rar \dar{p_X}  & E \dar{p} \\
+X \rar & B
+\end{tikzcd}
+\]
+\end{minipage}
+&
+\begin{minipage}{0.65\textwidth}
+\begin{demo}
+Sea $b_0$ el punto base de $B$. $F = \nobreak p^{-1}(b_0)$. Por otra parte, si $x_0$ es el punto base de $X$, $p_X^{-1}(x_0) = \nobreak \{ (x_0, e) : p(e) = f(x_0) = b_0\} \cong F_{b_0}$
+\end{demo}
+\end{minipage}
+\end{tabular}
+Vamos ahora a ver un caso particular importante. Primero necesitaremos el siguiente resultado:
+\begin{prop}
+La aplicación $X^I \stackrel{\gamma}{\longrightarrow} X$, $\gamma(\omega) = \omega(1)$ es una fibración.
+\end{prop}
+\begin{demo}
+Consideramos el siguiente diagrama:\par
+\begin{tabular}{ll}
+\begin{minipage}{0.3\textwidth}
+\[
+\begin{tikzcd}
+Z \arrow{rr}{g} \arrow[hook]{dd}{i_0} & & X^I \arrow{dd}{\gamma} \\
+\\
+Z \times I \arrow{rr}{H} \arrow[dashed]{uurr}{\widetilde{H}} & & X
+\end{tikzcd}
+\]
+\end{minipage}
+&
+\begin{minipage}{0.65\textwidth}
+Definimos $\widetilde{H}$ como sigue:
+\[ \widetilde{H}(z,t) = g(z) \cdotp H(z, [0,t]) \]
+esto es, como la composición de la curva $g(z)$ con la curva $H_z$ de $0$ a $t$. Está bien definido ya que
+\begin{align*}
+g(z)(1) = \gamma(g(z)) = H(z,0)\\
+\widetilde{H}(z,0) = g(z) \\
+\widetilde{H}(z,t)(1) = \gamma \circ \widetilde{H}(z,t) = H(z,t) \end{align*}
+\end{minipage}
+\end{tabular}
+De forma explícita:
+\[
+\widetilde{H}(z,t)(s) = 
+\begin{cases}
+g(z)(s(t+1)) & \text{si } 0 \leq s \leq \frac{1}{t+1} \\
+H(z, s(t+1) -1) & \text{si } \frac{1}{t+1} \leq s \leq 1
+\end{cases}
+\]
+\end{demo}
+Por el corolario anterior, también lo es por tanto la llamada ``Fibración de caminos'' \par
+\begin{tabular}{ll}
+\begin{minipage}{0.5\textwidth}
+
+\end{minipage}
+&
+\begin{minipage}{0.5\textwidth}
+content...
+\end{minipage}
+\end{tabular}

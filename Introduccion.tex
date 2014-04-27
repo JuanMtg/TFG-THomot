@@ -482,9 +482,12 @@ Todo puede hacerse dualmente: En la suspensión de un espacio existe una ``co-op
 ( \ast, [x, 2t -1]) & t \geq \frac{1}{2}
 \end{cases}
 \end{align*}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.45\textwidth]{images/suspoperac.pdf}
+\end{figure}
 
-\textbf{Insertar diagrama p21}
-\textbf{Insertar imagen p21}
+\par
 que resulta ser ``co-asociativa'' con ``co-elemento neutro'' y con ``co-elemento inverso'' homotópico:
 \begin{prop}
 \begin{enumerate}
@@ -526,8 +529,12 @@ es un isomorfismo de grupos.
 Cuando $ X = S^{n-1}$, $\Sigma X \cong S^n$ y al grupo de clases de homotopía punteada
 \[ \pi_n(X, x_0) = [S^n, X] \]
 se le denomina $n$-ésimo grupo de homotopía de $X$ relativo al punto base $x_0$. \par
-La composición es por tanto bastante geométrica:
-\textbf{Insertar imagen p23} \par 
+La composición es por tanto bastante geométrica:\par \vspace{1em}
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{images/ejgruphomot.pdf}
+\end{figure}
+\par
 Se tiene asímismo, en virtud de todo lo anterior
 \begin{teor}
 $\pi_n(X) = [S^n, X] = [S^{n-1}, \Omega X] = \pi_{n-1}(\Omega X)$
@@ -544,8 +551,12 @@ y consideramos $ \displaystyle X = \cup_{n \geq 0} X^n $ al que asignamos la top
 A todo espacio $X$ así construido se le denomina CW-complejo.
 \begin{ejems}
 \begin{itemize}
-\item[(1)] Una superficie orientable compacta $M_g$ de género $g$ ($ g \geq 1$) puede ser construida a partir de un polígono de $4g$ lados identificando los lados de forma que se alternan pares de éstos. Para más claridad, a continuación se presentan algunos casos:
-\textbf{Insertar imagen p25} \par 
+\item[(1)] Una superficie orientable compacta $M_g$ de género $g$ ($ g \geq 1$) puede ser construida a partir de un polígono de $4g$ lados identificando los lados de forma que se alternan pares de éstos. Para más claridad, a continuación se presentan algunos casos: \par
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{images/supgeng.pdf}
+\end{figure} 
+\par 
 Con estas identificaciones, los $4g$ lados del polígono se transforman en $2g$ circunferencias unidas por un punto, esto es, adjuntar a $X^0 = \{ \ast \}$ $2g$ $1$-celdas mediante la única posible aplicación de adjunción $S^0 \longrightarrow X^0$. Así pues, $M_g = X^2$ con 
 \begin{align*} 
 X^0 &= \{ \ast \} \text{,  } X^1 = \bigvee_{2g} S^1 \\
@@ -561,7 +572,11 @@ x &\longmapsto \frac{x}{\|x\|}
 induce un homeomorfismo
 \[ \bb{R}P^n = \faktor{\bb{R}^{n+1} -\{0\}}{\sim} \stackrel{\cong}{\longrightarrow} \faktor{S^n}{x \sim -x} \]
 Por otra parte, la inclusión de un hemisferio $S_+^n \longhookrightarrow S^n$ también induce de forma obvia un homeomorfismo $\faktor{S_+^n}{\sim} \stackrel{\cong}{\longrightarrow} \faktor{S^n}{\sim}$ donde $x \in S^{n-1} \sim \nobreak -x$ \par
-\textbf{Insertar imagen p27} \par 
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{images/proyecreal.pdf}
+\end{figure}
+\par 
 Así vemos que $\bb{R}P^n = \bb{R}^{n-1} \cup_p e^n$, con $p : S^{n-1} \longrightarrow \bb{R}P^{n-1}$ la proyección. De esta forma $\bb{R}P^n$ admite una estructura con una $i$-celda, $i = 0, 1, \ldots ,n$. \par 
 De igual forma $\bb{R}P^\infty = \bigcup_n \bb{R}P^n$ es un CW-complejo con una celda de cada dimensión. $\bb{R}P^\infty$ puede entenderse como las líneas en $\bb{R}^n$ que pasan por el origen.
 \end{itemize}
@@ -590,8 +605,8 @@ Por ejemplo, si en $S^{n-1}$ tomamos cualquier CW-estructura y construimos $D^n$
 Nótese también que $\faktor{X^n}{X^{n-1}} = \bigvee_\alpha S_\alpha^n$ con $\alpha$ variando en el número de $n$-celdas. \par 
 \textbf{Wedge y Smash}: Si $\{X_\alpha \}_{\alpha \in I}$ son CW-complejos y $x_0^\alpha \in X_\alpha$  son $0$-celdas, el wedge $\bigvee_{\alpha \in I} X_\alpha$ obtenido al identificar puntos $\{x_0^\alpha \}$ no es más que el cociente $\faktor{\dot{\cup} X_\alpha}{\{x_0^\alpha\}}$ y tiene por lo anterior estructura de CW-complejo. \\
 Por otra parte, el smash de $2$ espacios $X$ e $Y$  se define como $X \wedge Y = \faktor{X \times Y}{X \vee Y}$ entendiendo $X \vee Y = X \times \{y_0\} \cup \{x_0\} \times Y$. Si $x_0$ e $y_0$ son $0$-celdas de $X$ e $Y$ respectivamente, entonces $X \times \{y_0\} \cup \{x_0\} \times Y$ es un subcomplejo de $X \times Y$ y podemos tomar el cociente considerando la estructura cociente $X \wedge Y$. \\
-Por ejemplo, $S^m \wedge S^n = \faktor{S^m \times S^n}{S^m \vee S^n}$ tiene pues una $0$-celda y una $(n+m)$-celda, por lo cual $S^m \wedge S^n = S^{m+n}$. En particular, $S^1 \wedge S^1 = \faktor{T^2}{S^1 \vee S^1} = S^2$ \textbf{Insertar imagen p 33} \par 
+Por ejemplo, $S^m \wedge S^n = \faktor{S^m \times S^n}{S^m \vee S^n}$ tiene pues una $0$-celda y una $(n+m)$-celda, por lo cual $S^m \wedge S^n = S^{m+n}$. En particular, $S^1 \wedge S^1 = \faktor{T^2}{S^1 \vee S^1} = S^2$ \nts{Insertar imagen p 33} \par 
 \textbf{Espacios de aplicaciones}: SI $X$ es un CW-complejo con finitas celdas e $Y$ tiene un número numerable de ellas, entonces los espacios
 $map(X,Y)$, $map_x(X,Y)$, $Y^X$ ó $(Y, y_0)^{(X, x_0)}$ tienen el tipo de homotopía de CW-complejos. En los espacios de aplicaciones tomamos siempre la topología compacto abierta, es decir, la que tiene por subbase a los conjuntos 
 \[ \langle K, \theta \rangle = \{f:X \longrightarrow Y : f(K) \subset \theta \} \]
-\textbf{Añadir nota de p33, demost por Milnor}
+\nts{Añadir nota de p33, demost por Milnor}

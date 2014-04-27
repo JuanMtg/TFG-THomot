@@ -15,6 +15,7 @@
 \usepackage[normalem]{ulem}		% Distintos subrayados
 \usepackage{hyperref}			% Hipervínculos
 \usepackage{parskip}			% Ajustes de distancia entre párrafos
+\usepackage[pdftex,usenames,dvipsnames]{color}
 
 % Estilo de página
 \pagestyle{fancy}
@@ -35,6 +36,7 @@ diagrams={>=latex}
 \interfootnotelinepenalty=10000
 % Nuevos comandos
 \newcommand{\sen}{\operatorname{\sen}}
+\newcommand*{\nts}[1]{\textbf{\color{magenta}{#1}}}
 %%% Flechas inclusiones largas
 \newcommand*{\longhookrightarrow}{\ensuremath{\lhook\joinrel\relbar\joinrel\rightarrow \nobreak}}
 \newcommand*{\longhookleftarrow}{\ensuremath{\leftarrow\joinrel\relbar\joinrel\rhook \nobreak}}

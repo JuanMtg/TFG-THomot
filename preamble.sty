@@ -48,6 +48,9 @@ diagrams={>=latex}
 \let\longla\longleftarrow
 \renewcommand*{\longleftarrow}{\ensuremath{\longla \nobreak}}
 
+%%% Comandos para grupos de homotopía
+\newcommand*{\homot}[2]{\ensuremath{\pi_{#1}\left(#2\right)}}
+
 % Cambios en nombres de secciones
 \addto\captionsspanish{\renewcommand{\appendixname}{}}
 
@@ -81,6 +84,14 @@ diagrams={>=latex}
 {
 	\par \vspace{0.5em}
 }
+
+\newenvironment{custom}[1][\unskip]{%
+	\vspace{0.5em} \par \noindent \textbf{#1:}
+}
+{
+	\par \vspace{0.5em}
+}
+
 %% Teoremas
 \newenvironment{teor}[1][\unskip]{%
 	\vspace{0.5em} \par \noindent \textbf{Teorema #1:}

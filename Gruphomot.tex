@@ -196,6 +196,19 @@ Así, las siguientes condiciones son equivalentes:
 \end{enumerate}
 De la misma forma, para un par $(X, A)$ son equivalentes las siguientes condiciones:
 \begin{enumerate}
-\item Cada aplicación $(D^i, S^{i-1}) \longrightarrow (X, A)$ es homótopa relativa a $S^{n-1}$ a una aplicación $D^i \longrightarrow A$ para cada $i \leq n$.
-\item Cada aplicación
+\item Cada aplicación $(D^i, S^{i-1}) \longrightarrow (X, A)$ es homótopa relativa a $S^{n-1}$ a una aplicación $D^i \longrightarrow A$.
+\item Cada aplicación $(D^i, S^{i-1}) \longrightarrow (X, A)$ es homótopa en $[(D^i, S^{i-1}), (X, A)]$ a una aplicación $D^i \longrightarrow A$.
+\item Cada aplicación $(D^i, S^{i-1}) \longrightarrow (X, A)$ es homótopa en $[(D^i, S^{i-1}), (X, A)]$ a una constante $D^i \longrightarrow A$.
+\item $\homot{n}{X, A, x_0} = 0$ $\forall x_0 \in A$.
 \end{enumerate}
+Para el caso $i = 0$, $\homot{0}{X, A, x_0}$ no está definido, por tanto, decimos que el par $(X, A)$ es $n$-conexo si se verifica una de las cuatro condiciones para $i > 0$ y si se verifica una de las tres primeras cuando $i=0$.
+
+\subsection*{Aplicaciones de la sucesión exacta de un par $(X,A)$}
+Veamos ahora varios resultados que hacen uso de esta sucesión exacta.
+\begin{teor}
+Sea $p : E \longrightarrow B$ una fibración. Tomamos $b_0 \in B$ y un punto $x_0 \in F = p^{-1}(b_0)$ de la fibra de $b_0$. Entonces
+\[
+\homot{n}{p} : \homot{n}{E, F, x_0} \longrightarrow \homot{n}{B, b_0}
+\]
+es isomorfismo si $n \geq 1$.
+\end{teor}

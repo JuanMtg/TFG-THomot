@@ -212,3 +212,77 @@ Sea $p : E \longrightarrow B$ una fibración. Tomamos $b_0 \in B$ y un punto $x_
 \]
 es isomorfismo si $n \geq 1$.
 \end{teor}
+\begin{demo}
+Veamos que $\homot{n}{p}$ es sobreyectiva. Sea $[f] \in \homot{n}{B, b_0}$, $f: (I^n, \partial I^n) \longrightarrow (B, b_0)$. $f$ puede ser vista como una homotopía
+\[
+I^{n-1}  \times I \longrightarrow B
+\]
+de la constante en $b_0$ a la constante en $b_0$ que lleva \par
+\nts{Imagen p 76}\par
+$\partial I^{n-1}$ también a $b_0$ para todo $t$. par
+Si consideramos $g: I^{n-1} \longrightarrow E$ la constante en $x_0$, por la propiedad del levantamiento homotópico, podemos encontrar $\widetilde{f}$ tal que:
+\[
+\begin{tikzcd}
+I^{n-1} \arrow{rr}{g} \arrow[hook]{dd}{i_0} & & E \arrow{dd}{p} \\
+\\
+I^{n-1} \times I \arrow{rr}{f} \arrow{uurr}{\widetilde{f}} & & B
+\end{tikzcd}
+\]
+Se tiene que $\widetilde{f}(\partial I^n) \subset F$ ya que $p \ \widetilde{f}(\partial I^n) = b_0$. Así, $[\widetilde{f}] \in \homot{n}{E, F, x_0}$ y $\homot{n}{p}[\widetilde{f}] = [f]$. \par
+Veamos que $\homot{n}{p}$ es inyectiva. Sean $\widetilde{f_0}, \widetilde{f_1} : (I^n, \partial I^n, J^{n-1}) \longrightarrow (E, F, x_0)$ tal que $p \circ \widetilde{f_0} \simeq p \circ \widetilde{f_1}$ mediante:
+\[
+G: (I^n, \partial I^n) \times I \longrightarrow (B, b_0)
+\]
+Tenemos un levantamiento parcial de $G$ en $I^n \times \{0\} \cup I^n \times \{1\} \cup J^{n-1} \times I$. Sea $\widetilde{G}$ este levantamiento. Se tiene el siguiente diagrama:
+\[
+\begin{tikzcd}
+I^n \times \{0\} \cup I^n \times \{1\} \cup J^{n-1} \times I \arrow[hook]{dd} \arrow{rr} & & E \arrow{dd}{p} \\
+\\
+I^n \times I \arrow{rr}{G} \arrow[dashed]{uurr}{\widetilde{G}}& & B
+\end{tikzcd}
+\]
+Luego $\widetilde{G} : (I^n, \partial I^n, J^{n-1}) \times I \longrightarrow (E, F, x_0)$ es una homotopía de $\widetilde{f_0}$ a $\widetilde{f_1}$.
+\end{demo}
+Con este resultado, si consideramos la sucesión exacta larga del par $(E, F)$, tenemos:
+\[
+\begin{tikzcd}
+\dots \arrow{r} & \homot{n}{E, x_0} \arrow{r}{\homot{n}{i}} \arrow{dr}{\homot{n}{p}} & \homot{n}{E, F, x_0} \arrow{r} \arrow{d}{\homot{n}{p}} & \homot{n-1}{F, x_0} \arrow{r} & \dots \\
+ & & \homot{n}{B, b_0} & &
+\end{tikzcd}
+\]
+Luego tenemos el siguiente teorema:
+\begin{teor}
+Si $B$ es arcoconexo, se tiene la sucesión exacta de homotopía de una fibración:
+\begin{align*}
+\dots \longrightarrow &\homot{n}{F, x_0} \longrightarrow \homot{n}{E, x_0} \longrightarrow \homot{n}{B, b_0} \longrightarrow \homot{n-1}{F, x_0} \longrightarrow \dots \\
+ \dots & \longrightarrow \homot{1}{E, x_0} \longrightarrow \homot{1}{B, b_0} \longrightarrow \homot{0}{F, x_0} \longrightarrow \homot{0}{E, x_0} \longrightarrow \homot{0}{B, b_0}
+\end{align*}
+\end{teor}
+
+\subsection*{Aplicaciones de la sucesión en homotopía de una fibración}
+\begin{enumerate}
+\item Un espacio recubridor es una fibración con fibra discreta, por lo tanto $\homot{i}{F, x_0} = \nobreak 0$ $\forall i \geq  1$ y $\homot{0}{F, x_0}$ es el conjunto de componentes arcoconexas punteadas que contienen al punto base $x_0$. \nts{revisar} \par
+Por tanto, de la sucesión exacta en homotopía tenemos que:
+\[
+\longrightarrow \homot{n}{E, x_0} \stackrel{\cong}{\longrightarrow} \homot{n}{B, b_0} \longrightarrow 0 \quad \text{si } n \geq 2
+\]
+\[
+\homot{1}{E, x_0} \longrightarrow \homot{1}{B, b_0} \quad \text{es inyectiva}
+\]
+
+En particular, dado un espacio $X$, un recubridor universal $\widetilde{X}$ es tal que  $\homot{1}{\widetilde{X}} = 0$, $\homot{i}{\widetilde{X}} = \homot{i}{X}$, $i \geq 2$. \par
+Un par de casos particulares son $S^1$ y $T^n$. Para el primero $exp : \bb{R} \longrightarrow S^1$ es un espacio recubridor, luego tenemos que
+\[
+\homot{i}{S^1} = 0, \ i \geq 2 ; \qquad \homot{1}{S^1} = \bb{Z}
+\]
+y usando que $\homot{n}{\prod_i X_i} \cong \prod_i \homot{n}{X_i}$, se ve que 
+\[
+\homot{i}{T^n} = 0, \ i \geq 2 ; \qquad \homot{1}{T^n} = \bigoplus_{k = 1}^{n} \bb{Z}
+\]
+
+\item Un fibrado con fibra discreta es un espacio recubridor, y recíprocamente, un espacio recubridor es un fibrado con fibra discreta. \par
+Veamos entonces algunos ejemplos de fibrados:
+\begin{enumerate}
+\item Un ejemplo es la banda de Möbius.
+\end{enumerate}
+\end{enumerate}

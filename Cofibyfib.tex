@@ -18,14 +18,27 @@ De forma equivalente, $(X,A)$ tiene la HEP si el siguiente diagrama puede comple
 Decimos que un par $(X,A)$ ( o la inclusión $i: A \longhookrightarrow X$) es una cofibración si posee la HEP con respecto a todo espacio Y. \par 
 Es decir, $A \subset X$ es cofibración si toda aplicación  
 \[ f : X \times \{0\} \cup A \times I \longrightarrow Y \]
-se extiende a $X \times I$.
-O de forma gráfica, \nts{Insertar imagen p 35}
+se extiende a $X \times I$. \par
+\begin{tabular}{ll}
+\begin{minipage}{0.5\textwidth}
+O de forma gráfica: 
+\end{minipage}
+&
+\begin{minipage}{0.5\textwidth}
+\includegraphics[width=0.7\linewidth]{images/cofibrac}
+\end{minipage}
+\end{tabular}
+
 \end{defin}
 
 \textbf{Observaciones:}
 \begin{enumerate}
 \item No todas las inclusiones $A \subset X$ son cofibraciones. Un contraejemplo de esto es el espacio formado por los segmentos de $(0, 0)$ en $(1, \frac{1}{n})$.
-Esto es, $ A = \{0\} \times [0,1] \cup [0,1] \times \{0\} \bigcup_{n \in \bb{N}} \{ (t, \frac{t}{n}) : t \in [0,1] \} $ \nts{Insertar imagen p35} \\
+Esto es, $ A =  \bigcup_{n \in \bb{N}} \{ (t, \frac{t}{n}) : t \in [0,1] \} \cup \{0\} \times [0,1] \cup [0,1] \times \{0\} $ \par
+\begin{figure}[h]
+\centering
+\includegraphics[width = 0.35\textwidth]{images/ejcofibsegmentos}
+\end{figure}
 $A$ no es un retracto de $I^2$, luego no se tiene la extensión para la identidad 
 \[ 
 \begin{tikzcd}
@@ -33,9 +46,10 @@ A \arrow{rr}{Id} \drar[hook] & & A \\
  & X \urar[dashed] &
 \end{tikzcd}
 \]
-Se tiene un caso análogo para el espacio peine anteriormente visto.
+Un caso similar se tiene para el espacio anteriormente visto.
 
-\item Podríamos haber definido la cofibración sustituyendo la inclusión por una aplicación $f : A \longrightarrow X $ cualquiera. Podemos demostrar entonces que $f$ es inyectiva y pero no es necesariamente un homeomorfismo sobre su imagen. Si suponemos que el par $(X, A)$ es una cofibración y que $X$ es Hausdorff, entonces se puede probar que $A$ es cerrado, teniendo así el homeomorfismo sobre su imagen. Desde este momento, se supondrá siempre esto, ya que el caso más general rara vez es necesario.
+\item Una definición alternativa de la cofibración consiste en sustituir la inclusión por una aplicación $f : A \longrightarrow X $ cualquiera. Podemos demostrar entonces que $f$ es inyectiva y pero no es necesariamente un homeomorfismo sobre su imagen. \par
+Si suponemos que el par $(X, A)$ es una cofibración y que $X$ es Hausdorff, entonces se puede probar que $A$ es cerrado, teniendo así el homeomorfismo sobre su imagen. Podemos suponer esto a partir de ahora, ya que el caso más general rara vez es necesario.
 \end{enumerate}
 
 \begin{teor}
@@ -57,40 +71,44 @@ Recíprocamente, al suponer que $A$ es cerrado, dadas dos aplicaciones cualesqui
 X \times \{0\} \longrightarrow Y \\
 A \times I \longrightarrow Y
 \end{cases} \]
-que coinciden en $A \times \{0\}$, obtenemos una aplicación $X \times \{0\} \cup A \times I \longrightarrow Y$ que es continua al serlo en los cerrados. Componiendo esta aplicación con una retracción obtenemos la extensión que queríamos.
+que coinciden en $A \times \{0\}$, obtenemos una aplicación $X \times \{0\} \cup A \times I \longrightarrow Y$ que es continua por el lema del pegamiento. Componiendo esta aplicación con una retracción obtenemos la extensión que queríamos.
 \end{demo}
 También hay resultados que relacionan cofibraciones con CW-complejos.
 \begin{teor}
-SI $(X, A)$ es un par de CW-complejos, entonces $X \times \{0\} \cup A \times I$ es un retracto de deformación de $X \times I$.
+Si $(X, A)$ es un par de CW-complejos, entonces $X \times \{0\} \cup A \times I$ es un retracto de deformación de $X \times I$.
 \end{teor}
 \begin{demo}
-Existe una retracción $r : D^n \times I \longrightarrow D^n \times \{0\} \cup \partial D^n \times I$. \\
+Por el teorema anterior, existe una retracción 
+\[r : D^n \times I \longrightarrow D^n \times \{0\} \cup \partial D^n \times I\] 
 Tomando la homotopía 
 \begin{align*}
 H : (D^n \times I) \times I \longrightarrow D^n \times I \\
 H(p, s) = s r(p) + (1-s)p
 \end{align*}
 induce una homotopía entre $Id_{D^n \times I} $ e $ir$. Por tanto, r es un retracto de deformación de $D^n \times I$. \\
-Podemos ampliar este retracto de deformación a uno de $X^n \times I$ en $X^n \times \{0\} \cup (X^{n-1} \cup A^n) \times I$. \par
-Como $X^n$ se obtiene adjuntando $n$-celdas a $X^{n-1} \cup A^n$, $X^n \times I$ se obtiene de $X^n \times \{0\} \cup (X^{n-1} \cup A^n) \times I$ adjuntando copias de $D^n \times I$ a lo largo de $D^n \times \{0\} \cup \partial D^n \times I$. \par 
-SI aplicamos el retracto de deformación de $X^n \times I$ en $X^n \times \{0\} \cup (X^{n-1} \cup A^n) \times I$ en los intervalos ${\small \left[\faktor{1}{2^{n+1}}, \faktor{1}{2^n}\right]}$ y las concatenamos, esto es un retracto de deformación de $X \times I$ en $X \times \{0\} \cup A \times I$.
+Este retracto de deformación se amplía a un retracto 
+\[X^n \times I \longrightarrow X^n \times \{0\} \cup (X^{n-1} \cup A^n) \times I \] de la siguiente forma: como $X^n$ se obtiene adjuntando $n$-celdas a $X^{n-1} \cup A^n$, obtenemos $X^n \times I$ a partir de $X^n \times \{0\} \cup (X^{n-1} \cup A^n) \times I$ adjuntando copias de $D^n \times I$ a lo largo de $D^n \times \{0\} \cup \partial D^n \times I$. \par 
+Si aplicamos el retracto de deformación de $X^n \times I$ en $X^n \times \{0\} \cup (X^{n-1} \cup A^n) \times I$ en los intervalos ${\small \left[\faktor{1}{2^{n+1}}, \faktor{1}{2^n}\right]}$ y las concatenamos, obtenemos un retracto de deformación de $X \times I$ en $X \times \{0\} \cup A \times I$.
 \end{demo}
 
 \begin{teor}
-SI el par $(X, A)$ es una cofibración y $A$ es contráctil, entonces $q : X \longrightarrow \faktor{X}{A}$ es una equivalenci de homotopía.
+Si el par $(X, A)$ es una cofibración y $A$ es contráctil, entonces la aplicación $q : X \longrightarrow \faktor{X}{A}$ es una equivalencia de homotopía.
 \end{teor}
 \begin{demo}
-Sea $H : X \times I \longrightarrow X$ una homotopía que extiende a la contracción $F : A \times I \longrightarrow A$ y que tiene como inicio a la identidad, $H(x,0) = x$ y verifica que $H(A,t) = F(A,t) \subset A \ \forall t$. La composición $ q \circ H_t : X \longrightarrow \faktor{X}{A}$ envía $A$ a un punto. Por tanto, factoriza como el diagrama
+Sea $H : X \times I \longrightarrow X$ una homotopía que extiende a la contracción $F : A \times I \longrightarrow A$, que tiene como inicio a la identidad, $H(x,0) = x$, y verifica que $H(A,t) = F(A,t) \subset A \ \forall t$. \par
+La composición $ q \circ H_t : X \longrightarrow \faktor{X}{A}$ envía $A$ a un punto. Por tanto, factoriza como el diagrama
 \[ \begin{tikzcd}
-	X \rar{H_t} \dar{q} & X \dar{q} \\
-	\faktor{X}{A} \rar{\overline{H}_t} & \faktor{X}{A}
+	X \arrow{rr}{H_t} \arrow{dd}{q}  & & X \arrow{dd}{q} \\
+	\\
+	\faktor{X}{A} \arrow{rr}{\overline{H}_t} & & \faktor{X}{A}
 \end{tikzcd} \]
-Tomando $t = 1$ , entonces $H(A, 1) = F(A, 1) = \ast$ es el punto donde $A$ se contrae, luego existe una aplicación $g$ tal que el siguiente diagrama es conmutativo:
+Tomando $t = 1$,  $H(A, 1) = F(A, 1) = \ast$ es el punto donde $A$ se contrae, luego existe una aplicación $g$ tal que el siguiente diagrama es conmutativo:
 \[ \begin{tikzcd}
-	X \rar{H_1} \dar{q} & X \dar{q} \\
-	\faktor{X}{A} \rar{\overline{H}_1} \urar{g} & \faktor{X}{A}
+	X \arrow{rr}{H_1} \arrow{dd}{q} & & X \arrow{dd}{q} \\
+	\\
+	\faktor{X}{A} \arrow{rr}{\overline{H}_1} \arrow{uurr}{g} & & \faktor{X}{A}
 \end{tikzcd} \]
-En principio tenemos que conmuta el triángulo superior $gq = H_1$. Para el triángulo inferior, tenemos que $qg(\bar{x}) = qgq(x) = qH_1(x) =\overline{H}_1 q(x) = \overline{H}_1(\bar{x})  $ teniendo en cuenta que el primer diagrama conmuta para todo $t$. Por tanto, tenemos que $q$ y $g$ son inversos homotópicos
+En principio tenemos que conmuta el triángulo superior $gq = H_1$. Para el triángulo inferior, tenemos que $qg(\bar{x}) = qgq(x) = qH_1(x) =\overline{H}_1 q(x) = \overline{H}_1(\bar{x})  $ teniendo en cuenta que el primer diagrama conmuta para todo $t$. Por tanto, tenemos que $q$ y $g$ son inversos homotópicos, como queríamos ver:
 \begin{align*}
 gq &= H_1 \simeq H_0 = Id_X \\
 qg &= \overline{H}_1 \simeq \overline{H}_0 = Id_{\faktor{X}{A}}
@@ -99,34 +117,37 @@ qg &= \overline{H}_1 \simeq \overline{H}_0 = Id_{\faktor{X}{A}}
 Veamos ahora algunos ejemplos:
 \begin{ejems}
 \begin{enumerate}
-\item \textbf{Grafos:} Los grafos que vemos a la izquierda son todos homotópicamente equivalentes. Se pueden ver que son retractos de $D^2 - \{x_0, x_1\}$, pero también podemos usar el teorema anterior. Tomando en los grafos $(A)$ y $(C)$ los segmentos rectos y haciendo cociente con respecto a ellos, obtenemos el grafo $(B)$. Así, por el teorema anterior, tenemos que son homotópicamente equivalentes. \par 
-De forma más general, si $G$ es un grafo finito, toda arista con distintos finales se puede contraer a un punto. En este caso, toda componente de $G$ es homótopa o bien a un punto o a una suma puntual de $S^1$.
+\item \textbf{Grafos:} 
+%Los grafos que vemos a la izquierda son todos homotópicamente equivalentes. Se pueden ver que son retractos de $D^2 - \{x_0, x_1\}$, pero también podemos usar el teorema anterior. Tomando en los grafos $(A)$ y $(C)$ los segmentos rectos y haciendo cociente con respecto a ellos, obtenemos el grafo $(B)$. Así, por el teorema anterior, tenemos que son homotópicamente equivalentes. \par 
+Si $G$ es un grafo finito, toda arista con distintos finales se puede contraer a un punto. En este caso, toda componente de $G$ es homótopa o bien a un punto o a una suma puntual de $S^1$.
 
 \item Consideremos $X$ el espacio formado por la unión de una $S^2$ y una $1$-celda por los polos. Por el teorema anterior, si identificamos los polos al mismo punto sobre la esfera o contraemos la $1$-celda a un punto, obtenemos dos espacios homotópicamente equivalentes. Así, tenemos que
 \[ S^2 \cup e^1 = S^1 \vee S^2 = \faktor{S^2}{S^0} \]
 
-\item \nts{Ejemplo unión de esferas}
 \end{enumerate}
 \end{ejems}
 
 \subsection{Cómo pegar espacios en general}
-Antes vimos el concepto de unir $n$-celdas a un espacio $X$. Ahora vamos a generalizar este concepto para cualesquiera espacios $X$ e $Y$. \par 
-Para ello, consideramos un subespacio $A \subset Y $ y una aplicación $f : A \longrightarrow X$. El subespacio $A$ será el ``sitio por donde vamos a pegar'' los espacios, mientras que la aplicación es la forma de pegarlos. Una vez dados estos dos elementos, definimos:
-\[ X \cup_f Y := \faktor{X \dot{\cup} Y}{x \in A \sim f(x)} \]
+Anteriormente se definió concepto de unión de $n$-celdas a un espacio $X$. Ahora vamos a generalizar este concepto para cualesquiera espacios $X$ e $Y$. \par 
+Para ello, consideramos un subespacio $A \subset Y $ y una aplicación $f : A \longrightarrow X$. El subespacio $A$ será el punto de unión de ambos espacios, mientras que la aplicación es la forma de pegarlos. Una vez dados estos dos elementos, definimos:
+\[ X \cup_f Y := \faktor{X \dot{\cup} Y}{\sim} \qquad \text{donde }x \in A \sim f(x) \]
 \nts{Insertar imagen p43} \\
-Como hemos observado, pegar una celda es un caso particular, donde el subespacio que escogemos es la frontera de la celda. \par 
-Otro caso interesante es el llamado cilindro de una aplicación. Sea $f: X \longrightarrow Y$ una aplicación continua. Definimos el cilindro de $f$, 
+Como hemos observado, pegar una celda es un caso particular de la unión de espacios, donde el espacio Y es la $n$-celda y el subespacio de unión es la frontera de la celda. 
+\subsection*{Cilindro y cono de una aplicación f}
+Otro caso interesante de pegado de espacios es el llamado cilindro de una aplicación. \par
+Sea $f: X \longrightarrow Y$ una aplicación continua. Definimos el cilindro de $f$, 
 \[M_f = Y \cup_{\tilde{f}} (X \times I) \] 
 donde
 \begin{align*}
 \tilde{f} : X \times I \longrightarrow Y \\
 \tilde{f}(x,1) = f(x)
 \end{align*}
-esto es, $M_f = \faktor{Y \dot{\cup} (X \times I)}{(x,1) \sim f(x)}$
+esto es, 
+\[ M_f = \faktor{Y \: \dot{\cup} \: (X \times I)}{\scriptstyle(x,1) \sim f(x)} \]
 
-Si además colapsamos $X \times \{0\}$ a un punto, obtenemos el ``cono de $f$'', que también lo podemos definir como 
-\[ C_f = \faktor{Y \dot{\cup} CX}{(x,1) \sim f(x)} \]
-Visto esto, podemos factorizar la función $f$ como la siguiente composición: $f = p \circ i$, donde $i$ es la inclusión y $p$ es la aplicación que ``aplasta'' el cilindro al espacio $Y$, esto es $i(x) = (x,0)$  y $p : M_f \longrightarrow Y$ tal que $p \vert_Y = Id_Y$, $p(x,t) = f(x)$. \par 
+Si además colapsamos $X \times \{0\}$ a un punto, obtenemos el cono de $f$, que también lo podemos definir como 
+\[ C_f = \faktor{Y \: \dot{\cup} \: CX}{\scriptstyle (x,1) \sim f(x)} \]
+Visto esto, podemos factorizar la función $f$ como la composición $f = p \circ i$, donde $i$ es la inclusión y $p$ es la aplicación de retracción del cilindro al espacio $Y$, esto es $i(x) = (x,0)$  y $p : M_f \longrightarrow Y$ tal que $p \vert_Y = Id_Y$, $p(x,t) = f(x)$. \par 
 Visto esto último, tenemos el siguiente resultado:
 \begin{teor}
 Sea $f : X \longrightarrow Y$ una aplicación y consideremos la factorización de $f$ dada por el cilindro de $f$, $f = p \circ i$. Entonces $i$ es una cofibración y $p$ una equivalencia de homotopía. En particular, toda aplicación $f$ es, salvo homotopía, una cofibración. \footnote{Mirar esta última parte}
@@ -135,7 +156,7 @@ Sea $f : X \longrightarrow Y$ una aplicación y consideremos la factorización d
 En efecto, $X \longhookrightarrow M_f$ es una cofibración, pues la retracción $I \times I \stackrel{r}{\longrightarrow} I \times \{0\} \cup \partial I \times I$ induce una retracción de $M_f \times I$ en $M_f \times \{0\} \cup X \times  I$. \par 
 Por otra parte, la inclusión $j : Y \longrightarrow M_f$ es una equivalencia de homotopía inversa de $p$: $p \circ j = Id_Y$, $j \circ p \simeq Id_{M_f}$.
 \end{demo}
-En general, si $A \longhookrightarrow X$ es una cofibración, llamamos cofibra de A a $\faktor{X}{A}$, de forma que una cofibración es análogo a una sucesión exata corta
+En general, si $A \longhookrightarrow X$ es una cofibración, llamamos cofibra de A a $\: \faktor{X}{A}$, de forma que una cofibración es análogo a una sucesión exacta corta
 \[ A \longhookrightarrow X \longrightarrow \faktor{X}{A} \]
 Si $f : X \longrightarrow Y$ es una aplicación cualquiera, la cofibra de $f$ es la cofibra de la cofibración asociada
 \[ X \longrightarrow M_f \longrightarrow \faktor{M_f}{X} = C_f \]
@@ -146,7 +167,7 @@ donde $q = q' \circ j$ , $q' : M_f \longrightarrow C_f$. \par
 que es una cofibración de cofibra $\Sigma X$. \par
 Tenemos entonces una sucesión
 \[ X \stackrel{f}{\longrightarrow} Y \stackrel{q}{\longrightarrow} C_f \stackrel{\delta}{\longrightarrow} \Sigma X \stackrel{\Sigma f}{\longrightarrow} \Sigma Y \stackrel{\Sigma q}{\longrightarrow} \Sigma C_f \longrightarrow \dots \]
-que es la sucesión de ``Barratt-Puppe'' que da lugar a una sucesión exacta larga de grupos:
+que es la sucesión de \textit{Barratt-Puppe} que da lugar a una sucesión exacta larga de grupos:
 \[ [X, Z] \stackrel{f^*}{\longleftarrow} [Y, Z] \stackrel{q^*}{\longleftarrow} [C_f, Z] \stackrel{\delta^*}{\longleftarrow} [\Sigma X, Z] \stackrel{\Sigma f^*}{\longleftarrow} [\Sigma Y, Z] \stackrel{\Sigma q^*}{\longleftarrow} \dots \]
 la cual se deduce del siguiente resultado:
 \begin{teor}

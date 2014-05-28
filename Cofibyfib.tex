@@ -147,13 +147,17 @@ esto es,
 
 Si además colapsamos $X \times \{0\}$ a un punto, obtenemos el cono de $f$, que también lo podemos definir como 
 \[ C_f = \faktor{Y \: \dot{\cup} \: CX}{\scriptstyle (x,1) \sim f(x)} \]
-Visto esto, podemos factorizar la función $f$ como la composición $f = p \circ i$, donde $i$ es la inclusión y $p$ es la aplicación de retracción del cilindro al espacio $Y$, esto es $i(x) = (x,0)$  y $p : M_f \longrightarrow Y$ tal que $p \vert_Y = Id_Y$, $p(x,t) = f(x)$. \par 
+Visto esto, podemos factorizar la función $f$ como la composición $f = p \circ i$, donde $i$ es la inclusión y $p$ es la aplicación de retracción del cilindro al espacio $Y$, esto es $i(x) = (x,0)$  y $p : M_f \longrightarrow Y$  es tal que $p \vert_Y = Id_Y$, $\ p(x,t) = f(x)$. \par 
 Visto esto último, tenemos el siguiente resultado:
 \begin{teor}
-Sea $f : X \longrightarrow Y$ una aplicación y consideremos la factorización de $f$ dada por el cilindro de $f$, $f = p \circ i$. Entonces $i$ es una cofibración y $p$ una equivalencia de homotopía. En particular, toda aplicación $f$ es, salvo homotopía, una cofibración. \footnote{Mirar esta última parte}
+Sea $f : X \longrightarrow Y$ una aplicación y consideremos la factorización de $f$ dada por el cilindro de $f$, $f = p \circ i$. Entonces $i$ es una cofibración y $p$ una equivalencia de homotopía. En particular, toda aplicación $f$ es, salvo homotopía, una cofibración. 
 \end{teor}
 \begin{demo}
-En efecto, $X \longhookrightarrow M_f$ es una cofibración, pues la retracción $I \times I \stackrel{r}{\longrightarrow} I \times \{0\} \cup \partial I \times I$ induce una retracción de $M_f \times I$ en $M_f \times \{0\} \cup X \times  I$. \par 
+En efecto, $X \longhookrightarrow M_f$ es una cofibración, pues la retracción 
+\[
+I \times I \stackrel{r}{\longrightarrow} I \times \{0\} \cup \partial I \times I
+\]
+induce una retracción de $M_f \times I$ en $M_f \times \{0\} \cup X \times  I$. \par 
 Por otra parte, la inclusión $j : Y \longrightarrow M_f$ es una equivalencia de homotopía inversa de $p$: $p \circ j = Id_Y$, $j \circ p \simeq Id_{M_f}$.
 \end{demo}
 En general, si $A \longhookrightarrow X$ es una cofibración, llamamos cofibra de A a $\: \faktor{X}{A}$, de forma que una cofibración es análogo a una sucesión exacta corta
@@ -162,25 +166,28 @@ Si $f : X \longrightarrow Y$ es una aplicación cualquiera, la cofibra de $f$ es
 \[ X \longrightarrow M_f \longrightarrow \faktor{M_f}{X} = C_f \]
 que escribimos como: 
 \[ X \stackrel{f}{\longrightarrow} Y \stackrel{q}{\longrightarrow} C_f  \]
-donde $q = q' \circ j$ , $q' : M_f \longrightarrow C_f$. \par 
+donde $q : Y \stackrel{j}{\longhookrightarrow} M_f \stackrel{q'}{\longrightarrow} C_f $\par 
 \nts{Insertar imagen p46}
 que es una cofibración de cofibra $\Sigma X$. \par
 Tenemos entonces una sucesión
 \[ X \stackrel{f}{\longrightarrow} Y \stackrel{q}{\longrightarrow} C_f \stackrel{\delta}{\longrightarrow} \Sigma X \stackrel{\Sigma f}{\longrightarrow} \Sigma Y \stackrel{\Sigma q}{\longrightarrow} \Sigma C_f \longrightarrow \dots \]
-que es la sucesión de \textit{Barratt-Puppe} que da lugar a una sucesión exacta larga de grupos:
+que es la sucesión de \textit{Barratt-Puppe}. Esta da lugar a una sucesión exacta larga de grupos:
 \[ [X, Z] \stackrel{f^*}{\longleftarrow} [Y, Z] \stackrel{q^*}{\longleftarrow} [C_f, Z] \stackrel{\delta^*}{\longleftarrow} [\Sigma X, Z] \stackrel{\Sigma f^*}{\longleftarrow} [\Sigma Y, Z] \stackrel{\Sigma q^*}{\longleftarrow} \dots \]
 la cual se deduce del siguiente resultado:
 \begin{teor}
 Para todo espacio $Z$, la sucesión 
-\[ [X, Z] \stackrel{f^*}{\longleftarrow} [Y, Z] \stackrel{q^*}{\longleftarrow} [C_f, Z] \]
+\[ [C_f, Z] \stackrel{q^*}{\longrightarrow} [Y, Z] \stackrel{f^*}{\longrightarrow} [X, Z] \]
 inducida por $X \stackrel{f}{\longrightarrow} Y \stackrel{q}{\longrightarrow} C_f$ es exacta.
 \end{teor}
 \begin{demo}
-\footnote{\nts{Volver a mirar demostración}} Tenemos que $ q^* \circ f^* = (q \circ f)^* = (c_{x_0})^* = c$. Supongamos que $f^*(g) \simeq c$ con $g : Y \longrightarrow Z$, esto es 
+Tenemos que $ f^* \circ q^* = (q \circ f)^* = (c_{x_0})^* = c$ ya que la sucesión inicial es exacta por hipótesis. Por tanto, tenemos que $Im \ q^* \subset Ker \ f^* $.\par 
+Veamos la otra inclusión. Sea $g : Y \longrightarrow Z$ tal que $f^*(g) \simeq c$, esto es:
+\[
 \begin{tikzcd}
-X \rar{f} \arrow[bend right]{rr}{*} & Y \rar{g} & Z
+X \rar{f} \arrow[bend right]{rr}{c} & Y \rar{g} & Z
 \end{tikzcd}
-pero sabemos que toda aplicación homótopa a la constante se extiende al cono de $X$.
+\]
+Como toda aplicación homótopa a la constante se extiende al cono de $X$, tenemos el diagrama: \par
 \begin{tabular}{ll}
 \begin{minipage}{0.4\textwidth}
 \[
@@ -189,19 +196,26 @@ pero sabemos que toda aplicación homótopa a la constante se extiende al cono d
 X \rar{f} \arrow[hook]{ur}  & Y \rar{g}  & Z
 \end{tikzcd}
 \]
-\nts{Añadir imagen p 47}
 \end{minipage}
 &
 \begin{minipage}{0.55\textwidth}
-Definimos entonces $k : C_f \longrightarrow Z$ tal que $k\vert_Y = g$, $k \vert_{CX} = h$ \par
-Obviamente $q^*(k) = h \circ q = k \circ q' \circ j = g$
+Definimos entonces $k : C_f \longrightarrow Z$ tal que $k\vert_Y = g$ y $k \vert_{CX} = h$ \par
+De esta forma, tenemos que 
+\[
+q^*(k) = k \circ q = k \circ q' \circ j = g
+\]
+Lo cual nos dice que $Ker \ f^* \subset Im \ q^*$.
 \end{minipage}
 \end{tabular}
 \end{demo}
 
 \section{Fibraciones}
 \begin{defin}
-Una aplicación $p : E \longrightarrow B$ tiene la propiedad de levantamiento homotópico (HLP) con respecto a un espacio $X$ si dada una homotopía $G : X \times I \longrightarrow B$ que tiene levantamiento en su inicio, entonces se levanta toda ella, esto es, si existe $g : X \longrightarrow E$ tal que  $G(x, 0) = pg(x)$, existe entonces $\widetilde{G} : X \times I \longrightarrow E$ tal que $\widetilde{G}(x,0) = g(x)$ y $G = p \circ \widetilde{G}$. \par
+Una aplicación $p : E \longrightarrow B$ tiene la propiedad de levantamiento homotópico (HLP) con respecto a un espacio $X$ si dada una homotopía 
+\[
+G : X \times I \longrightarrow B
+\]
+que tiene levantamiento en su inicio, entonces se levanta toda ella, esto es, si existe $g : X \longrightarrow E$ tal que  $G(x, 0) = pg(x)$, existe entonces $\widetilde{G} : X \times I \longrightarrow E$ tal que $\widetilde{G}(x,0) = g(x)$ y $G = p \circ \widetilde{G}$. \par
 Dicho de otra forma, el diagrama conmutativo siguiente puede completarse con la aplicación punteada $\widetilde{G}$:
 \[
 \begin{tikzcd}

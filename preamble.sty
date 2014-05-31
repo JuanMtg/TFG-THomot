@@ -16,6 +16,7 @@
 \usepackage{hyperref}			% Hipervínculos
 \usepackage{parskip}			% Ajustes de distancia entre párrafos
 \usepackage[pdftex,usenames,dvipsnames]{color}
+\usepackage{wasysym}
 
 % Estilo de página
 \pagestyle{fancy}
@@ -27,7 +28,8 @@
 \tikzset{
 commutative diagrams/.cd,
 arrow style=tikz,
-diagrams={>=latex}
+diagrams={>=latex},
+mysymbol/.style={start anchor=center,end anchor=center,draw=none}
 }
 
 % Ajustes en el documento
@@ -56,6 +58,12 @@ diagrams={>=latex}
 %%% Redefinimos bar como overline y tilde como widetilde
 \renewcommand*{\bar}[1]{\ensuremath{\overline{#1}}}
 \renewcommand*{\tilde}[1]{\ensuremath{\widetilde{#1}}}
+
+%%% Comando para introducir simbolos de conmutatividad en diagramas
+\newcommand{\cdiagr}[2][\circlearrowright]{%
+  \arrow[mysymbol]{#2}[description]{#1}}
+\newcommand{\cdiagl}[2][\circlearrowleft]{%
+  \arrow[mysymbol]{#2}[description]{#1}}
 
 % Cambios en nombres de secciones
 \addto\captionsspanish{\renewcommand{\appendixname}{}}

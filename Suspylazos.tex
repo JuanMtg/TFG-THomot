@@ -4,8 +4,8 @@ Primero veamos un tipo de espacios topológicos que nos será de gran utilidad d
 Un CW-complejo, o complejo celular es un tipo particular de espacio topológico muy útil en la teoría de homotopía. Veamos su construcción: \par
 Comenzamos con $X^0$ un espacio topológico discreto compuesto por las $0$-celdas. Adjuntamos $I_1$ $1$-celdas a $X^0$ para formar el $1$-esqueleto.
 \[ X^1 = X^0 \cup_{f_\alpha} \left( \dot{\cup} \, e_\alpha^1 \right) \quad \alpha \in I_1\]
-Inductivamente, suponemos construido el $(n-1)$-esqueleto $X^{n-1}$ al que adjuntamos una familia de $n$-celdas $\{e_\alpha^n\}_{\alpha \in I_n}$ mediante las correspondientes aplicaciones de adjuncion $f_\alpha : S^{n-1} \longrightarrow X^{n-1}$. \par 
-Llegado a este punto, tenemos entonces dos opciones: el proceso se detiene en un $n$, en cuyo caso la topología ya está definida, o podemos seguir indefinidamente en la sucesion
+Inductivamente, suponemos construido el $(n-1)$-esqueleto $X^{n-1}$ al que adjuntamos una familia de $n$-celdas $\{e_\alpha^n\}_{\alpha \in I_n}$ mediante las correspondientes aplicaciones de adjunción $f_\alpha : S^{n-1} \longrightarrow X^{n-1}$. \par 
+Llegado a este punto, tenemos entonces dos opciones: el proceso se detiene en un $n$, en cuyo caso la topología ya está definida, o podemos seguir indefinidamente en la sucesión
 \[ X^0 \subset X^1 \subset \ldots \subset X^n \subset \ldots \]
 y consideramos $\displaystyle X = \cup_{n \geq 0} X^n $ al que asignamos la topología débil heredada de los esqueletos, esto es, $A \subset X$ es abierto si y sólo si $A \cap X^n$ es abierto de $X^n$ para todo $n \geq 0$. \par 
 A todo espacio $X$ así construido se le denomina CW-complejo, y se denomina CW-descomposición al conjunto de todas las celdas adjuntadas, $\xi = \{e^k_\alpha\}_{k \in \bb{N}, \ \alpha \in I_k}$. \par
@@ -70,7 +70,7 @@ Entonces, $\varphi_i$ y $\varphi_j$ definen $\psi : S^{n-1} \longrightarrow (X \
 \end{cases} \]
 donde $\phi_i$ y $\phi_j$ son las aplicaciones características. \par 
 
-\textbf{Cocientes}: Si $(X, A)$ es un CW-par ($A$ es un subcomplejo de $X$) el cociente $\faktor{X}{A}$ hereda de forma natural una estructura de CW-complejo. Las celdas de $\faktor{X}{A}$ son las de $X - A$ más una $0$-celda nueva, la imagen de $A$ en $\faktor{X}{A}$. Para cada $n$-celda $e^n$ en $X - A$ con adjunción $\varphi : S^{n-1} \longrightarrow X^{n-1}$ la corespondiente adjunción en $\faktor{X}{A}$ es $S^{n-1} \longrightarrow X^{n-1} \longrightarrow \faktor{X^{n-1}}{A^{n-1}}$. \par
+\textbf{Cocientes}: Si $(X, A)$ es un CW-par ($A$ es un subcomplejo de $X$) el cociente $\faktor{X}{A}$ hereda de forma natural una estructura de CW-complejo. Las celdas de $\faktor{X}{A}$ son las de $X - A$ más una $0$-celda nueva, la imagen de $A$ en $\faktor{X}{A}$. Para cada $n$-celda $e^n$ en $X - A$ con adjunción $\varphi : S^{n-1} \longrightarrow X^{n-1}$ la correspondiente adjunción en $\faktor{X}{A}$ es $S^{n-1} \longrightarrow X^{n-1} \longrightarrow \faktor{X^{n-1}}{A^{n-1}}$. \par
 Por ejemplo, si en $S^{n-1}$ tomamos cualquier CW-estructura y construimos $D^n$ adjuntando una $n$-celda a $S^{n-1}$. $\faktor{D^n}{S^{n-1}} = S^n$ con la estructura usual. Otro ejemplo, si en la superficie de género $g$, $M_g$ ``colapsamos'' el $1$-esqueleto $\faktor{M_g}{M_g^1} = S^2$. \par 
 Nótese también que $\faktor{X^n}{X^{n-1}} = \displaystyle \bigvee_\alpha S_\alpha^n$ con $\alpha$ variando en el número de $n$-celdas. \par 
 
@@ -163,7 +163,7 @@ que es una homotopía entre $\varphi (f)$ y $\varphi (g)$.
 De igual forma, $\varphi^{-1}$ induce la aplicación $\overline{\varphi^{-1}} : [\Sigma X, Y] \longrightarrow [X, \Omega Y]$ y se tiene que $\overline{\varphi}^{-1} = \overline{\varphi^{-1}}$\\
 \end{demo}
 
-\textbf{Observación:} Como indicamos en la introducción, $\Omega$ y $\Sigma$ son duales en el sentido de Eckman-Hilton. \par
+\textbf{Observación:} Como indicamos en la introducción, $\Omega$ y $\Sigma$ son duales en el sentido de Eckmann-Hilton. \par
 
 En $\Sigma X$ podemos definir la operación  $\mu : \Omega X \times \Omega X \longrightarrow \Omega X$
 \[
@@ -326,7 +326,7 @@ La operación interna de este grupo se ve muy bien de forma geométrica en esta 
 \includegraphics[width=0.7\textwidth]{images/ejgruphomot.pdf}
 \end{figure}
 
-Ahora bien, teniendo en cuenta que $\Sigma S^n = S^{n+1} \ \forall n \geq 0$, y el teorema anteior, tenemos el siguiente resultado:
+Ahora bien, teniendo en cuenta que $\Sigma S^n = S^{n+1} \ \forall n \geq 0$, y el teorema anterior, tenemos el siguiente resultado:
 \begin{teor}
 $\pi_n(X) = [S^n, X] = [S^{n-1}, \Omega X] = \pi_{n-1}(\Omega X)$
 \end{teor}

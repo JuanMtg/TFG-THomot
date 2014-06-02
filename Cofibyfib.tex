@@ -197,7 +197,7 @@ Para todo espacio $Z$, la sucesión
 inducida por $X \stackrel{f}{\longrightarrow} Y \stackrel{q}{\longrightarrow} C_f$ es exacta.
 \end{teor}
 \begin{demo}
-Tenemos que $ f^* \circ q^* = (q \circ f)^* = (c_{x_0})^* = c$ ya que la sucesión inicial es exacta por hipótesis. Por tanto, tenemos que $Im \ q^* \subset Ker \ f^* $.\par 
+Tenemos que $ f^* \circ q^* = (q \circ f)^* = (c_{x_0})^* = c$, ya que la sucesión inicial es exacta por hipótesis. Por tanto, tenemos que $Im \ q^* \subset Ker \ f^* $.\par 
 Veamos la otra inclusión. Sea $g : Y \longrightarrow Z$ tal que $f^*(g) \simeq c$, esto es:
 \[
 \begin{tikzcd}
@@ -284,7 +284,7 @@ Esta misma demostración nos dice que todas las curvas se levantan.
 Todas las fibras tienen el mismo tipo de homotopía.
 \end{teor}
 \begin{demo}
-Denotemos por $F_b = p^{-1}(b)$ la fibra en $b$. Así, para cada $b_0, b_1 \in B$ y cada curva $\omega : I \longrightarrow B$ curva en $B$ uniendo $b_0$ con $b_1$, definimos una aplicación continua $h_[\omega] : F_{b_0} \longrightarrow F_{b_1}$ de la siguiente forma: \par 
+Denotemos por $F_b = p^{-1}(b)$ la fibra en $b$. Así, para cada $b_0, b_1 \in B$ y cada curva $\omega : I \longrightarrow B$ curva en $B$ uniendo $b_0$ con $b_1$, definimos una aplicación continua $h_{[\omega]} : F_{b_0} \longrightarrow F_{b_1}$ de la siguiente forma: \par 
 Por la HLP, si consideramos 
 \begin{align*}
 F_{b_0} \times I &\longrightarrow B \\
@@ -357,7 +357,7 @@ Primero introduzcamos el concepto de pullback en un ámbito general.
 Sean $f : X \longrightarrow Z$ y $g: Y \longrightarrow Z$ dos aplicaciones con un codominio común. El pullback de las aplicaciones $f$ y $g$ consiste en un objeto $P$  subconjunto del producto cartesiano $X \times Y$ y dos aplicaciones $p_X : P \longrightarrow X$ y $p_Y : P \longrightarrow Y$ tales que el siguiente diagrama conmuta:
 \[
 \begin{tikzcd}
-P \cdiagr{ddrr} \arrow{rr}{p_Y} \arrow{dd}{p_Y} && Y \arrow{dd}{g} \\
+P \arrow{rr}{p_Y} \arrow{dd}{p_Y} && Y \arrow{dd}{g} \\
 \\
 X \arrow{rr}{f} && Z
 \end{tikzcd}
@@ -416,13 +416,13 @@ X \rar & B
 \begin{demo}
 Sea $b_0$ el punto base de $B$ y sea $F = \nobreak p^{-1}(b_0)$. \par
 Si $x_0$ es el punto base de $X$, entonces 
-\[p_X^{-1}(x_0) = \nobreak \{ (x_0, e) : p(e) = f(x_0) = b_0\} \cong F_{b_0}\]
+\[p_X^{-1}(x_0) = \nobreak \{ (x_0, e) \ \vert \ p(e) = f(x_0) = b_0\} \cong F_{b_0}\]
 \end{demo}
 \end{minipage}
 \end{tabular}
 Vamos ahora a ver un caso particular importante. Primero necesitaremos el siguiente resultado:
 \begin{prop}
-La aplicación $X^I \stackrel{\gamma}{\longrightarrow} X$, $\gamma(\omega) = \omega(1)$ es una fibración.
+La aplicación $X^I \stackrel{\gamma}{\longrightarrow} X$ definida por $\gamma(\omega) = \omega(1)$ es una fibración.
 \end{prop}
 \begin{demo}
 Consideramos el siguiente diagrama:\par
@@ -441,12 +441,13 @@ Z \times I \arrow{rr}{H} \arrow[dashed]{uurr}{\widetilde{H}} & & X
 Definimos $\widetilde{H}$ como sigue:
 \[ \widetilde{H}(z,t) = g(z) \cdotp H(z, [0,t]) \]
 esto es, como la composición de la curva $g(z)$ con la curva $H_z$ de $0$ a $t$. Está bien definido ya que
-\begin{align*}
-g(z)(1) = \gamma(g(z)) = H(z,0)\\
-\widetilde{H}(z,0) = g(z) \\
-\widetilde{H}(z,t)(1) = \gamma \circ \widetilde{H}(z,t) = H(z,t) \end{align*}
+
 \end{minipage}
 \end{tabular}
+\begin{align*}
+H(z,0) &= g(z)(1) = \gamma(g(z))  \\
+\widetilde{H}(z,0) &= g(z) \\
+\widetilde{H}(z,t)(1) &= \gamma \circ \widetilde{H}(z,t) = H(z,t) \end{align*}
 De forma explícita:
 \[
 \widetilde{H}(z,t)(s) = 
@@ -456,33 +457,30 @@ H(z, s(t+1) -1) & \text{si } \frac{1}{t+1} \leq s \leq 1
 \end{cases}
 \]
 \end{demo}
-Por el corolario anterior, también lo es por tanto la llamada ``Fibración de caminos'' \par
-\begin{tabular}{ll}
-\begin{minipage}{0.5\textwidth}
-\nts{Insertar imagen p56}
-\end{minipage}
-&
-\begin{minipage}{0.5\textwidth}
-\begin{align*}
-PX \longrightarrow X \\
-\omega \longmapsto \omega(1)
-\end{align*}
-\[PX = \left\lbrace \omega \in X^I : \omega(0) = x_0 \right\rbrace \]
-cuya fibra es $\Omega X$.
-\end{minipage}
-\end{tabular}
+Se deduce inmediatamente de esta proposición, que la ``fibración de caminos'' es, en efecto, una fibración. Ésta viene dada de la siguiente forma: \par
+\begin{figure}[h]
+\centering
+\includegraphics[width = 0.9\textwidth]{images/fibraccaminos}
+\end{figure}
+
+Y tenemos entonces la siguiente sucesión exacta:
 \[ \Omega X \longrightarrow PX \longrightarrow X \]
 Por otra parte, dada $f: X \longrightarrow Y$ una aplicación cualquiera, podemos descomponerla de la siguiente forma
 \[
 \begin{tikzcd}
 X \arrow{rr}{f} \drar{\varphi} & & Y \\
- & E_f = \{ (x, \omega ) \in X \times Y^I : f(x) = \omega(0) \} \urar[twoheadrightarrow]{p_1} &
+ & E_f = \{ (x, \omega ) \in X \times Y^I \ \vert \ f(x) = \omega(0) \} \urar[twoheadrightarrow]{p_1} &
 \end{tikzcd}
 \]
-Donde $E_f$ es el pullback de $p$ y $f$ y $\varphi(x) = (x, C_{f(x)})$ y $p_1(x, \omega) = \omega(1)$. \par
-Tenemos que $p_1$ es la composición de una proyección de un producto (que es fibración) y de evaluar en $1$ que acabamos de ver que también lo es. Luego $p_1$ es una fibración. Por otra parte, $\varphi$ es también de forma obvia una equivalencia de homotopía. Por lo tanto, tenemos el siguiente resultado:
+Donde $E_f$ es el pullback de $p_1$ y $f$ y las aplicaciones vienen definidas como 
+\begin{align*}
+&\varphi(x) = (x, c_{f(x)}) \\
+&p_1(x, \omega) = \omega(1)
+\end{align*}
+La aplicación $p_1$ es la composición de una proyección de un producto (que es fibración) y de la evaluación en $1$, que acabamos de ver que también lo es. Luego $p_1$ es una fibración. \par 
+Por otra parte, $\varphi$ es también de forma obvia una equivalencia de homotopía. Por lo tanto, tenemos el siguiente resultado:
 \begin{teor}
-Toda aplicación es, salvo homotopía, una fibración. \footnote{\nts{Mirar en libro}}
+Toda aplicación es, salvo homotopía, una fibración. 
 \[
 \begin{tikzcd}
 X \arrow{rr}{f} \drar{\varphi} & & Y \\
@@ -493,21 +491,20 @@ X \arrow{rr}{f} \drar{\varphi} & & Y \\
 A la fibra de $p_1$ se le denomina fibra homotópica de $f$ y es:
 \begin{align*}
 F &\longrightarrow E_f \stackrel{p_1}{\longrightarrow} Y \\
-F = \{ (x, \omega) & : \omega(1) = y_0, \omega(0) = f(x) \}
+F = \{ (x, \omega) & \ \vert \ \omega(1) = y_0, \ \omega(0) = f(x) \}
 \end{align*}
-Si consideramos la inversa homotópica de $\varphi$, $E_f \stackrel{\phi}{\longrightarrow} X$, $\phi(x, \omega) = x$, entonces la cmposición  \nts{corregir}
-\[
-\begin{tikzcd}
-F \rar & E_f \rar{\phi} & X \\
-(x, \omega) \arrow[mapsto]{rr} & & x
-\end{tikzcd}
-\]
-es fibración cuya fibra típica es $\{(x_0, \omega) : \omega(0) = f(x_0) = y_0, \ \omega(1) = y_0 \} = \Omega Y$. \par
+Si consideramos la inversa homotópica de $\varphi$, $E_f \stackrel{\phi}{\longrightarrow} X$, definida por $\phi(x, \omega) = x$, entonces la composición 
+\begin{align*}
+F \longrightarrow E_f \stackrel{\phi}{\longrightarrow} X \\
+(x, \omega) \vdash\joinrel\relbar\joinrel\relbar\joinrel\relbar\joinrel\relbar\joinrel\relbar\joinrel\relbar\joinrel\rightarrow x
+\end{align*}
+
+es fibración cuya fibra típica es $\{(x_0, \omega) \ \vert \ \omega(0) = f(x_0) = y_0, \ \omega(1) = y_0 \} = \Omega Y$. \par
 Esto da lugar a la sucesión
 \[ \Omega Y \longrightarrow F \longrightarrow X \stackrel{f}{\longrightarrow} Y \]
-Si repetimos este proceso una y otra vez, obtenemos:
+Volviendo a realizar este razonamiento de forma iterativa, obtenemos la siguiente sucesión:
 \[ \dots \longrightarrow \Omega^2 Y \longrightarrow \Omega F \longrightarrow \Omega X \longrightarrow \Omega Y \longrightarrow F \longrightarrow X \longrightarrow Y \]
-Que es dual en el sentido de Eckmann-Hilton de la sucesión de Barratt-Puppe. Aplicando $[Z,-]$: 
+Que es dual en el sentido de Eckmann-Hilton de la sucesión de Barratt-Puppe, como indicamos cuando definimos esta dualidad. \par Aplicando $[Z,-]$ obtenemos: 
 \[ \dots  \longrightarrow [Z,\Omega F] \longrightarrow [Z, \Omega X] \longrightarrow [Z,\Omega Y] \longrightarrow [Z, F] \longrightarrow [Z, X] \longrightarrow [Z, Y] \]
 Se puede demostrar que:
 \begin{teor}
@@ -516,13 +513,13 @@ La sucesión
 es una sucesión exacta de grupos (o de acción o conjuntos en los casos pertinentes).
 \end{teor}
 Entonces, tomando en el teorema $Z = S^0$, obtenemos la sucesión
-\[ \dots  \longrightarrow [S^0,\Omega^n F] \longrightarrow [S^0, \Omega^n X] \longrightarrow [S^0,\Omega^n Y] \longrightarrow [S^0, \Omega^{n-1} F] \longrightarrow [S^0, \Omega^{n-1} X] \longrightarrow \dots \]
+\[ \dots \longrightarrow [S^0, \Omega^n X] \longrightarrow [S^0,\Omega^n Y] \longrightarrow [S^0, \Omega^{n-1} F] \longrightarrow [S^0, \Omega^{n-1} X] \longrightarrow \dots \]
 Pero ya vimos que $[\Sigma X, Y] \cong [X, \Omega Y]$, luego tenemos la sucesión exacta:
-\[ \dots  \longrightarrow [\Sigma^n S^0, F] \longrightarrow [\Sigma^n S^0,  X] \longrightarrow [\Sigma^n S^0, Y] \longrightarrow [\Sigma^{n-1} S^0, F] \longrightarrow [\Sigma^{n-1}S^0,  X] \longrightarrow \dots \]
-Y tenemos que $\Sigma^n S^0 = S^n$ y $[S^n, X] = \pi_n(X)$. Por lo tanto, tenemos el siguiente resultado:
+\[ \dots  \longrightarrow [\Sigma^n S^0,  X] \longrightarrow [\Sigma^n S^0, Y] \longrightarrow [\Sigma^{n-1} S^0, F] \longrightarrow [\Sigma^{n-1}S^0,  X] \longrightarrow \dots \]
+Y al ser $\Sigma^n S^0 = S^n$ y $[S^n, X] = \pi_n(X)$, tenemos el siguiente resultado, que volveremos a ver en el próximo capítulo:
 \begin{teor}
 Se tiene la siguiente sucesión exacta larga en homotopía de una fibración:
 \[
-\dots \longrightarrow \pi_n (F) \longrightarrow \pi_n (E) \longrightarrow \pi_n (B) \longrightarrow \pi_{n-1} (F) \longrightarrow \dots 
+\dots \longrightarrow \pi_n (F) \longrightarrow \pi_n (E) \longrightarrow \pi_n (B) \longrightarrow \pi_{n-1} (F) \longrightarrow \pi_{n-1} (E) \longrightarrow \dots 
 \]
 \end{teor}

@@ -16,7 +16,7 @@ Esta operación induce en las clases de homotopía una operación que es asociat
 \]
 admite elemento neutro:
 \[
-f + c_{x_0} \simeq f \simeq c_{x_0} \qquad (\text{relativa a } \partial I^n)
+f + c_{x_0} \simeq f \simeq c_{x_0} + f \qquad (\text{relativa a } \partial I^n)
 \]
 y elemento inverso:
 \[
@@ -48,23 +48,30 @@ Sean $a,b \in X$ y sea $1$ la unidad de ambas operaciones. Entonces
 a \circ b &= (1 \bullet a) \circ (b \bullet 1) = (1 \circ b) \bullet (a \circ 1) = b \bullet a  \\
 &= (b \circ 1) \bullet (1 \circ a) = (b \bullet 1) \circ (1 \bullet a) = b \circ a
 \end{align*}
+Esto demuestra la igualdad de las operaciones y la conmutatividad. Veamos la asociatividad:
+\[
+(a \bullet b) \bullet c = (a \bullet b) \bullet (1 \bullet c) = (a \bullet 1) \bullet (b \bullet c) = a \bullet (b \bullet c)
+\]
 \end{demo}
 Por tanto, como estas operaciones verifican las condiciones de la proposición, obtenemos el siguiente resultado inmediatamente:
 \begin{teor}
 Si $n \geq 2$, entonces $\homot{n}{X, x_0}$ es abeliano.
 \end{teor}
-El caso $n=1$ no puede contemplarse ya que al trabajar únicamente con una coordenada no disponemos de otra operacioón distinta con l aque aplicar el Argumento de Eckmann-Hilton.
+El caso $n=1$ no puede contemplarse ya que al trabajar únicamente con una coordenada no disponemos de otra operación distinta con la que aplicar el Argumento de Eckmann-Hilton.
 \begin{custom}[Observaciones]
 \begin{enumerate}
 \item En el caso que tengamos $C$ componente arcoconexa que contiene a $x_0$, entonces $\homot{n}{X, x_0} = \homot{n}{C, x_0}$. Por lo tanto, supondremos $X$ arcoconexo.
 
-\item Las aplicaciones $ (I^n, \partial I^n) \longrightarrow (X, x_0)$ coinciden con las aplicaciones $(\faktor{I^n}{\partial I^n}, \ast) \longrightarrow (X, x_0)$. Pero $S^n = \faktor{I^n}{\partial I^n}$ y con estas identificaciones, la estructura de grupo es la que conocíamos \par
-\nts{Insertar imagen p63}
+\item Las aplicaciones $ (I^n, \partial I^n) \longrightarrow (X, x_0)$ coinciden con las aplicaciones definidas en el cociente $(\faktor{I^n}{\partial I^n}, \ast) \longrightarrow (X, x_0)$. Pero $S^n = \faktor{I^n}{\partial I^n}$ y con estas identificaciones, la estructura de grupo es la que conocíamos \par
+\begin{figure}[h]
+\centering
+\includegraphics[width = 0.5\textwidth]{images/ejgruphomot}
+\end{figure}
 \[S^n \longrightarrow S^n \vee S^n \stackrel{f \vee g}{\longrightarrow} X \]
 \end{enumerate}
 \end{custom}
 Veamos ahora que si cambiamos el punto base obtenemos grupos de homotopía isomorfos (al igual que ocurría para $\pi_1$). \par
-Tomamos $2$ puntos $x_0, x_1 \in X$ y un camino $\gamma : I \longrightarrow X$ tal que $\gamma(0) = x_0$, $\gamma(1) = x_1$. A cada aplicación $f : (S^n, p_o) \longrightarrow (X, x_0)$ le asociamos una aplicación
+Tomamos dos puntos $x_0, \ x_1 \in X$ y un camino $\gamma : I \longrightarrow X$ tal que $\gamma(0) = x_0$, $\gamma(1) = x_1$. A cada aplicación $f : (S^n, p_o) \longrightarrow (X, x_0)$ le asociamos una aplicación
 \[
 \gamma_f : (S^n, p_0) \longrightarrow (X, x_0)
 \]
@@ -76,7 +83,7 @@ Se tienen entonces las siguientes propiedades: \par
 \item $(\gamma \eta)_f \simeq \gamma_{\eta_f}$
 \item ${c_{x_1}}_f \simeq f$
 \end{enumerate}
-Entonces para cada $\gamma$ definimos
+Entonces, para cada $\gamma$ definimos
 \begin{align*}
 \beta_\gamma : \homot{n}{X, x_1} &\longrightarrow \homot{n}{X, x_0} \\
 [f] &\longmapsto [\gamma_f]
@@ -99,7 +106,7 @@ La aplicación
 \end{align*}
 es una acción.
 \end{teor}
-Cuando $n = 1$, la acción es por conjugación. hace al grupo abeliano $\homot{n}{X, x_0}$ un $\bb{Z}[\homot{1}{X}]$-módulo via
+Cuando $n = 1$, la acción es por conjugación, y hace al grupo abeliano $\homot{n}{X, x_0}$ un $\bb{Z}[\homot{1}{X}]$-módulo mediante
 \[
 \left( \sum_i n_i \gamma_i \right) \alpha = \sum_i n_i {\gamma_i}_\alpha
 \]
@@ -203,7 +210,7 @@ De la misma forma, para un par $(X, A)$ son equivalentes las siguientes condicio
 \end{enumerate}
 Para el caso $i = 0$, $\homot{0}{X, A, x_0}$ no está definido, por tanto, decimos que el par $(X, A)$ es $n$-conexo si se verifica una de las cuatro condiciones para $i > 0$ y si se verifica una de las tres primeras cuando $i=0$.
 
-\subsection*{Aplicaciones de la sucesión exacta de un par $(X,A)$}
+\section{Aplicaciones de la sucesión exacta de un par $(X,A)$}
 Veamos ahora varios resultados que hacen uso de esta sucesión exacta.
 \begin{teor}
 Sea $p : E \longrightarrow B$ una fibración. Tomamos $b_0 \in B$ y un punto $x_0 \in F = p^{-1}(b_0)$ de la fibra de $b_0$. Entonces
@@ -259,7 +266,7 @@ Si $B$ es arcoconexo, se tiene la sucesión exacta de homotopía de una fibraci�
 \end{align*}
 \end{teor}
 
-\subsection*{Aplicaciones de la sucesión en homotopía de una fibración}
+\subsection{Aplicaciones de la sucesión en homotopía de una fibración}
 \begin{enumerate}
 \item Un espacio recubridor es una fibración con fibra discreta, por lo tanto $\homot{i}{F, x_0} = \nobreak 0$ $\forall i \geq  1$ y $\homot{0}{F, x_0}$ es el conjunto de componentes arcoconexas punteadas que contienen al punto base $x_0$. \nts{revisar} \par
 Por tanto, de la sucesión exacta en homotopía tenemos que:
@@ -283,6 +290,97 @@ y usando que $\homot{n}{\prod_i X_i} \cong \prod_i \homot{n}{X_i}$, se ve que
 \item Un fibrado con fibra discreta es un espacio recubridor, y recíprocamente, un espacio recubridor es un fibrado con fibra discreta. \par
 Veamos entonces algunos ejemplos de fibrados:
 \begin{enumerate}
-\item Un ejemplo es la banda de Möbius.
+\item Un ejemplo es la banda de Möbius, definida como 
+\[
+E = \faktor{I \times [-1, 1]}{\scriptstyle (0,v) \sim (1, -v)}
+\]
+\begin{tabular}{ll}
+\begin{minipage}{0.4\textwidth}
+Si tomamos como fibración
+\begin{align*}
+p : E \longrightarrow S^1 = \faktor{I}{\scriptstyle (0 \sim 1)} \\
+[x,t] \longmapsto [x]
+\end{align*}
+tenemos un fibrado con fibra $\{x_0\} \times [-1, 1]$.
+\end{minipage}
+&
+\begin{minipage}{0.4\textwidth}
+\nts{Insertar imagen p79 y banda}
+\end{minipage}
+\end{tabular}
+
+\item Si unimos dos bandas de Möbius por su borde, obtenemos la botella de Klein 
+\[
+K = \faktor{E \dot{\cup} E}{\sim} 
+\]
+donde la relación $\sim$ viene dada por $[x, -1] \sim [x', -1]$ y $[x, 1] \sim [x', 1]$. \par
+\begin{tabular}{ll}
+	\begin{minipage}{0.45\textwidth}
+	Al igual que antes, consideramos la aplicación 
+		\begin{align*}
+			p : K \longrightarrow S^1\\
+			[x,t] \longmapsto [x]
+		\end{align*}
+	\end{minipage}
+		&
+	\begin{minipage}{0.36\textwidth}
+		\nts{Insertar imagen diagrama Klein y botella}
+	\end{minipage}
+\end{tabular}
+Como la fibra de la banda de Möbius era $\{x_0\} \times [-1, 1]$, para la botella de Klein la fibra es 
+\[
+\{x_0\} \times [-1, 1] \ \dot{\cup} \ \{x_0'\} \times [-1, 1] \cong \faktor{[-1, 1] \ \dot{\cup} \ [-1,1]}{\sim} \cong S^1
+\]
+Utilizando entonces la sucesión exacta de una fibración vista anteriormente, obtenemos
+\[
+\homot{2}{S^1} \longrightarrow \homot{2}{K} \longrightarrow \homot{2}{S^1} \longrightarrow \homot{1}{S^1} \longrightarrow \homot{1}{K} \longrightarrow \homot{1}{S^1} \longrightarrow 0
+\]
+Por tanto, como tenemos que $\homot{n}{S^1} = 0 \ si \ n \geq 2$, entonces  se tiene que $\homot{2}{K} = 0 \ si \ n \geq 2$. Por otra parte,  $\homot{1}{K} $ es una extension de un producto de $\bb{Z}$, este viene dado por 
+\[
+\homot{1}{K} = \faktor{F(a,b)}{abab^{-1}} = \bb{Z} \rtimes_\varphi \bb{Z}
+\]
+donde $F(a,b)$ es el grupo libre generado por $a$ y $b$, y  $\rtimes_\varphi$ es el producto semidirecto \footnote{El producto semidirecto de dos grupos $G$ y $H$ se define, dado $\varphi : H \longrightarrow Aut(G)$ un homomorfismo de grupos, como $G \rtimes_\varphi H = G \times H$ dotándolo de la operación
+\begin{center}
+$(g_1, h_1) \ast (g_2, h_2) = (g_1 \varphi(h_1)(g_2), h_1 h_2)$
+\end{center}}, donde, en este caso, $\varphi(h)(g) = (-1)^hg$.
 \end{enumerate}
+\item De los espacios proyectivos también se obtienen fibrados de gran utilidad, en especial para el cálculo de los grupos de homotopía de las esferas. \par
+En el caso real, tomamos el espacio recubridor de dos hojas de $\bb{R}P^n$, $S^n \longrightarrow \bb{R}P^n$. De esta forma, obtenemos que 
+\begin{align*}
+\homot{1}{\bb{R}P^n} &= \bb{Z}_2 \\
+\homot{m}{\bb{R}P^n} &= \homot{m}{S^n} \ m \geq 2
+\end{align*}
+El espacio proyectivo complejo lo definimos como $\bb{C}P^n = \faktor{S^{2n+1}}{\sim}$, donde la relación de equivalencia $\sim$ viene dada por $z \sim z'$ si y sólo si $\exists \lambda \in \bb{C}, \ |\lambda| = 1$ tal que $z = \lambda z'$. \par
+De esta forma, obtenemos un fibrado
+\[
+S^1 \longrightarrow S^{2n+1} \longrightarrow \bb{C}P^n.
+\]
+Para el caso $n = 1$, tenemos que $\bb{C}P^1 = \faktor{D^2}{S^1} = S^2$, ya que podemos ver la identificación anterior como 
+\[
+\bb{C}P^n = \faktor{D^{2n}}{\scriptstyle u \in S^{2n-1} \sim \lambda u}
+\]
+De esta forma, tenemos un fibrado llamado \textit{Fibración de Hopf}:
+\[
+S^1 \longrightarrow S^3 \stackrel{p}{\longrightarrow} S^2
+\]
+donde la proyección es $p(z_0, z_1) = \faktor{z_0}{z_1} \in \bb{C} \ \cup \{\infty \} = S^2$. \par
+De esta forma, usando la sucesión en homotopía, tenemos que 
+\begin{align*}
+\underbrace{\homot{n}{S^1}}_{\text{=0}} &\longrightarrow \homot{n}{S^3} \stackrel{\cong}{\longrightarrow} \homot{n}{S^2} \longrightarrow \underbrace{\homot{n-1}{S^1}}_{\text{=0}} \longrightarrow \dots \\ 
+\dots &\longrightarrow \underbrace{\homot{2}{S^1}}_{\text{=0}} \longrightarrow \underbrace{\homot{2}{S^3}}_{\text{=0}} \longrightarrow \homot{2}{S^2} \stackrel{\cong}{\longrightarrow} \underbrace{\homot{1}{S^1}}_{\text{=}\bb{Z}} \longrightarrow \underbrace{\homot{1}{S^3}}_{\text{=0}} \longrightarrow \underbrace{\homot{1}{S^2}}_{\text{=0}}
+\end{align*}
+Por tanto, obtenemos que
+\[
+\begin{cases}
+\homot{n}{S^3} = \homot{n}{S^2} & \text{si } n \geq 3 \\
+\homot{2}{S^2} = \bb{Z}
+\end{cases}
+\]
+También se pueden utilizar los espacios proyectivos sobre los \textit{cuaterniones de Hamilton} y construir $\bb{H}P^n$ o los \textit{octoniones de Cayley} para tener $\bb{O}P^n$ y obtener fibrados de Hopf similares al visto para  $\bb{C}$. Concretamente, son los siguientes:
+\[
+\begin{matrix}
+S^3 \longrightarrow S^7 \longrightarrow S^4 & \text{para } \bb{H}P^1 \\
+S^7 \longrightarrow S^{15} \longrightarrow S^8 & \text{para } \bb{O}P^1
+\end{matrix}
+\]
 \end{enumerate}

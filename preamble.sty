@@ -22,6 +22,10 @@
 % Estilo de página
 \pagestyle{fancy}
 
+\fancyhead[LE,RO]{\itshape CAPÍTULO \arabic{chapter}}
+\fancyhead[LO,RE]{\itshape \rightmark}
+
+
 % TikZ CD y propiedades
 \usepackage{tikz-cd}
 \usetikzlibrary{matrix, arrows}
@@ -114,6 +118,13 @@ mysymbol/.style={start anchor=center,end anchor=center,draw=none}
 }
 {
 	\par \vspace{0.5em}
+}
+
+\newenvironment{teorf}[1][\unskip]{%
+	\vspace{0.5em} \par \noindent \textbf{Teorema #1:}
+}
+{
+	\qed \par \vspace{0.5em}
 }
 
 \newenvironment{prop}[1][\unskip]{%

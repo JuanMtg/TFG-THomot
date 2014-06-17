@@ -1,72 +1,85 @@
 \addcontentsline{toc}{chapter}{Introducción}
 \chapter*{Introducción}
-\section*{Los problemas clásicos de levantamiento: extensión y clasificación}\label{sec:levext}
-En distintos contextos matemáticos encontramos dos problemas básicos, común a todos ellos, si los despojamos de las características propias de un entorno: los problemas de extensión y levantamiento. \par
+\section*{Los problemas clásicos de levantamiento, extensión y clasificación}\label{sec:levext}
+En distintos contextos matemáticos encontramos dos problemas básicos, común a todos ellos: los problemas de extensión y levantamiento. \par
 
 \subsection*{El problema de la extensión}\label{c1:ext}
 Dado un diagrama de aplicaciones continuas 
 $$
 \begin{tikzcd}
-	A \rar{f} \dar[hook]{i} & Y \\
-	X \urar[dashed]{\tilde{f}}	&
+	A \rar{f} \dar[hook, swap]{i} & Y \\
+	X \urar[dashed, swap]{\tilde{f}}	&
 \end{tikzcd} 
 $$
-donde $i$ es una ``inclusión'' en un contexto dado, ¿cuándo existe $\tilde{f}$, extensión de $f$? \par
+donde $i$ es una inclusión en un contexto dado, ¿cuándo existe $\tilde{f}$ extensión de $f$? \par
 
-La respuesta no es trivial. Es claro que, incluso si $i$ no es inclusión, ha de verificarse que si $i(a)= i(b)$ entonces $f(a) = f(b)$. Pero incluso si $i$ es biyectiva es necesario exigirle a $X$, para que la única $\tilde{f}$ posible sea continua, que posea la topología de la identificación determinada por $i$: 
+La respuesta no es trivial. Para que esto ocurra, aunque $i$ no sea inclusión, ha de verificarse que si $i(a)= i(b)$ entonces $f(a) = f(b)$. Pero incluso si $i$ es biyectiva es necesario exigirle a $X$, para que la única $\tilde{f}$ posible sea continua, que posea la topología de la identificación determinada por $i$: 
 $$
 \theta \subset X \text{ es abierto si y sólo si } i^{-1} (\theta) \text{ es abierto de } A. 
 $$
 \newpage
 Hay varios ejemplos de resultados que dan respuesta a este problema. Algunos dan una respuesta positiva:
-\begin{teor} 
+\begin{teorf} 
 Si $X,Y$ son espacios métricos, $Y$ completo, y $A$ es denso en $X$, toda aplicación uniformemente continua $f:A\longrightarrow Y $ se extiende a una uniformemente continua $\tilde{f} : X \rightarrow Y$.
-\end{teor} 
+\end{teorf} 
 
-\begin{teor}[de Extensión de Tietze]
+\begin{teorf}[de Extensión de Tietze]
 Sea $X$ normal, $A \subset X$ cerrado, $I \subset \mathbb{R}$ intervalo. Entonces toda $f : A \rightarrow I $  admite una extensión $\tilde{f} : X \rightarrow I$.
-\end{teor}
+\end{teorf}
 \hypertarget{c1t:retractoh}{Mientras que la de otros es negativa:}
-\begin{teor} \label{c1t:retracto}
+\begin{teorf} \label{c1t:retracto}
 La esfera $S^{n}$ no es un retracto del disco $D^{n+1}$. En otras palabras, la identidad $S^{n} \rightarrow S^{n}$ no se extiende a $D^{n+1}$.
-\end{teor}
+\end{teorf}
+
+
+Muchas veces, el problema de la extensión es puramente homotópico: existen algunas aplicaciones $i : A \longrightarrow X$ para las que existe una extensión de $g : A \longrightarrow Y$ si y sólo si existe alguna extensión para una ``deformada'' de g. \par 
+Para intentar dar una respuesta la pregunta de la extensión, veremos la \textit{propiedad de extensión homotópica}, introduciremos las cofibraciones y algunos resultados sobre éstas. \par
+
+%Un par $(X, A)$ con $A \subset X$  (que pueden ser visto como $i : A \longhookrightarrow X$) tiene la propiedad de extensión homotópica si dada una homotopía $A \times I \longrightarrow Y$ con una extensión en su inicio a $X$, entonces se extiende para todo $X \times I$. \par
+%
+%Con esta propiedad, definiremos una cofibración como los pares $(X, A)$ con  (que también pueden ser vistas como las inclusiones $i : A \longhookrightarrow X$) que verifican la propiedad de extensión homotópica con respecto a cualquier espacio topológico $Y$. \par
+
 
 \subsection*{El problema del levantamiento}\label{c1:lev}
-Dualmente \footnote{Dual en el sentido de ``Eckmann-Hilton'', dualidad que se definirá más adelante.},
+Dualmente \footnote{Dual en el sentido de ``Eckmann-Hilton'', dualidad de la que se hablará más adelante.},
 nos encontramos con el problema del levantamiento de aplicaciones continuas. Es el siguiente: dado un diagrama
 $$
 \begin{tikzcd}
-	{}	& X \dar[two heads]{p} \\
-	Y \urar[dashed]{\tilde{f}} \rar{f} & B
+	{}	& X \dar[two heads]{\ p} \\
+	Y \urar[dashed]{\tilde{f}} \rar[swap]{f} & B
 \end{tikzcd}
 $$
-donde $p$ es sobreyectiva ¿cuándo existe $\tilde{f}$, levantamiento de $f$?\\ 
+donde $p$ es sobreyectiva, ¿cuándo existe $\tilde{f}$ levantamiento de $f$?\par 
 La respuesta tampoco es elemental. Incluso si $p$ es biyectiva hay que exigirle que sea homeomorfismo para que la única $\tilde{f}$ sea continua.\par
 
-Igualmente hay resultados clásicos en distintos ambientes que contestan parcialmente esta cuestión.
+Al igual que para el problema de la extensión, para el levantamiento hay resultados clásicos en distintos ambientes que contestan parcialmente esta cuestión.
 
-\begin{teor} 
+\begin{teorf} 
 Sea $A \subset \mathbb{R}^2$ un conjunto estrellado respecto a $x_{0} \in A$ y $f : A \longrightarrow S^{1}$ una aplicación continua. Entonces f queda determinada de forma continua por su función angular, esto es, existe una aplicación $\tilde{f} : A \longrightarrow \mathbb{R}$ de tal forma que el siguiente diagrama es conmutativo:
 $$
 \begin{tikzcd}
-	{}	& \mathbb{R} \dar{exp} \\
-	A \urar{\tilde{f}} \rar{f} & S^1
+	{}	& \mathbb{R} \dar{\ exp} \\
+	A \urar{\tilde{f}} \rar[swap]{f} & S^1
 \end{tikzcd}
 $$
-Esto es, $f(x) = (cos\tilde{f}(x), sen\tilde{f}(x))$. Es más, dos tales funciones $\tilde{f}$ se diferencian en un múltiplo entero de $2\pi$.
-\end{teor}
+Esto es, $f(x) = \left(\text{cos}\tilde{f}(x), \ \text{sen}\tilde{f}(x) \right)$. Es más, dos tales funciones $\tilde{f}$ se diferencian en un múltiplo entero de $2\pi$.
+\end{teorf}
 
-Estos problemas son, en parte, origen de la teoria de homotopía. Muchas veces, los problemas de extensión y levantamiento son puramente homotópicos: \par
-\begin{quotation}
-Hay aplicaciones $p : X \longrightarrow B$ para las que existe el levantamiento de $f : \nobreak Y \longrightarrow B$ si existe el levantamiento de una ``deformada'' de $f$. \\
-De igual forma existen algunas aplicaciones $i : A \longrightarrow X$ para las que existe una extensión de $g : A \longrightarrow Y$ si y sólo si existe alguna extensión para una ``deformada'' de g.
-\end{quotation}
-Introduzcamos el concepto de deformación en homotopía:
+Al igual que para el problema de la extensión, el del levantamiento es también homotópico: hay aplicaciones $p : X \longrightarrow B$ para las que existe el levantamiento de $f : \nobreak Y \longrightarrow B$ si existe el levantamiento de una ``deformada'' de $f$. \par
+
+Para el estudio de este problema, haremos uso de la \textit{propiedad del levantamiento homotópico} y de las fibraciones. 
+
+%Diremos que una aplicación $p : E \longrightarrow B$ tiene la propiedad del levantamiento homotópico con respecto a un espacio $X$ si una homotopía $X \times I \longrightarrow B$ que posee un levantamiento en su inicio, entonces se levanta a todo $X \times I$. \par
+%
+%Y al igual que con las cofibraciones, diremos que una aplicación $p : E \longrightarrow B$ es una fibración si posee la propiedad del levantamiento homotópico con respecto a cualquier espacio $X$.
+
+Estos problemas son, en parte, origen de la teoria de homotopía. Introduzcamos entonces el concepto de deformación en homotopía:
 \begin{defin}
 Dos aplicaciones $f, g : X \longrightarrow Y$ se dicen homótopas (deformables la una en la otra), denotado por $f \simeq g$, si existe  $H : X \times [0,1] \longrightarrow Y$ una aplicación tal que $H(x ,0) = f(x)$ y $H(x, 1) = g(x)$.
 \end{defin}
-Llegados a este punto, los problemas de extensión y levantamiento deparan ahora a un problema común de clasificación. ¿Cuándo dos aplicaciones $X \longrightarrow Y$ son homótopas? ¿Cómo es el conjunto $[X, Y]$ de clases de homotopía de aplicaciones $X \longrightarrow Y$? \par 
-Los métodos que se siguen son, a grosso modo, de dos enfoques distintos:\\
+
+De esta forma, los problemas de extensión y levantamiento nos llevan ahora a un problema común de clasificación. ¿Cuándo dos aplicaciones $X \longrightarrow Y$ son homótopas? ¿Cómo es el conjunto $[X, Y]$ de clases de homotopía de aplicaciones $X \longrightarrow Y$? \par 
+Los métodos que se siguen son de dos enfoques distintos:\par 
 Por una parte, a los espacios se le asocian modelos algebraicos y morfismos entre los respectivos modelos algebraicos a las aplicaciones. Estas asociaciones permiten parcialmente su clasificación. \par 
 Como ejemplo, probemos el \hyperlink{c1t:retractoh}{teorema anterior} por el que $S^n$ no es un retracto de $D^{n+1}$. Para ello, asociemos a $S^n$ un invariante algebraico no nulo (como por ejemplo el grupo de homología $n$-ésimo). Como el disco $D^{n+1}$ es deformable a un punto, todos esos invariantes se hacen 0. Si $S^n$ fuese retracto de $D^{n+1}$ existiría un diagrama como el siguiente:
 $$
@@ -82,6 +95,6 @@ $$
 		&	0 \urar & 
 \end{tikzcd}
 $$
-lo que resulta contradictorio. \par
+lo que resulta contradictorio. \qed \par
 
 Por otra parte, para saber más sobre $[X, Y]$ es habitual tratar de dotar a este conjunto de otras estructuras (grupo, módulo...) que den luz sobre su comportamiento. \par

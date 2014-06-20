@@ -70,14 +70,14 @@ Al conjunto cociente formado por las clases de homotopía de aplicaciones contin
 Veamos ahora la definición de que dos espacios sean ``deformables'' el uno en el otro:
 
 \begin{defin}
-Dos espacios $X$ e $Y$ son homotópicamente equivalentes si existen aplicaciones $f: X \longrightarrow Y$ y $g: Y \longrightarrow X$ tales que $g \circ f \simeq 1_X$ y $f \circ g \simeq 1_Y$. A las aplicaciones $f$ y $g$ se les denomina equivalencias de homotopía.
+Dos espacios $X$ e $Y$ son homotópicamente equivalentes si existen aplicaciones $f: X \longrightarrow Y$ y $g: Y \longrightarrow X$ tales que $g \circ f \simeq Id_X$ y $f \circ g \simeq Id_Y$. A las aplicaciones $f$ y $g$ se les denomina equivalencias de homotopía.
 \end{defin}
 
 \begin{ejems}
 \begin{enumerate}
 \item \label{ej3:ret} \textbf{Retractos}: La aplicación $A \stackrel{i}{\longhookrightarrow} X$
-es un retracto de X si existe una aplicación $r : X \longrightarrow A$ tal que $r \circ i = 1_A$.
-Decimos que $A$ es un retracto de deformación de $X$ si además $i \circ r \simeq 1_X$.\par
+es un retracto de X si existe una aplicación $r : X \longrightarrow A$ tal que $r \circ i = Id_A$.
+Decimos que $A$ es un retracto de deformación de $X$ si además $i \circ r \simeq Id_X$.\par
 Como ejemplo, $S^n = \{ x \in \mathbb{R}^{n+1}$ : $\| x \| = 1 \}$ es un retracto de deformación de $\mathbb{R}^{n+1} -\{ 0 \}$. En efecto, si consideramos 
 \begin{align*}
 r : \mathbb{R}^{n+1} &-\{ 0 \} \longrightarrow S^n, \\
@@ -90,9 +90,9 @@ H(x, t) &= (1 - t)x + \frac{tx}{\| x \|} ,
 \end{align*}
 es una homotopía entre $Id_{\mathbb{R}^{n+1} -\{ 0 \}}$ e $i \circ r$.
 
-\item \label{ej3:contr} \textbf{Espacios contráctiles}: Un espacio X es contráctil si tiene el mismo tipo de homotopía de un punto, o equivalentemente, la identidad en $X$ es homótopa a una constante. Por ejemplo, como hemos visto en \hyperlink{ej1:2}{uno de los ejemplos anteriores}, $R^n$ y $D^n$ son espacios contráctiles.
+\item \label{ej3:contr} \textbf{Espacios contráctiles}: Un espacio $X$ es contráctil si tiene el mismo tipo de homotopía de un punto, o equivalentemente, la identidad en $X$ es homótopa a una constante. Por ejemplo, como hemos visto en \hyperlink{ej1:2}{uno de los ejemplos anteriores}, $\bb{R}^n$ y $D^n$ son espacios contráctiles.
 
-\item \label{ej3:peine} \textbf{El espacio peine} P es un espacio contráctil. P es el conjunto definido de la siguiente forma: 
+\item \label{ej3:peine} \textbf{El espacio peine} $P$ es un espacio contráctil. $P$ es el conjunto definido de la siguiente forma: 
 
 \begin{tabular}{ll}
 \begin{minipage}{0.3\textwidth}
@@ -169,8 +169,7 @@ x &\longmapsto [(x, 1)],
 es un homeomorfismo en su imagen por lo que podemos pensar en $X$ como un subespacio del cono. Además, el espacio $CX$ es contráctil.
 \end{itemize}
 \section{Adjunción de celdas a un espacio}\label{c1:unionceldas}
-Sea $X$ un espacio topológico y $D^n$ un disco de dimensión $n \geq 1$. 
- Sea $f : S^{n-1} \longrightarrow X$ una aplicación continua. Definimos $X \cup_f e^n$, el espacio obtenido adjuntando a X una $n$-celda mediante $f$, como \par
+Sea $X$ un espacio topológico y $D^n$ un disco de dimensión $n \geq 1$. Sea $f : S^{n-1} \longrightarrow X$ una aplicación continua. Definimos $X \cup_f e^n$, el espacio obtenido adjuntando a $X$ una $n$-celda mediante $f$, como \par
 \begin{tabular}{ll}
 \begin{minipage}{0.5\textwidth}
 \[ X \cup_f e^n := \faktor{ X \: \dot{\cup} \: D^n}{ \sim} \: , \]
@@ -222,7 +221,7 @@ De forma análoga se prueba que $k \circ h \simeq 1_{X \cup_g e^n}$.
 Si $X$ es arcoconexo, $X \cup_f e^1 \simeq X \vee S^1$ y si $f$ es homótopa a una constante (o nulhomótopa), entonces
 $X \cup_f e^n \simeq X \vee S^n$. \qed
 \end{coro}
-\newpage
+
 \begin{teor}
 Una aplicación $f : (X, x_0) \longrightarrow (Y, y_0)$ es nulhomótopa si y sólo si se extiende a $CX$: 
 $$

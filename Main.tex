@@ -6,7 +6,11 @@
 \pagenumbering{Roman}
 \include{Portada}
 
+\setcounter{page}{5}
 \tableofcontents
+\newpage
+\mbox{}
+\thispagestyle{empty}
 
 \include{Abstract}
 
@@ -19,10 +23,12 @@
 \include{Cofibyfib}
 \include{Gruphomot}
 
+\phantomsection
 \addcontentsline{toc}{chapter}{Bibliografía}
 \bibliographystyle{plain}
 \bibliography{ref}
 \nocite{CWcomp:Top,Hatcher:AlgTop,Kosniowski:AlgTop,Massey:AlgTop,May:AlgTop,Rotman:AlgTop,Spanier:AlgTop}
+
 
 
 \end{document}

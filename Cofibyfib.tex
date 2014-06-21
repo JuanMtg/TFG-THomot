@@ -4,7 +4,7 @@ En esta parte introduciremos los conceptos de fibraciones y cofibraciones, relac
 \begin{defin}
 Sea $A \subset X$ un subespacio. Decimos que $i : A \longhookrightarrow X$ o el par $(X, A)$ tiene la propiedad de extensión homotópica (HEP) con respecto al espacio $Y$ si dada una homotopía
 \[ G : A \times I \longrightarrow Y \]
-que tiene una extensión a X en su inicio, esto es, si existe $f: X \longrightarrow Y $ tal que $f(a) = G(a, 0)$ $\forall \ a \in A$, entonces $G$ se extiende a todo $X \times I$, es decir, existe $F : X \times I \longrightarrow Y$ tal que $f(x) = F(x,0)$ y $F(a,t) = G(a, t)$ $\forall \ t \in I, \ a \in A$. \par 
+que tiene una extensión a $X$ en su inicio, esto es, si existe $f: X \longrightarrow Y $ tal que $f(a) = G(a, 0)$ $\forall \ a \in A$, entonces $G$ se extiende a todo $X \times I$, es decir, existe $F : X \times I \longrightarrow Y$ tal que $f(x) = F(x,0)$ y $F(a,t) = G(a, t)$ $\forall \ t \in I, \ a \in A$. \par 
 De forma equivalente, $(X,A)$ tiene la HEP si el siguiente diagrama puede completarse con el morfismo punteado:
 \[
 \begin{tikzcd}
@@ -15,7 +15,7 @@ De forma equivalente, $(X,A)$ tiene la HEP si el siguiente diagrama puede comple
 \]
 \end{defin}
 \begin{defin}
-Decimos que un par $(X,A)$ (o la inclusión $i: A \longhookrightarrow X$) es una cofibración si posee la HEP con respecto a todo espacio Y. \par 
+Decimos que un par $(X,A)$ (o la inclusión $i: A \longhookrightarrow X$) es una cofibración si posee la HEP con respecto a todo espacio $Y$. \par 
 Es decir, $A \subset X$ es cofibración si toda aplicación  
 \[ f : X \times \{0\} \cup A \times I \longrightarrow Y \]
 se extiende a $X \times I$. \par
@@ -84,7 +84,7 @@ La homotopía
 H : (D^n \times I) \times I \longrightarrow D^n \times I, \\
 H(p, s) = s r(p) + (1-s)p,
 \end{align*}
-induce una homotopía entre $Id_{D^n \times I} $ e $ir$. Por tanto, r es un retracto de deformación de $D^n \times I$. 
+induce una homotopía entre $Id_{D^n \times I} $ e $ir$. Por tanto, $r$ es un retracto de deformación de $D^n \times I$. 
 Este retracto de deformación se amplía a un retracto 
 \[X^n \times I \longrightarrow X^n \times \{0\} \cup (X^{n-1} \cup A^n) \times I \] de la siguiente forma: como $X^n$ se obtiene adjuntando $n$-celdas a $X^{n-1} \cup A^n$, obtenemos $X^n \times I$ a partir de $X^n \times \{0\} \cup (X^{n-1} \cup A^n) \times I$ adjuntando copias de $D^n \times I$ a lo largo de $D^n \times \{0\} \cup \partial D^n \times I$. \par 
 Si aplicamos el retracto de deformación de $X^n \times I$ en $X^n \times \{0\} \cup (X^{n-1} \cup A^n) \times I$ en los intervalos ${\small \left[\faktor{1}{2^{n+1}}, \faktor{1}{2^n}\right]}$ y las concatenamos, obtenemos un retracto de deformación de $X \times I$ en $X \times \{0\} \cup A \times I$.
@@ -172,7 +172,7 @@ I \times I \stackrel{r}{\longrightarrow} I \times \{0\} \cup \partial I \times I
 induce una retracción de $M_f \times I$ en $M_f \times \{0\} \cup X \times  I$. \par 
 Por otra parte, la inclusión $j : Y \longrightarrow M_f$ es una equivalencia de homotopía inversa de $p$: $p \circ j = Id_Y$, $j \circ p \simeq Id_{M_f}$.
 \end{demo}
-En general, si $A \longhookrightarrow X$ es una cofibración, llamamos cofibra de A a $\: \faktor{X}{A}$, de forma que una cofibración es análogo a una sucesión exacta corta
+En general, si $A \longhookrightarrow X$ es una cofibración, llamamos cofibra de $A$ a $\: \faktor{X}{A}$, de forma que una cofibración es análogo a una sucesión exacta corta
 \[ A \longhookrightarrow X \longrightarrow \faktor{X}{A} \, .\]
 Si $f : X \longrightarrow Y$ es una aplicación cualquiera, la cofibra de $f$ es la cofibra de la cofibración asociada
 \[ X \longrightarrow M_f \longrightarrow \faktor{M_f}{X} = C_f \]

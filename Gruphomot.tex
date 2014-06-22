@@ -129,22 +129,37 @@ $\pi_n$ es un funtor en la categoría homotópica con valores en la categoría d
 \begin{enumerate}
 \item $\homot{n}{f \circ g} = \homot{n}{f} \circ \homot{n}{g}$
 \item $\homot{n}{Id} = Id_{\homot{n}{X}}$
-\item Si $f \simeq_{\{x_0\}} g$, entonces $\homot{n}{f} = \homot{n}{g}$.
 \end{enumerate}
+Además, si $f, g : (X, x_0) \longrightarrow (Y, y_0)$ son dos aplicaciones tales que $f \simeq_{\{x_0\}} g$, entonces $\homot{n}{f} = \homot{n}{g}$.
 \end{prop}
 \begin{demo}
 \begin{enumerate}
 \item Sean $f: (X, x_0) \longrightarrow (Y, y_0)$ y $g: (Y, y_0) \longrightarrow (Z, z_0)$ y sea $[\alpha] \in \homot{n}{X, x_0}$. Entonces,
 \[
-\homot{n}{f \circ g}([\alpha]) = [f \circ g \circ \alpha] = \homot{n}{f}([g \circ \alpha]) = \homot{n}{f} \circ \homot{n}{g}([\alpha]).
+\homot{n}{f \circ g}([\alpha]) = [f \circ g \circ \alpha] = \homot{n}{f}([g \circ \alpha]) = \homot{n}{f} \circ \homot{n}{g}([\alpha]),
 \]
-Por tanto, se tiene que $\homot{n}{f \circ g} = \homot{n}{f} \circ \homot{n}{g}.$
-\item Se obtiene sin más que aplicar la definición:
+que es lo que se quería probar.
+%Por tanto, se tiene que $\homot{n}{f \circ g} = \homot{n}{f} \circ \homot{n}{g}.$
+\item Esta parte se obtiene sin más que aplicar la definición de la aplicación inducida:
 \[
 \homot{n}{Id}([\alpha]) = [Id \circ \alpha] = [\alpha] = Id_{\homot{n}{X}}([\alpha]).
 \]
 \end{enumerate}
+Para la última parte, si tenemos que $f \simeq_{\{x_0\}} g$, entonces existe una homotopía tal que
+\begin{align*}
+H : X \times I &\longrightarrow Y, \\
+H(x, 0) &= f(x),\\
+H(x, 1) &= g(x), \\
+H(x_0, t) &= x_0.
+\end{align*}
+Es necesario ver que $\homot{n}{f}([\alpha]) = [ f \circ \alpha]  = [ g \circ \alpha ] = \homot{n}{g}([\alpha])$. Pero esto es claro sin más que considerar la homotopía
+\begin{align*}
+F : S^n \times I &\longrightarrow Y, \\
+F(x, t) &= H( \alpha(x), t),
+\end{align*}
+que es una homotopía entre $ f \circ \alpha$ y $ g \circ \alpha$.
 \end{demo}
+
 En particular, si $f : (X, x_0) \longrightarrow (Y, y_0)$ es una equivalencia de homotopía, entonces $\homot{n}{f}$ es un isomorfismo para todo $n \geq 1$. En efecto, existe $g$ tal que $f \circ g \simeq Id_{(Y, \ y_0)}$ y $g \circ f \simeq Id_{(X, \ x_0)}$. 
 Luego tenemos que 
 \begin{align*}
@@ -442,9 +457,6 @@ S^7 \longrightarrow S^{15} \longrightarrow S^8 & \text{para } \bb{O}P^1
 \end{matrix}
 \]
 \end{enumerate}
-%\section{Otros resultados para el cálculo de}
+%\section{Otros resultados para el cálculo de grupos de homotopía}
 %\fancyhead[LO,RE]{\itshape \rightmark}
-
-\newpage
-\mbox{}
-\thispagestyle{empty}
+%Para concluir, simplemente notar que 

@@ -22,7 +22,7 @@ y elemento inverso
 \[
 f^{-1} (s_1, \ldots, s_n) = f(1 - s_1, \ldots, s_n) \qquad (\text{relativa a } \partial I^n).
 \]
-Se podría pensar sobre otras posibles operaciones variando la coordenada elegida. Podemos definir las operaciones
+Se podrían considerar otras posibles operaciones variando la coordenada elegida. Podemos definir las operaciones
 \[
 (f +_i \: g)(s_1, \ldots, s_n) = 
 \begin{cases}
@@ -30,9 +30,9 @@ f(s_1, \ldots, 2s_i, \ldots, s_n) & \text{si } s_i \leq \frac{1}{2}, \\
 g(s_1, \ldots, 2s_i -1, \ldots, s_n) & \text{si } s_i \geq \frac{1}{2}. \\
 \end{cases}
 \]
-Pero estas operaciones coinciden. Esto puede demostrarse haciendo uso del siguiente resultado:
+Pero todas estas operaciones coinciden. Esto puede demostrarse haciendo uso del siguiente resultado:
 \begin{prop}[(Argumento de Eckmann-Hilton)]
-Sea $X$ un conjunto dotado de dos operaciones $\bullet$ y $\circ$ y supongamos que 
+Sea $X$ un conjunto dotado de dos operaciones $\bullet$, $\circ$, y supongamos que 
 \begin{enumerate}
 \item $\bullet$ y $\circ$ poseen la misma unidad.
 \item $\forall a,b,c,d \in X$ se verifica que
@@ -57,7 +57,7 @@ Por tanto, como estas operaciones verifican las condiciones de la proposición, 
 \begin{teor}
 Si $n \geq 2$, entonces $\homot{n}{X, x_0}$ es abeliano.
 \end{teor}
-El caso $n=1$ no puede contemplarse ya que al trabajar únicamente con una coordenada no disponemos de otra operación distinta con la que aplicar el Argumento de Eckmann-Hilton.
+El caso $n=1$ no puede contemplarse ya que al trabajar únicamente con una coordenada no disponemos de otra operación distinta con la que aplicar el Argumento de Eckmann-Hilton. Es bien sabido que el grupo fundamental de un espacio no es abeliano en general.
 \begin{custom}[Observaciones]
 \begin{enumerate}
 \item En el caso que tengamos $C$ componente arcoconexa que contiene a $x_0$, entonces $\homot{n}{X, x_0} = \homot{n}{C, x_0}$. Por lo tanto, supondremos $X$ arcoconexo.
@@ -127,8 +127,8 @@ Con esta definición, tenemos:
 \begin{prop}
 $\pi_n$ es un funtor en la categoría homotópica con valores en la categoría de los grupos:
 \begin{enumerate}
-\item $\homot{n}{f \circ g} = \homot{n}{f} \circ \homot{n}{g}$
-\item $\homot{n}{Id} = Id_{\homot{n}{X}}$
+\item $\homot{n}{f \circ g} = \homot{n}{f} \circ \homot{n}{g}$.
+\item $\homot{n}{Id} = Id_{\homot{n}{X}}$.
 \end{enumerate}
 Además, si $f, g : (X, x_0) \longrightarrow (Y, y_0)$ son dos aplicaciones tales que $f \simeq_{\{x_0\}} g$, entonces $\homot{n}{f} = \homot{n}{g}$.
 \end{prop}
@@ -258,7 +258,7 @@ tal que $\partial ([F]) = [f]$.
 \begin{defin}
 Un espacio topológico $X$ con punto base $x_0$ se dice $n$-conexo si $\homot{i}{X, x_0} = 0$ para todo $i \leq n$.
 \end{defin}
-Con esta definición, que un espacio sea $0$-conexo quiere decir que es arcoconexo, y que sea $1$-conexo significa que el espacio es símplemente conexo. \par
+Con esta definición, que un espacio sea $0$-conexo quiere decir que es arcoconexo, y que sea $1$-conexo significa que el espacio es simplemente conexo. \par
 Como $n$-conexidad implica $0$-conexidad, la mención del punto base de un espacio $n$-conexo no es importante. \par
 Así, las siguientes condiciones son equivalentes:
 \begin{enumerate}
@@ -408,7 +408,7 @@ Podemos entonces utilizar la sucesión exacta de una fibración vista anteriorme
 \[
 \homot{2}{S^1} \longrightarrow \homot{2}{K} \longrightarrow \homot{2}{S^1} \longrightarrow \homot{1}{S^1} \longrightarrow \homot{1}{K} \longrightarrow \homot{1}{S^1} \longrightarrow 0
 \]
-Por tanto, como tenemos que $\homot{n}{S^1} = 0 \ si \ n \geq 2$, entonces  se tiene que $\homot{2}{K} = 0 \ si \ n \geq 2$. Por otra parte,  $\homot{1}{K} $ es una extension de un producto de $\bb{Z}$, este viene dado por 
+Por tanto, como tenemos que $\homot{n}{S^1} = 0 \ si \ n \geq 2$, entonces  se tiene que $\homot{2}{K} = 0 \ si \ n \geq 2$. Por otra parte,  $\homot{1}{K} $ es una extensión de un producto de $\bb{Z}$, este viene dado por 
 \[
 \homot{1}{K} = \faktor{F(a,b)}{abab^{-1}} = \bb{Z} \rtimes_\varphi \bb{Z}
 \]

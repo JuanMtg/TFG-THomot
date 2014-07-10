@@ -1,0 +1,123 @@
+\begin{frame}{Grupos de Homotopía}
+\begin{defin}
+Dado $(X, x_0)$ un espacio topológico punteado. Definimos el \alert{grupo de homotopía $n$-ésimo} como:
+\[ \homot{n}{X, x_0} = [(I^n, \partial I^n), (X, x_0)], \text{ donde } I^n = [0,1]^n. \]
+\end{defin}
+
+\only<2>{
+\[
+(f + g)(s_1, \ldots, s_n) = 
+\begin{cases}
+f(2s_1, s_2, \ldots, s_n) & \text{si } s_1 \leq \frac{1}{2}, \\
+g(2s_1 - 1, s_2, \ldots, s_n) & \text{si } s_1 \geq \frac{1}{2}.
+\end{cases}
+\]}
+
+\only<3>{
+\[
+(f +_i \: g)(s_1, \ldots, s_n) = 
+\begin{cases}
+f(s_1, \ldots, 2s_i, \ldots, s_n) & \text{si } s_i \leq \frac{1}{2}, \\
+g(s_1, \ldots, 2s_i -1, \ldots, s_n) & \text{si } s_i \geq \frac{1}{2}. \\
+\end{cases}
+\]}
+\end{frame}
+
+\begin{frame}{Grupos de Homotopía}
+\begin{prop}[(Argumento de Eckmann-Hilton)]
+Sea $X$ un conjunto dotado de dos operaciones $\bullet$, $\circ$, y supongamos que 
+\begin{enumerate}
+\item $\bullet$ y $\circ$ poseen la misma unidad.
+\item $\forall a,b,c,d \in X$ se verifica que
+\[
+(a \bullet b) \circ (c \bullet d) = (a \circ c) \bullet (b \circ d) .
+\]
+\end{enumerate}
+Entonces $\bullet$ y $\circ$ coinciden, y son asociativas y conmutativas.
+\end{prop}
+\pause
+\begin{teor}
+Si $n \geq 2$, entonces $\homot{n}{X, x_0}$ es abeliano.
+\end{teor}
+\end{frame}
+
+\begin{frame}{Grupos de Homotopía Relativa}
+\begin{defin}
+Consideramos $(X, x_0)$ espacio topológico punteado y $A$ tal que  $x_0 \in A \subset X$. Denominamos $J^{n-1} = \partial I^n - I^{n-1}$. \par 
+Definimos entonces el \alert{grupo de homotopía relativa $n$-ésimo} como
+\[
+\homot{n}{X, A, x_0} = [(I^n, \partial I^n, J^{n-1}), (X, A, x_0)]
+\]
+\end{defin}
+Con la anterior operación definida, $\homot{n}{X, A, x_0}$ es un grupo si $n \geq 2$ y es abeliano si $n \geq 3$.
+\end{frame}
+
+\begin{frame}[fragile]{Sucesión exacta larga en homotopía}
+\begin{teor}
+La sucesión
+\begin{align*} 
+\ldots \longrightarrow \homot{n}{A, x_0} & \longrightarrow \homot{n}{X, x_0} \longrightarrow \homot{n}{X, A, x_0} \longrightarrow \homot{n-1}{A, x_0} \longrightarrow \ldots \\
+\ldots  &\longrightarrow \homot{1}{X, A, x_0} \longrightarrow \homot{0}{A, x_0} \longrightarrow \homot{0}{X, x_0}
+\end{align*}
+es exacta.
+\end{teor}
+\end{frame}
+
+\begin{frame}[fragile]{Aplicaciones de la sucesión exacta larga}
+\begin{teor}
+Sea $p : E \longrightarrow B$ una fibración. Tomamos $b_0 \in B$ y un elemento $x_0$ de la fibra de $b_0$,  $x_0 \in F = p^{-1}(b_0)$. Entonces
+\[
+\homot{n}{p} : \homot{n}{E, F, x_0} \longrightarrow \homot{n}{B, b_0}
+\]
+es isomorfismo si $n \geq 1$.
+\end{teor}
+\pause
+\[
+\begin{tikzcd}
+\dots \arrow{r} & \homot{n}{E, x_0} \arrow{r}{\homot{n}{i}} \arrow[swap]{dr}{\homot{n}{p}} & \homot{n}{E, F, x_0} \arrow{r} \arrow{d}{\homot{n}{p}} \arrow[invis, swap]{d}{\cong} & \homot{n-1}{F, x_0} \arrow{r} & \dots \\
+ & & \homot{n}{B, b_0} & &
+\end{tikzcd}
+\]
+\end{frame}
+
+\begin{frame}[fragile]{Aplicaciones de la sucesión exacta larga}
+Un espacio recubridor es una fibración con fibra discreta, por lo tanto $\homot{i}{F, x_0} = \nobreak 0$ $\forall i \geq  1$ y $\homot{0}{F, x_0}$ es el conjunto de componentes arcoconexas que contienen a $x_0$. \par
+
+\[
+0 \longrightarrow \homot{n}{E, x_0} \stackrel{\cong}{\longrightarrow} \homot{n}{B, b_0} \longrightarrow 0 \quad \text{si } n \geq 2,
+\]
+\[
+\homot{1}{E, x_0} \longrightarrow \homot{1}{B, b_0} \quad \text{es inyectiva.}
+\]
+\pause
+Si tomamos $exp : \bb{R} \longrightarrow S^1$ espacio recubridor, tenemos que
+\[
+\homot{i}{S^1} = 0, \ i \geq 2 ; \qquad \homot{1}{S^1} = \bb{Z}.
+\]
+\end{frame}
+
+\begin{frame}[fragile]{Aplicaciones de la sucesión exacta larga}
+Considerando el espacio proyectivo complejo definido como $\bb{C}P^n = \faktor{S^{2n+1}}{\sim}$. \par
+De esta forma, obtenemos un fibrado
+\[
+S^1 \longrightarrow S^{2n+1} \longrightarrow \bb{C}P^n.
+\]
+Si $n = 1$,
+\[
+S^1 \longrightarrow S^3 \longrightarrow S^2
+\]
+\end{frame}
+
+\begin{frame}[fragile]{Aplicaciones de la sucesión exacta larga}
+\begin{align*}
+\underbrace{\homot{n}{S^1}}_{\text{=0}} &\longrightarrow \homot{n}{S^3} \stackrel{\cong}{\longrightarrow} \homot{n}{S^2} \longrightarrow \underbrace{\homot{n-1}{S^1}}_{\text{=0}} \longrightarrow \dots \\ 
+\dots &\longrightarrow \underbrace{\homot{2}{S^1}}_{\text{=0}} \longrightarrow \underbrace{\homot{2}{S^3}}_{\text{=0}} \longrightarrow \homot{2}{S^2} \stackrel{\cong}{\longrightarrow} \underbrace{\homot{1}{S^1}}_{\text{=}\bb{Z}} \longrightarrow \underbrace{\homot{1}{S^3}}_{\text{=0}} \longrightarrow \underbrace{\homot{1}{S^2}}_{\text{=0}}
+\end{align*}
+Por tanto, obtenemos que
+\[
+\begin{cases}
+\homot{n}{S^3} = \homot{n}{S^2} & \text{si } n \geq 3 \\
+\homot{2}{S^2} = \bb{Z}
+\end{cases}
+\]
+\end{frame}

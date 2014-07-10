@@ -1,0 +1,113 @@
+% Copyright 2009 by Nico Schlömer
+% Modified by Juan Antonio Macías
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+
+\mode<presentation>
+
+
+% =========================================================================
+% A good guess on what the UMA colours could be.
+
+% Antwerpen University Colours
+\definecolor{uablue}{RGB}{0,61,100}
+\colorlet{uablue100}{uablue}
+\colorlet{uablue75} {uablue!75!white}
+\colorlet{uablue50} {uablue!50!white}
+\colorlet{uablue25} {uablue!25!white}
+\colorlet{uablue10} {uablue!10!white}
+\colorlet{uablue5}  {uablue!5!white}
+
+\definecolor{uared}{RGB}{126,0,47}
+\colorlet{uared100}{uared}
+\colorlet{uared75} {uared!75!white}
+\colorlet{uared50} {uared!50!white}
+\colorlet{uared25} {uared!25!white}
+\colorlet{uared10} {uared!10!white}
+\colorlet{uared5}  {uared!5!white}
+
+% Universidad de Málaga colours
+
+\definecolor{umablue}{RGB}{0,44,91}
+\colorlet{umablue100}{umablue}
+\colorlet{umablue75} {umablue!75!white}
+\colorlet{umablue50} {umablue!50!white}
+\colorlet{umablue25} {umablue!25!white}
+\colorlet{umablue10} {umablue!10!white}
+\colorlet{umablue5}  {umablue!5!white}
+
+\definecolor{vividbrown}{RGB}{215,154,70}
+\colorlet{vividbrown100}{vividbrown}
+\colorlet{vividbrown75} {vividbrown!75!white}
+\colorlet{vividbrown50} {vividbrown!50!white}
+\colorlet{vividbrown25} {vividbrown!25!white}
+\colorlet{vividbrown10} {vividbrown!10!white}
+\colorlet{vividbrown5}  {vividbrown!5!white}
+% =========================================================================
+
+
+\ifbeamer@dark%
+
+  \setbeamercolor{structure}{fg=white}%
+  \setbeamercolor{normal text}{fg=white}%
+  \setbeamercolor{frametitle}{fg=white}%
+  \setbeamercolor{frame number in foot}{fg=umablue}%
+
+  \setbeamercolor{frame number in head}{fg=white}%
+
+\else%
+
+  \setbeamercolor{structure}{fg=umablue}%
+  \setbeamercolor{normal text}{fg=umablue}%
+  \setbeamercolor{frametitle}{fg=umablue}%
+  \setbeamercolor{section name}{fg=uared}%
+  \setbeamercolor{subsection name}{fg=umablue}%
+  \setbeamercolor{frame number in foot}{fg=white}%
+
+  \ifbeamer@darktitle%
+      \setbeamercolor{title}{fg=white}%
+      \setbeamercolor{subtitle}{fg=white}%
+  \else
+      \setbeamercolor{subtitle}{fg=uared}%
+  \fi
+
+\fi
+
+
+% =======================================================================
+% alert color
+\setbeamercolor{alerted text}{fg=uared}
+% =======================================================================
+
+% =======================================================================
+% blocks
+
+\ifbeamer@dark%
+
+  \setbeamercolor{block title}{use=structure,fg=white,bg=uablue}
+  \setbeamercolor{block title alerted}{use=alerted text,fg=white,bg=uared}
+  \setbeamercolor{block title example}{use=example text,fg=white,bg=uablue}
+
+  \setbeamercolor{block body}        {fg=uablue,use=block title,bg=uablue10}
+  \setbeamercolor{block body alerted}{fg=uablue,use=block title alerted,bg=uared10}
+  \setbeamercolor{block body example}{fg=uablue,use=block title example,bg=uablue10}
+
+\else%
+
+  \setbeamercolor{block title}{use=structure,fg=white,bg=umablue}
+  \setbeamercolor{block title alerted}{use=alerted text,fg=white,bg=uared}
+  \setbeamercolor{block title example}{use=example text,fg=white,bg=umablue}
+
+  \setbeamercolor{block body}        {fg=umablue,use=block title,bg=umablue10}
+  \setbeamercolor{block body alerted}{fg=umablue,use=block title alerted,bg=uared10}
+  \setbeamercolor{block body example}{fg=umablue,use=block title example,bg=umablue10}
+
+\fi
+% =======================================================================
+
+
+\mode
+<all>

@@ -1,0 +1,114 @@
+% Paquetes principales
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usefonttheme{professionalfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage[spanish,english]{babel}
+\usepackage{libertine} 
+\usepackage[libertine]{newtxmath}
+\usepackage{faktor}	
+\usepackage{lipsum}
+\usepackage[normalem]{ulem}		% Distintos subrayados
+%\usepackage{parskip} 			% Ajustes de distancia entre párrafos
+\usepackage{tikz-cd}
+\usetikzlibrary{matrix, arrows}
+
+\tikzset{
+commutative diagrams/.cd,
+arrow style=tikz,
+diagrams={>=latex},
+mysymbol/.style={start anchor=center,end anchor=center,draw=none},
+invis/.style={start anchor=center, end anchor=center, draw=none}
+}
+
+
+% Nuevos comandos
+\newcommand*{\nts}[1]{\textbf{\color{magenta}{#1}}}
+%%% Flechas inclusiones largas
+\newcommand*{\longhookrightarrow}{\ensuremath{\lhook\joinrel\relbar\joinrel\rightarrow \nobreak}}
+\newcommand*{\longhookleftarrow}{\ensuremath{\leftarrow\joinrel\relbar\joinrel\rhook \nobreak}}
+\newcommand*{\bb}[1]{\mathbb{#1}}
+%%% Redefinimos flechas para que no se corten entre líneas
+\let\longra\longrightarrow
+\renewcommand*{\longrightarrow}{\ensuremath{\longra \nobreak}}
+\let\longla\longleftarrow
+\renewcommand*{\longleftarrow}{\ensuremath{\longla \nobreak}}
+
+%%% Comandos para grupos de homotopía y homología
+\newcommand*{\homot}[2]{\ensuremath{\pi_{#1}(#2)}}
+\newcommand*{\homotp}[2]{\ensuremath{\pi_{#1}\left(#2\right)}}
+\newcommand*{\homs}[2]{\ensuremath{H_{#1}\left(#2\right)}}
+\newcommand*{\homr}[2]{\ensuremath{\widetilde{H}_{#1}\left(#2\right)}}
+
+%%% Redefinimos bar como overline y tilde como widetilde
+\renewcommand*{\bar}[1]{\ensuremath{\overline{#1}}}
+\renewcommand*{\tilde}[1]{\ensuremath{\widetilde{#1}}}
+
+%%% Comando para introducir simbolos de conmutatividad en diagramas
+\newcommand{\cdiagr}[2][\circlearrowright]{%
+  \arrow[mysymbol]{#2}[description]{#1}}
+\newcommand{\cdiagl}[2][\circlearrowleft]{%
+  \arrow[mysymbol]{#2}[description]{#1}}
+
+\AtBeginSection{\frame{\sectionpage}}
+
+%% Teoremas
+\newenvironment{teor}[1][\unskip]{%
+\begin{block}{Teorema #1}
+}
+{
+\end{block}
+}
+
+\newenvironment{coro}[1][\unskip]{%
+\begin{block}{Corolario #1}
+}
+{
+\end{block}
+}
+
+\newenvironment{lema}[1][\unskip]{%
+\begin{block}{Lema #1}
+}
+{
+\end{block}
+}
+
+\newenvironment{prop}[1][\unskip]{%
+\begin{block}{Proposición #1}
+}
+{
+\end{block}
+}
+
+
+\newenvironment{demo}[1][\unskip]{%
+\begin{block}{Demostración #1}
+}
+{
+\end{block}
+}
+
+\newenvironment{defin}[1][\unskip]{%
+\begin{block}{Definición #1}
+}
+{
+\end{block}
+}
+
+\newenvironment{ejem}[1][\unskip]{%
+\begin{block}{Ejemplo #1}
+}
+{
+\end{block}
+}
+
+\newenvironment{ejems}[1][\unskip]{%
+\begin{block}{Ejemplos #1}
+}
+{
+\end{block}
+}
